@@ -11,7 +11,16 @@ import SwiftUI
 struct RocketTrackerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView {
+                LaunchView()
+                    .tabItem {
+                        Label("Launch Sites", systemImage: "map.circle.fill")
+                    }
+                LaunchSiteView()
+                    .tabItem {
+                        Label("Launches", systemImage: "car.circle")
+                    }
+            }
         }
     }
 }
