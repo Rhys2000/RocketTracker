@@ -16,6 +16,7 @@
 		90A5F04A2A8A75E500ECE789 /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5F0492A8A75E500ECE789 /* LaunchViewModel.swift */; };
 		90A5F04E2A8A761100ECE789 /* LaunchSite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5F04D2A8A761100ECE789 /* LaunchSite.swift */; };
 		90A5F0502A8A762400ECE789 /* LaunchSiteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5F04F2A8A762400ECE789 /* LaunchSiteViewModel.swift */; };
+		90A5F0772A8C2F9600ECE789 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5F0762A8C2F9600ECE789 /* PreviewProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		90A5F0492A8A75E500ECE789 /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
 		90A5F04D2A8A761100ECE789 /* LaunchSite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchSite.swift; sourceTree = "<group>"; };
 		90A5F04F2A8A762400ECE789 /* LaunchSiteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchSiteViewModel.swift; sourceTree = "<group>"; };
+		90A5F0762A8C2F9600ECE789 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 		90A5F02E2A8A70D700ECE789 /* RocketTracker */ = {
 			isa = PBXGroup;
 			children = (
+				90A5F0752A8C2F6D00ECE789 /* Extensions */,
 				90A5F02F2A8A70D700ECE789 /* RocketTrackerApp.swift */,
 				90A5F0412A8A736F00ECE789 /* Launch */,
 				90A5F03D2A8A72D000ECE789 /* LaunchSite */,
@@ -128,6 +131,14 @@
 				90A5F0492A8A75E500ECE789 /* LaunchViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		90A5F0752A8C2F6D00ECE789 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				90A5F0762A8C2F9600ECE789 /* PreviewProvider.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,6 +216,7 @@
 				90A5F04E2A8A761100ECE789 /* LaunchSite.swift in Sources */,
 				90A5F0432A8A738400ECE789 /* LaunchView.swift in Sources */,
 				90A5F0482A8A75D700ECE789 /* Launch.swift in Sources */,
+				90A5F0772A8C2F9600ECE789 /* PreviewProvider.swift in Sources */,
 				90A5F0302A8A70D700ECE789 /* RocketTrackerApp.swift in Sources */,
 				90A5F04A2A8A75E500ECE789 /* LaunchViewModel.swift in Sources */,
 			);
