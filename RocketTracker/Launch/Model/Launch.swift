@@ -20,6 +20,8 @@ struct Launch: Identifiable, Codable {
     let vehicleName: String
     let vehicleVariant: String
     let missionStatus: MissionOutcome
+    
+    let crewedLaunch: Bool?
     let staticFire: Bool?
     let staticFireToLaunchWindow: Int?
     let boosterID: [String?]
