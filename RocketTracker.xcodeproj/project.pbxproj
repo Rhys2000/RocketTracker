@@ -91,8 +91,8 @@
 		90A5F0412A8A736F00ECE789 /* Launch */ = {
 			isa = PBXGroup;
 			children = (
-				90A5F0492A8A75E500ECE789 /* LaunchViewModel.swift */,
-				90A5F0472A8A75D700ECE789 /* Launch.swift */,
+				90A5F0742A8C25E000ECE789 /* ViewModel */,
+				90A5F0732A8C25D200ECE789 /* Model */,
 				90A5F0462A8A755500ECE789 /* Views */,
 			);
 			path = Launch;
@@ -112,6 +112,22 @@
 				90A5F03F2A8A734E00ECE789 /* LaunchSiteView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		90A5F0732A8C25D200ECE789 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				90A5F0472A8A75D700ECE789 /* Launch.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		90A5F0742A8C25E000ECE789 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				90A5F0492A8A75E500ECE789 /* LaunchViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
