@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		908D91D72A8D3B5D00AF36CA /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908D91D62A8D3B5D00AF36CA /* View.swift */; };
 		90A5F0302A8A70D700ECE789 /* RocketTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5F02F2A8A70D700ECE789 /* RocketTrackerApp.swift */; };
 		90A5F0342A8A70D800ECE789 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90A5F0332A8A70D800ECE789 /* Assets.xcassets */; };
 		90A5F0372A8A70D800ECE789 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90A5F0362A8A70D800ECE789 /* Preview Assets.xcassets */; };
@@ -17,9 +18,12 @@
 		90A5F04E2A8A761100ECE789 /* LaunchSite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5F04D2A8A761100ECE789 /* LaunchSite.swift */; };
 		90A5F0502A8A762400ECE789 /* LaunchSiteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5F04F2A8A762400ECE789 /* LaunchSiteViewModel.swift */; };
 		90A5F0772A8C2F9600ECE789 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5F0762A8C2F9600ECE789 /* PreviewProvider.swift */; };
+		90A5F0792A8C33CD00ECE789 /* LaunchRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5F0782A8C33CC00ECE789 /* LaunchRowView.swift */; };
+		90A5F07B2A8C3F4C00ECE789 /* RecoveryLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5F07A2A8C3F4C00ECE789 /* RecoveryLabelView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		908D91D62A8D3B5D00AF36CA /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		90A5F02C2A8A70D700ECE789 /* RocketTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RocketTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90A5F02F2A8A70D700ECE789 /* RocketTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketTrackerApp.swift; sourceTree = "<group>"; };
 		90A5F0332A8A70D800ECE789 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -31,6 +35,8 @@
 		90A5F04D2A8A761100ECE789 /* LaunchSite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchSite.swift; sourceTree = "<group>"; };
 		90A5F04F2A8A762400ECE789 /* LaunchSiteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchSiteViewModel.swift; sourceTree = "<group>"; };
 		90A5F0762A8C2F9600ECE789 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
+		90A5F0782A8C33CC00ECE789 /* LaunchRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRowView.swift; sourceTree = "<group>"; };
+		90A5F07A2A8C3F4C00ECE789 /* RecoveryLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryLabelView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				90A5F0422A8A738400ECE789 /* LaunchView.swift */,
+				90A5F0782A8C33CC00ECE789 /* LaunchRowView.swift */,
+				90A5F07A2A8C3F4C00ECE789 /* RecoveryLabelView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -137,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				90A5F0762A8C2F9600ECE789 /* PreviewProvider.swift */,
+				908D91D62A8D3B5D00AF36CA /* View.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -211,13 +220,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90A5F07B2A8C3F4C00ECE789 /* RecoveryLabelView.swift in Sources */,
 				90A5F0502A8A762400ECE789 /* LaunchSiteViewModel.swift in Sources */,
 				90A5F0402A8A734E00ECE789 /* LaunchSiteView.swift in Sources */,
 				90A5F04E2A8A761100ECE789 /* LaunchSite.swift in Sources */,
 				90A5F0432A8A738400ECE789 /* LaunchView.swift in Sources */,
+				90A5F0792A8C33CD00ECE789 /* LaunchRowView.swift in Sources */,
 				90A5F0482A8A75D700ECE789 /* Launch.swift in Sources */,
 				90A5F0772A8C2F9600ECE789 /* PreviewProvider.swift in Sources */,
 				90A5F0302A8A70D700ECE789 /* RocketTrackerApp.swift in Sources */,
+				908D91D72A8D3B5D00AF36CA /* View.swift in Sources */,
 				90A5F04A2A8A75E500ECE789 /* LaunchViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
