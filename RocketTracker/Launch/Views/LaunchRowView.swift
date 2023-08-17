@@ -15,30 +15,18 @@ struct LaunchRowView: View {
     
     var body: some View {
         HStack(spacing: 0) {
-            Image("Falcon9Block5")
-                .resizable()
-                .frame(width: 130) //maxHeight: textHeight)
-                .frame(maxHeight: textHeight)
-                .cornerRadius(15, corners: [.topLeft, .bottomLeft])
+            imageView
+            
             VStack(alignment: .leading) {
-                Text(launch.abbreviatedMissionName!.isEmpty ? launch.missionName : launch.abbreviatedMissionName!)
-                    .bold()
-                    .font(.title2)
-                    .frame(minHeight: 25)
-                Text(launch.launchProvider.rawValue)
-                    .frame(minHeight: 0)
-                Text(launch.vehicleName + " " + launch.vehicleVariant)
-                    .frame(minHeight: 0)
-                Text(launch.launchPad + ", " + launch.launchSite)
-                    .frame(minHeight: 0)
-                Text((launch.boosterRecoveryMethod[0]?.rawValue)!)
-                    .frame(minHeight: 0)
-                Text(launch.liftOffTime + " e ")
+                missionText
+                providerText
+                vehicleText
+                locationText
+                recoveryText
+                liftOffTimeText
             }
-            .font(.headline)
-            .background(Color.orange)
-            .padding(.leading)
-            .cornerRadius(15, corners: [.topRight, .bottomRight])
+            //.background(Color.orange)
+            .padding(.leading, 8)
             .overlay(
                 GeometryReader(content: { geometry in
                     Color.clear
@@ -47,14 +35,71 @@ struct LaunchRowView: View {
                             })
                     })
                 )
+            Spacer()
         }
         .frame(width: .infinity)
-        .background(Color.green)
+        .background(Color.theme.secondaryBackground)
+        .cornerRadius(15, corners: [.topRight, .bottomRight])
+        .padding(.horizontal)
     }
 }
 
 struct LaunchRowView_Previews: PreviewProvider {
     static var previews: some View {
         LaunchRowView(launch: dev.launch)
+    }
+}
+
+extension LaunchRowView {
+    private var imageView: some View {
+        Image("Falcon9Block5")
+            .resizable()
+            .frame(width: 130) //maxHeight: textHeight)
+            .frame(maxHeight: textHeight)
+            .cornerRadius(15, corners: [.topLeft, .bottomLeft])
+    }
+    
+    private var missionText: some View {
+        Text(launch.abbreviatedMissionName!.isEmpty ? launch.missionName : launch.abbreviatedMissionName!)
+            .bold()
+            .font(.title2)
+            .frame(minHeight: 25)
+            .foregroundColor(Color.theme.primaryText)
+            .padding(.top, 5)
+    }
+    
+    private var providerText: some View {
+        Text(launch.launchProvider.rawValue)
+            .frame(minHeight: 0)
+            .font(.headline)
+            .foregroundColor(Color.theme.secondaryText)
+    }
+    
+    private var vehicleText: some View {
+        Text(launch.vehicleName + " " + launch.vehicleVariant)
+            .frame(minHeight: 0)
+            .font(.headline)
+            .foregroundColor(Color.theme.secondaryText)
+    }
+    
+    private var locationText: some View {
+        Text(launch.launchSitePad + ", " + launch.launchSite)
+            .frame(minHeight: 0)
+            .font(.headline)
+            .foregroundColor(Color.theme.secondaryText)
+    }
+    
+    private var recoveryText: some View {
+        Text((launch.boosterRecoveryMethod[0]?.rawValue)!)
+            .frame(minHeight: 0)
+            .font(.headline)
+            .foregroundColor(Color.theme.secondaryText)
+    }
+    
+    private var liftOffTimeText: some View {
+        Text(launch.liftOffTime.stringAsADate() + "  ")
+            .font(.headline)
+            .foregroundColor(Color.theme.primaryText)
+            .padding(.bottom, 5)
     }
 }
