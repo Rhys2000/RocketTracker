@@ -9,8 +9,13 @@ import SwiftUI
 
 struct LaunchView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-            .foregroundColor(Color.blue)
+        ZStack {
+            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+                .foregroundColor(Color.blue)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.theme.primaryBackground)
+        .ignoresSafeArea()
     }
 }
 
