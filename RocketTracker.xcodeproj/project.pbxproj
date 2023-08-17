@@ -20,6 +20,8 @@
 		90A5F0772A8C2F9600ECE789 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5F0762A8C2F9600ECE789 /* PreviewProvider.swift */; };
 		90A5F0792A8C33CD00ECE789 /* LaunchRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5F0782A8C33CC00ECE789 /* LaunchRowView.swift */; };
 		90A5F07B2A8C3F4C00ECE789 /* RecoveryLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5F07A2A8C3F4C00ECE789 /* RecoveryLabelView.swift */; };
+		90DDC7CC2A8E5D16004B532E /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDC7CB2A8E5D16004B532E /* Color.swift */; };
+		90DDC7CE2A8E6035004B532E /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDC7CD2A8E6035004B532E /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		90A5F0762A8C2F9600ECE789 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		90A5F0782A8C33CC00ECE789 /* LaunchRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRowView.swift; sourceTree = "<group>"; };
 		90A5F07A2A8C3F4C00ECE789 /* RecoveryLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryLabelView.swift; sourceTree = "<group>"; };
+		90DDC7CB2A8E5D16004B532E /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		90DDC7CD2A8E6035004B532E /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,8 @@
 			children = (
 				90A5F0762A8C2F9600ECE789 /* PreviewProvider.swift */,
 				908D91D62A8D3B5D00AF36CA /* View.swift */,
+				90DDC7CB2A8E5D16004B532E /* Color.swift */,
+				90DDC7CD2A8E6035004B532E /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -221,10 +227,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				90A5F07B2A8C3F4C00ECE789 /* RecoveryLabelView.swift in Sources */,
+				90DDC7CE2A8E6035004B532E /* String.swift in Sources */,
 				90A5F0502A8A762400ECE789 /* LaunchSiteViewModel.swift in Sources */,
 				90A5F0402A8A734E00ECE789 /* LaunchSiteView.swift in Sources */,
 				90A5F04E2A8A761100ECE789 /* LaunchSite.swift in Sources */,
 				90A5F0432A8A738400ECE789 /* LaunchView.swift in Sources */,
+				90DDC7CC2A8E5D16004B532E /* Color.swift in Sources */,
 				90A5F0792A8C33CD00ECE789 /* LaunchRowView.swift in Sources */,
 				90A5F0482A8A75D700ECE789 /* Launch.swift in Sources */,
 				90A5F0772A8C2F9600ECE789 /* PreviewProvider.swift in Sources */,
