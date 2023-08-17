@@ -16,7 +16,7 @@ struct Launch: Identifiable, Codable {
     let orbitalDestination: OrbitDestination
     let launchProvider: LaunchProvider
     let launchSite: String
-    let launchPad: String
+    let launchSitePad: String
     let vehicleName: String
     let vehicleVariant: String
     let missionStatus: MissionOutcome
