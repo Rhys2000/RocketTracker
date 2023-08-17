@@ -14,11 +14,11 @@ struct RocketTrackerApp: App {
             TabView {
                 LaunchView()
                     .tabItem {
-                        Label("Launch Sites", systemImage: "map.circle.fill")
+                        Label("Launches", systemImage: "car.circle")
                     }
                 LaunchSiteView()
                     .tabItem {
-                        Label("Launches", systemImage: "car.circle")
+                        Label("Launch Sites", systemImage: "map.circle.fill")
                     }
             }
         }
