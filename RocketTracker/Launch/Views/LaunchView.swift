@@ -8,19 +8,31 @@
 import SwiftUI
 
 struct LaunchView: View {
+    
+    @EnvironmentObject private var lvm: LaunchViewModel
+    
     var body: some View {
         ZStack {
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-                .foregroundColor(Color.blue)
+            Color.theme.primaryBackground
+                .ignoresSafeArea()
+            VStack {
+                List {
+                    ForEach(lvm.allLaunches) { launch in
+                        LaunchRowView(launch: launch)
+                            .listRowBackground(Color.theme.primaryBackground)
+                            .listRowSeparator(.hidden)
+                    }
+                }
+                .listStyle(PlainListStyle())
+                Spacer(minLength: 0)
+            }
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.theme.primaryBackground)
-        .ignoresSafeArea()
     }
 }
 
 struct LaunchView_Previews: PreviewProvider {
     static var previews: some View {
         LaunchView()
+            .environmentObject(dev.launchVM)
     }
 }

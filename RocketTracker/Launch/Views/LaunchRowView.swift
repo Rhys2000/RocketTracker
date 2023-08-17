@@ -37,10 +37,8 @@ struct LaunchRowView: View {
                 )
             Spacer()
         }
-        .frame(width: .infinity)
         .background(Color.theme.secondaryBackground)
-        .cornerRadius(15, corners: [.topRight, .bottomRight])
-        .padding(.horizontal)
+        .cornerRadius(15, corners: [.allCorners])
     }
 }
 
@@ -83,7 +81,7 @@ extension LaunchRowView {
     }
     
     private var locationText: some View {
-        Text(launch.launchSitePad + ", " + launch.launchSite)
+        Text(launch.launchSitePad + ", " + launch.launchSiteName)
             .frame(minHeight: 0)
             .font(.headline)
             .foregroundColor(Color.theme.secondaryText)

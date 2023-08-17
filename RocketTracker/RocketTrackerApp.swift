@@ -9,6 +9,9 @@ import SwiftUI
 
 @main
 struct RocketTrackerApp: App {
+    
+    @StateObject var lvm = LaunchViewModel()
+    
     var body: some Scene {
         WindowGroup {
             TabView {
@@ -21,6 +24,7 @@ struct RocketTrackerApp: App {
                         Label("Launch Sites", systemImage: "map.circle.fill")
                     }
             }
+            .environmentObject(lvm)
         }
     }
 }

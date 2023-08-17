@@ -7,6 +7,43 @@
 
 import Foundation
 
+/*
+ JSON Format
+ {
+     "id" : "",
+     "mission_name" : "",
+     "alternative_mission_name" : "",
+     "abbreviated_mission_name" : "",
+     "lift_off_time" : "",
+     "orbital_destination" : "",
+     "launch_provider" : "",
+     "launch_site_name" : "",
+     "launch_site_pad" : "",
+     "vehicle_name" : "",
+     "vehicle_variant" : "",
+     "mission_outcome" : "",
+     "crewed_launch" : ,
+     "static_fire" : ,
+     "static_fire_to_launch_window" : ,
+     "booster_name" : [""],
+     "booster_recovery_attempted" : [],
+     "booster_recovery_method" : [""],
+     "booster_recovery_location" : [""],
+     "booster_recovery_distance" : [],
+     "booster_recovery_outcome" : [""],
+     "number_of_fairing_flights" : [],
+     "fairing_recovery_attempted" : [],
+     "fairing_recovery_method" : [""],
+     "fairing_recovery_location" : [""],
+     "fairing_recovery_distance" : [],
+     "fairing_recovery_outcome" : [""],
+     "support_vessel" : [""],
+     "support_vessel_roles" : [[""]],
+     "description" : [""],
+     "livestream_link" : "",
+ }
+ */
+
 struct Launch: Identifiable, Codable {
     let id: String
     let missionName: String
@@ -15,29 +52,29 @@ struct Launch: Identifiable, Codable {
     let liftOffTime: String
     let orbitalDestination: OrbitDestination
     let launchProvider: LaunchProvider
-    let launchSite: String
+    let launchSiteName: String
     let launchSitePad: String
     let vehicleName: String
     let vehicleVariant: String
-    let missionStatus: MissionOutcome
+    let missionOutcome: MissionOutcome
     
     let crewedLaunch: Bool?
     let staticFire: Bool?
     let staticFireToLaunchWindow: Int?
-    let boosterID: [String?]
-    let boosterRecoveryAttempted: [Bool?]
+    let boosterName: [String?]
+    let boosterRecoveryAttempted: [Bool]
     let boosterRecoveryMethod: [RecoveryMethod?]
     let boosterRecoveryLocation: [String?]
     let boosterRecoveryDistance: [Double?]
     let boosterRecoveryOutcome: [RecoveryOutcome?]
     let numberOfFairingFlights: [Int?]
-    let fairingRecoveryAttempted: [Bool?]
+    let fairingRecoveryAttempted: [Bool]
     let fairingRecoveryMethod: [RecoveryMethod?]
     let fairingRecoveryLocation: [String?]
     let fairingRecoveryDistance: [Double?]
     let fairingRecoveryOutcome: [RecoveryOutcome?]
     let supportVessel: [String?]
-    let supportVesselRoles: [[VesselRole?]]
+    let supportVesselRole: [[VesselRole?]]
     let description: [String?]
     let livesteamLink: String?
 }
