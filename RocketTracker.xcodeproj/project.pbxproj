@@ -24,6 +24,7 @@
 		90DDC7CE2A8E6035004B532E /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDC7CD2A8E6035004B532E /* String.swift */; };
 		90DDC7D12A8EB91A004B532E /* LaunchDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDC7D02A8EB91A004B532E /* LaunchDataService.swift */; };
 		90DDC7D42A8EBAC9004B532E /* spacex.json in Resources */ = {isa = PBXBuildFile; fileRef = 90DDC7D32A8EBAC9004B532E /* spacex.json */; };
+		90DDC7D82A8EE2AB004B532E /* Vessel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDC7D72A8EE2AB004B532E /* Vessel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		90DDC7CD2A8E6035004B532E /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		90DDC7D02A8EB91A004B532E /* LaunchDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDataService.swift; sourceTree = "<group>"; };
 		90DDC7D32A8EBAC9004B532E /* spacex.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = spacex.json; sourceTree = "<group>"; };
+		90DDC7D72A8EE2AB004B532E /* Vessel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vessel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,9 +80,10 @@
 			isa = PBXGroup;
 			children = (
 				90A5F02F2A8A70D700ECE789 /* RocketTrackerApp.swift */,
-				90A5F0752A8C2F6D00ECE789 /* Extensions */,
 				90A5F0412A8A736F00ECE789 /* Launch */,
 				90A5F03D2A8A72D000ECE789 /* LaunchSite */,
+				90DDC7D52A8EE27F004B532E /* Vessel */,
+				90A5F0752A8C2F6D00ECE789 /* Extensions */,
 				90DDC7CF2A8EB8DF004B532E /* Services */,
 				90A5F0332A8A70D800ECE789 /* Assets.xcassets */,
 				90A5F0352A8A70D800ECE789 /* Preview Content */,
@@ -178,6 +181,22 @@
 			path = JsonFiles;
 			sourceTree = "<group>";
 		};
+		90DDC7D52A8EE27F004B532E /* Vessel */ = {
+			isa = PBXGroup;
+			children = (
+				90DDC7D62A8EE2A3004B532E /* Model */,
+			);
+			path = Vessel;
+			sourceTree = "<group>";
+		};
+		90DDC7D62A8EE2A3004B532E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				90DDC7D72A8EE2AB004B532E /* Vessel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -253,6 +272,7 @@
 				90DDC7CE2A8E6035004B532E /* String.swift in Sources */,
 				90A5F0502A8A762400ECE789 /* LaunchSiteViewModel.swift in Sources */,
 				90A5F0402A8A734E00ECE789 /* LaunchSiteView.swift in Sources */,
+				90DDC7D82A8EE2AB004B532E /* Vessel.swift in Sources */,
 				90A5F04E2A8A761100ECE789 /* LaunchSite.swift in Sources */,
 				90A5F0432A8A738400ECE789 /* LaunchView.swift in Sources */,
 				90DDC7CC2A8E5D16004B532E /* Color.swift in Sources */,
