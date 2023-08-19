@@ -90,6 +90,7 @@ enum OrbitDestination: String, Codable {
     case heo = "HEO" //High Earth Orbit
     case sub = "SUB" //Suborbital Trajectory
     case tli = "TLI" //Trans-Lunar Injection Orbit
+    case sel1 = "SEL1" //Sun-Earth Lagrange Point 1
 }
 
 enum LaunchProvider: String, Codable {
