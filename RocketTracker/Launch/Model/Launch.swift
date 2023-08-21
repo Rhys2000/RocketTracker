@@ -76,7 +76,7 @@ struct Launch: Identifiable, Codable {
     let supportVessel: [String]
     let supportVesselRole: [[VesselRole]]
     let description: [String]
-    let livesteamLink: String
+    let livestreamLink: String
 }
 
 enum OrbitDestination: String, Codable {
