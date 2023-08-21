@@ -22,20 +22,20 @@ import Foundation
      "vehicleName" : "Falcon 9",
      "vehicleVariant" : "Block ",
      "missionOutcome" : "",
-     "crewedLaunch" : ,
-     "staticFire" : ,
-     "staticFireToLaunchWindow" : ,
+     "crewedLaunch" : "",
+     "staticFire" : "",
+     "staticFireToLaunchWindow" : "",
      "boosterName" : [""],
-     "boosterRecoveryAttempted" : [],
+     "boosterRecoveryAttempted" : [""],
      "boosterRecoveryMethod" : [""],
      "boosterRecoveryLocation" : [""],
-     "boosterRecoveryDistance" : [],
+     "boosterRecoveryDistance" : [""],
      "boosterRecoveryOutcome" : [""],
-     "numberOfFairingFlights" : [],
-     "fairingRecoveryAttempted" : [],
+     "numberOfFairingFlights" : [""],
+     "fairingRecoveryAttempted" : [""],
      "fairingRecoveryMethod" : [""],
      "fairingRecoveryLocation" : [""],
-     "fairingRecoveryDistance" : [],
+     "fairingRecoveryDistance" : [""],
      "fairingRecoveryOutcome" : [""],
      "supportVessel" : [""],
      "supportVesselRole" : [[""]],
@@ -58,25 +58,25 @@ struct Launch: Identifiable, Codable {
     let vehicleVariant: String
     let missionOutcome: Outcome
     
-    let crewedLaunch: Bool
-    let staticFire: Bool
-    let staticFireToLaunchWindow: Int
+    let crewedLaunch: String
+    let staticFire: String
+    let staticFireToLaunchWindow: String
     let boosterName: [String]
-    let boosterRecoveryAttempted: [Bool]
+    let boosterRecoveryAttempted: [String]
     let boosterRecoveryMethod: [RecoveryMethod?]
     let boosterRecoveryLocation: [String]
-    let boosterRecoveryDistance: [Double]
+    let boosterRecoveryDistance: [String]
     let boosterRecoveryOutcome: [Outcome]
-    let numberOfFairingFlights: [Int]
-    let fairingRecoveryAttempted: [Bool]
+    let numberOfFairingFlights: [String]
+    let fairingRecoveryAttempted: [String]
     let fairingRecoveryMethod: [RecoveryMethod]
     let fairingRecoveryLocation: [String]
-    let fairingRecoveryDistance: [Double]
+    let fairingRecoveryDistance: [String]
     let fairingRecoveryOutcome: [Outcome]
     let supportVessel: [String]
     let supportVesselRole: [[VesselRole]]
-    let description: [String?]
-    let livesteamLink: String?
+    let description: [String]
+    let livesteamLink: String
 }
 
 enum OrbitDestination: String, Codable {
