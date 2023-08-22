@@ -35,7 +35,7 @@ import Foundation
      "fairingRecoveryAttempted" : [""],
      "fairingRecoveryMethod" : [""],
      "fairingRecoveryLocation" : [""],
-     "fairingRecoveryDistance" : [""],
+     "fairingRecoveryDistance" : "",
      "fairingRecoveryOutcome" : [""],
      "supportVessel" : [""],
      "supportVesselRole" : [[""]],
@@ -71,7 +71,7 @@ struct Launch: Identifiable, Codable {
     let fairingRecoveryAttempted: [String]
     let fairingRecoveryMethod: [RecoveryMethod]
     let fairingRecoveryLocation: [String]
-    let fairingRecoveryDistance: [String]
+    let fairingRecoveryDistance: String
     let fairingRecoveryOutcome: [Outcome]
     let supportVessel: [String]
     let supportVesselRole: [[VesselRole]]
@@ -109,10 +109,11 @@ enum RecoveryMethod: String, Codable {
 }
 
 enum Outcome: String, Codable {
-    case success = "Success"
-    case partialSuccess = "Partial Success"
+    case aborted = "Aborted"
     case failure = "Failure"
-    case prelaunchExplosion = "Prelaunch Explosion"
+    case partialSuccess = "Partial Success"
+    case Explosion = "Explosion"
+    case success = "Success"
     case unknown = "Unknown"
     case notAvailable = "NA"
 }
