@@ -72,6 +72,13 @@ struct Launch: Identifiable, Codable {
     let supportVessel: [String]
     let supportVesselRole: [[VesselRole]]
     let description: [String]
+    //Case 1 - Future: <Launch Provider> are targeting no earlier than <Day of the Week>, <Month> <Day> at <Time hh:mm> <Time Abbreviation x.m.> <TimeZone in LaunchSite LocalTime>, (<Time hh:mm> UTC), for <Launch Vehicle>'s launch to <OrbitDestination> from <LaunchSitePad Full Name> (LaunchSitePad) at <LaunchSite Full Name> in <LaunchSite State>.
+    // SpaceX are targeting no earlier than Friday, August 25 at 3:50 a.m. EST, (7:50 UTC), for Falcon 9's launch to International Space Station from Launch Complex 39A (LC-39A) at Kennedy Space Center in Florida.
+    
+    //Case 2 - Past: On <Day of the Week>, <Month> <Day> at <Time hh:mm> <Time Abbreviation x.m.> <TimeZone in LaunchSite LocalTime>, (<Time hh:mm> UTC), <Launch Provider> <MissionOutcome> launched <LaunchVehicle> from <LaunchSitePad Full Name> (LaunchSitePad) at <LaunchSite Full Name> in <LaunchSite State>.
+    // On Saturday, June 13 at 5:21 a.m. EDT, (9:21 UTC), SpaceX successfully launched Falcon 9 from Space Launch Complex 40 (SLC-40) at Cape Canaveral Space Force Station in Florida.
+    
+    //Case 3 - In Flight:
     let livestreamLink: String
 }
 
