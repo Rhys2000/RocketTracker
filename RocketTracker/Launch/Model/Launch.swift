@@ -36,13 +36,13 @@ import Foundation
      "fairingRecoveryOutcome" : ["Upcoming", "Upcoming"],
      "supportVessel" : [""],
      "supportVesselRole" : [[""]],
-     "description" : [""],
+     "payloadDescription" : [""],
      "livestreamLink" : "",
  },
  */
 
 struct Launch: Identifiable, Codable {
-    let id: String
+    let cosparCode: String
     let missionName: String
     let alternativeMissionName: String
     let abbreviatedMissionName: String
@@ -78,6 +78,10 @@ struct Launch: Identifiable, Codable {
     
     //Case 3 - In Flight:
     let livestreamLink: String
+    
+    var id: String {
+        cosparCode + missionName
+    }
 }
 
 enum OrbitDestination: String, Codable {
@@ -96,6 +100,7 @@ enum OrbitDestination: String, Codable {
     case sel1 = "SEL1" //Sun-Earth Lagrange Point 1
     case sel2 = "SEL2" //Sun-Earth Lagrange Point 2
     case helio = "HELIO" //Heliocentric Orbit
+    case notAvailale = "NA"
 }
 
 enum LaunchProvider: String, Codable {
