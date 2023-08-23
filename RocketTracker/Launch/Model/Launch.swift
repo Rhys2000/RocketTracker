@@ -31,7 +31,6 @@ import Foundation
      "boosterRecoveryDistance" : [""],
      "boosterRecoveryOutcome" : [""],
      "numberOfFairingFlights" : ["", ""],
-     "fairingRecoveryAttempted" : ["", ""],
      "fairingRecoveryMethod" : ["", ""],
      "fairingRecoveryLocation" : ["", ""],
      "fairingRecoveryDistance" : "",
@@ -66,7 +65,6 @@ struct Launch: Identifiable, Codable {
     let boosterRecoveryDistance: [String]
     let boosterRecoveryOutcome: [Outcome]
     let numberOfFairingFlights: [String] //Look for values of 0
-    let fairingRecoveryAttempted: [String]
     let fairingRecoveryMethod: [RecoveryMethod]
     let fairingRecoveryLocation: [String]
     let fairingRecoveryDistance: String
