@@ -6927,7 +6927,7 @@
         "supportVessel" : ["Of Course I Still Love You", "Go Quest", "NRC Quest", "Scorpius"],
         "supportVesselRole" : [["ASDS"], ["DSV"], ["FRV"], ["TUG"]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=JILQ2qe-cjI",
     },
     {
         "id" : "2023-022",
@@ -6960,7 +6960,7 @@
         "supportVessel" : ["Just Read the Instructions", "Bob", ""?],
         "supportVesselRole" : [["ASDS"], ["DSV", "FRV"], [""]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=PxfFL249aoU",
     },
     {
         "id" : "2023-026",
@@ -6993,7 +6993,7 @@
         "supportVessel" : ["A Shortfall of Gravitas", "Doug"],
         "supportVesselRole" : [["ASDS"], ["DSV", "FRV", "TUG"]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=oe4S-q_gQaU",
     },
     {
         "id" : "2023-027",
@@ -7026,7 +7026,7 @@
         "supportVessel" : ["Just Read the Instructions", ""?],
         "supportVesselRole" : [["ASDS"], [""]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=BZfB8Ny2Tkw",
     },
     {
         "id" : "2023-028",
@@ -7059,7 +7059,7 @@
         "supportVessel" : ["Of Course I Still Love You", "Go Quest", "NRC Quest", "Scorpius"],
         "supportVesselRole" : [["ASDS"], ["DSV"], ["FRV"], ["TUG"]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=BAkApUbevaA",
     },
     {
         "id" : "2023-029",
@@ -7092,7 +7092,7 @@
         "supportVessel" : ["Bob"],
         "supportVesselRole" : [["FRV"]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=AfWFGJMTSqw",
     },
     {
         "id" : "2023-033",
@@ -7125,7 +7125,7 @@
         "supportVessel" : ["A Shortfall of Gravitas", ""?],
         "supportVesselRole" : [["ASDS"], [""]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=8tteM4Q2Lh0",
     },
     {
         "id" : "2023-037",
@@ -7158,7 +7158,7 @@
         "supportVessel" : ["Of Course I Still Love You", "Go Quest", "NRC Quest", "Scorpius"],
         "supportVesselRole" : [["ASDS"], ["DSV"], ["FRV"], ["TUG"]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=HT2F37M193Y",
     },
     {
         "id" : "2023-038",
@@ -7191,7 +7191,7 @@
         "supportVessel" : ["Just Read the Instructions", "Bob"], "",
         "supportVesselRole" : [["ASDS"], ["DSV", "FRV"], [""]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=4aMf9K_ZaAI",
     },
     {
         "id" : "2023-042",
@@ -7224,7 +7224,7 @@
         "supportVessel" : ["A Shortfall of Gravitas", "Doug"],
         "supportVesselRole" : [["ASDS"], ["DSV", "FRV", "TUG"]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=Bhe91f5smxM",
     },
     {
         "id" : "2023-046",
@@ -7257,7 +7257,7 @@
         "supportVessel" : ["Just Read the Instructions", "Bob"],
         "supportVesselRole" : [["ASDS"], ["DSV", "FRV", "TUG"]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=iS9cT0vz3ng",
     },
     {
         "id" : "2023-050",
@@ -7290,13 +7290,13 @@
         "supportVessel" : ["NRC Quest"],
         "supportVesselRole" : [["FRV"]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=vnnUoZ66ihg",
     },
     {
         "id" : "2023-052",
         "missionName" : "Intelsat 40e / TEMPO",
         "alternativeMissionName" : "",
-        "abbreviatedMissionName" : "",
+        "abbreviatedMissionName" : "IS-40e",
         "liftOffTime" : "2023-04-07T04:30:00+0000",
         "orbitalDestination" : "GTO",
         "launchProvider" : "SpaceX",
@@ -7323,7 +7323,7 @@
         "supportVessel" : ["A Shortfall of Gravitas", "Doug", ""?],
         "supportVesselRole" : [["ASDS"], ["DSC", "FRV"], [""]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=TyWpP0fCxy8",
     },
     {
         "id" : "2023-054",
@@ -7356,7 +7356,7 @@
         "supportVessel" : ["NRC Quest"],
         "supportVesselRole" : [["FRV"]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=F_OEbfFvdeE",
     },
     {
         "id" : "2023-056",
@@ -7389,7 +7389,7 @@
         "supportVessel" : ["A Shortfall of Gravitas", "Bob", "Crosby Skipper"],
         "supportVesselRole" : [["ASDS"], ["DSV", "FRV"], ["TUG"]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=kpoMcjTvylk",
     },
     {
         "id" : "2023-058",
@@ -7422,7 +7422,7 @@
         "supportVessel" : ["Of Course I Still Love You", "Go Beyond", "NRC Quest", "Scorpius"],
         "supportVesselRole" : [["ASDS"], ["DSV"], ["FRV"], ["TUG"]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=-5EX1u0fA78",
     },
     {
         "id" : "2023-059",
@@ -7455,7 +7455,7 @@
         "supportVessel" : ["Just Read the Instructions", "Bob", ""?],
         "supportVesselRole" : [["ASDS"], ["DSV", "FRV"], [""]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=QER02i5yWxw",
     },
     {
         "id" : "2023-060",
@@ -7488,7 +7488,7 @@
         "supportVessel" : ["Doug"],
         "supportVesselRole" : [["FRV"]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=YFbp6PVbJQA",
     },
     {
         "id" : "2023-061",
@@ -7521,7 +7521,7 @@
         "supportVessel" : ["A Shortfall of Gravitas", "Bob", "Crosby Skipper"],
         "supportVesselRole" : [["ASDS"], ["DSV", "FRV"], ["TUG"]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=R9eHIjRuBjY",
     },
     {
         "id" : "2023-064",
@@ -7554,7 +7554,7 @@
         "supportVessel" : ["Of Course I Still Love You", "Go Beyond", "Scorpius"],
         "supportVesselRole" : [["ASDS"], ["DSV", "FRV"], ["TUG"]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=bzAcO60OPrk",
     },
     {
         "id" : "2023-065",
@@ -7587,7 +7587,7 @@
         "supportVessel" : ["Just Read the Instructions", "Bob", "Crosby Skipper"],
         "supportVesselRole" : [["ASDS"], ["DSV", "FRV"], ["TUG"]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=RAmIaHGoaYU",
     },
     {
         "id" : "2023-067",
@@ -7620,7 +7620,7 @@
         "supportVessel" : ["A Shortfall of Gravitas", "Doug", "Crosby Skipper"],
         "supportVesselRole" : [["ASDS"], ["DSV", "FRV", "TUG"], ["TUG"]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=VzEfuP95Z90",
     },
     {
         "id" : "2023-068",
@@ -7653,7 +7653,7 @@
         "supportVessel" : ["Of Course I Still Love You", "Go Beyond", ""?],
         "supportVesselRole" : [["ASDS"], ["DSV", "FRV"], [""]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=crdFx4HiSFw",
     },
     {
         "id" : "2023-070",
@@ -7686,7 +7686,7 @@
         "supportVessel" : [""],
         "supportVesselRole" : [["NA"]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=9ekFE2RxBMI",
     },
     {
         "id" : "2023-075",
@@ -7719,7 +7719,7 @@
         "supportVessel" : ["Just Read the Instructions", "Bob", ""?],
         "supportVesselRole" : [["ASDS"], ["DSV", "FRV"], [""]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=lBJ9uWdCLRI",
     },
     {
         "id" : "2023-078",
@@ -7752,7 +7752,7 @@
         "supportVessel" : ["Of Course I Still Love You", "Go Beyond", "Scorpius"],
         "supportVesselRole" : [["ASDS"], ["DSV", "FRV"], ["TUG"]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=EfJxpU0CLNI",
     },
     {
         "id" : "2023-079",
@@ -7785,7 +7785,7 @@
         "supportVessel" : ["A Shortfall of Gravitas", "Bob", "Crosby Skipper"],
         "supportVesselRole" : [["ASDS"], ["DSV", "FRV"], ["TUG"]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=Dy68lCXLsGc",
     },
     {
         "id" : "2023-080",
@@ -7818,7 +7818,7 @@
         "supportVessel" : [""?],
         "supportVesselRole" : [[""]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=Umx-gjHAXsc",
     },
     {
         "id" : "2023-083",
@@ -7851,7 +7851,7 @@
         "supportVessel" : ["Just Read the Instructions", "Bob", "Crosby Skipper"],
         "supportVesselRole" : [["ASDS"], ["DSV", "FRV"], ["TUG"]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=emZ-oROYq8s",
     },
     {
         "id" : "2023-084",
@@ -7884,7 +7884,7 @@
         "supportVessel" : ["Go Beyond"],
         "supportVesselRole" : [["FRV"]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=zO3luySkHQU",
     },
     {
         "id" : "2023-086",
@@ -7917,7 +7917,7 @@
         "supportVessel" : ["A Shortfall of Gravitas", "Doug"],
         "supportVesselRole" : [["ASDS"], ["DSV", "FRV", "TUG"]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=4fEMCn2L3OY",
     },
     {
         "id" : "2023-088",
@@ -7950,7 +7950,7 @@
         "supportVessel" : ["Of Course I Still Love You", "Go Beyond", "Scorpius"],
         "supportVesselRole" : [["ASDS"], ["DSV", "FRV"], ["TUG"]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=98JQV1czLsA",
     },
     {
         "id" : "2023-090",
@@ -7983,7 +7983,7 @@
         "supportVessel" : ["Just Read the Instructions", "Bob", "Crosby Skipper"],
         "supportVesselRole" : [["ASDS"], ["DSV", "FRV"], ["TUG"]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=9lwAP91Y7Cs",
     },
     {
         "id" : "2023-092",
@@ -8016,7 +8016,7 @@
         "supportVessel" : ["A Shortfall of Gravitas", "Doug", ""?],
         "supportVesselRole" : [["ASDS"], ["DSV", "FRV"], [""]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=NIwvwYVUuxg",
     },
     {
         "id" : "2023-094",
@@ -8049,7 +8049,7 @@
         "supportVessel" : ["Of Course I Still Love You", "Go Beyond", "Scorpius"],
         "supportVesselRole" : [["ASDS"], ["DSV", "FRV"], ["TUG"]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=UdfKyxdSJBk",
     },
     {
         "id" : "2023-096",
@@ -8082,7 +8082,7 @@
         "supportVessel" : ["Just Read the Instructions", "Bob", "Crosby Skipper"],
         "supportVesselRole" : [["ASDS"], ["DSV", "FRV"], ["TUG"]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=UytWKGvbIFs",
     },
     {
         "id" : "2023-099",
@@ -8115,7 +8115,7 @@
         "supportVessel" : ["A Shortfall of Gravitas", "Doug"],
         "supportVesselRole" : [["ASDS"], ["DSV", "FRV", "TUG"]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=p28VA2pfa2I",
     },
     {
         "id" : "2023-102",
@@ -8148,7 +8148,7 @@
         "supportVessel" : ["Of Course I Still Love You", "Go Beyond", "Scorpius"],
         "supportVesselRole" : [["ASDS"], ["DSV", "FRV"], ["TUG"]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=Z7c9JPUHpPM",
     },
     {
         "id" : "2023-105",
@@ -8181,7 +8181,7 @@
         "supportVessel" : ["Just Read the Instructions", "Bob", "Crosby Skipper"],
         "supportVesselRole" : [["ASDS"], ["DSV", "FRV"], ["TUG"]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=qvwF3P8eF6Q",
     },
     {
         "id" : "2023-107",
@@ -8210,16 +8210,16 @@
         "fairingRecoveryMethod" : ["Splashdown", "Splashdown"],
         "fairingRecoveryLocation" : ["Atlantic", "Atlantic"],
         "fairingRecoveryDistance" : "683",
-        "fairingRecoveryOutcome" : ["", ""?],
+        "fairingRecoveryOutcome" : ["Success", "Success"],
         "supportVessel" : ["A Shortfall of Gravitas", "Bob", "Signet Titan"],
         "supportVesselRole" : [["ASDS"], ["DSV", "FRV"], ["TUG"]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=gdSHi5Js104",
     },
     {
         "id" : "2023-108",
         "missionName" : "EchoStar-24",
-        "alternativeMissionName" : "Jupiter-3",
+        "alternativeMissionName" : "Hughes Jupiter-3",
         "abbreviatedMissionName" : "",
         "liftOffTime" : "2023-07-29T03:04:00+0000",
         "orbitalDestination" : "GTO",
@@ -8247,13 +8247,13 @@
         "supportVessel" : ["Doug"],
         "supportVesselRole" : [["FRV"]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=5ixbPMe6684",
     },
     {
         "id" : "2023-112",
-        "missionName" : "Galaxy 37",
+        "missionName" : "Intelsat G-37",
         "alternativeMissionName" : "Horizons-4",
-        "abbreviatedMissionName" : "",
+        "abbreviatedMissionName" : "Galaxy 37",
         "liftOffTime" : "2023-08-03T05:00:00+0000",
         "orbitalDestination" : "GTO",
         "launchProvider" : "SpaceX",
@@ -8280,7 +8280,7 @@
         "supportVessel" : ["Just Read the Instructions", "Bob", "Crosby Skipper"],
         "supportVesselRole" : [["ASDS"], ["DSV", "FRV"], ["TUG"]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=XV2tyCEBctA",
     },
     {
         "id" : "2023-113",
@@ -8313,7 +8313,7 @@
         "supportVessel" : ["A Shortfall of Gravitas", "Doug"],
         "supportVesselRole" : [["ASDS"], ["DSV", "FRV", "TUG"]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=1sGWUunA2mM",
     },
     {
         "id" : "2023-115",
@@ -8346,7 +8346,7 @@
         "supportVessel" : ["Of Course I Still Love You", "Go Beyond", "Scorpius"],
         "supportVesselRole" : [["ASDS"], ["DSV", "FRV"], ["TUG"]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=alkJWrqffcw",
     },
     {
         "id" : "2023-119",
@@ -8379,7 +8379,7 @@
         "supportVessel" : ["Just Read the Instructions", "Doug", "Crosby Skipper"],
         "supportVesselRole" : [["ASDS"], ["DSV", "FRV"], ["TUG"]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=aKrbUe2sNr0",
     },
     {
         "id" : "2023-122",
@@ -8412,7 +8412,7 @@
         "supportVessel" : ["A Shortfall of Gravitas", "Doug"],
         "supportVesselRole" : [["ASDS"], ["DSV", "FRV", "TUG"]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=rmlRxzxYlyM",
     },
     {
         "id" : "2023-124",
@@ -8436,7 +8436,7 @@
         "boosterRecoveryLocation" : ["OCISLY"],
         "boosterRecoveryDistance" : ["643"],
         "boosterRecoveryOutcome" : ["Success"],
-        "numberOfFairingFlights" : ["0", "0"?],
+        "numberOfFairingFlights" : ["0", "0"?], Listen to Broadcast
         "fairingRecoveryAttempted" : ["true", "true"],
         "fairingRecoveryMethod" : ["Splashdown", "Splashdown"],
         "fairingRecoveryLocation" : ["Pacific", "Pacific"],
@@ -8445,6 +8445,6 @@
         "supportVessel" : ["Of Course I Still Love You", "Go Beyond", "Scorpius"],
         "supportVesselRole" : [["ASDS"], ["DSV", "FRV"], ["TUG"]],
         "description" : [""],
-        "livestreamLink" : "",
+        "livestreamLink" : "https://www.youtube.com/watch?v=agYuEAkEljw",
     },
 ]
