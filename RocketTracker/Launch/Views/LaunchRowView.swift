@@ -88,7 +88,7 @@ extension LaunchRowView {
     }
     
     private var recoveryText: some View {
-        Text((launch.boosterRecoveryMethod[0]?.rawValue)!)
+        Text(launch.boosterRecoveryMethod[0].rawValue)
             .frame(minHeight: 0)
             .font(.headline)
             .foregroundColor(Color.theme.secondaryText)
