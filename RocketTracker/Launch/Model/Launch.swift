@@ -26,7 +26,6 @@ import Foundation
      "staticFire" : "",
      "staticFireToLaunchWindow" : "",
      "boosterName" : ["B"],
-     "boosterRecoveryAttempted" : [""],
      "boosterRecoveryMethod" : [""],
      "boosterRecoveryLocation" : [""],
      "boosterRecoveryDistance" : [""],
@@ -62,8 +61,7 @@ struct Launch: Identifiable, Codable {
     let staticFire: String
     let staticFireToLaunchWindow: String
     let boosterName: [String]
-    let boosterRecoveryAttempted: [String]
-    let boosterRecoveryMethod: [RecoveryMethod?]
+    let boosterRecoveryMethod: [RecoveryMethod]
     let boosterRecoveryLocation: [String]
     let boosterRecoveryDistance: [String]
     let boosterRecoveryOutcome: [Outcome]
@@ -100,12 +98,13 @@ enum LaunchProvider: String, Codable {
 }
 
 enum RecoveryMethod: String, Codable {
-    case expended = "Expended"
-    case parachute = "Parachute"
-    case splashdown = "Splashdown"
-    case returnToLaunchSite = "RTLS"
     case droneship = "Droneship"
+    case expended = "Expended"
+    case hoverslam = "Hoverslam"
     case netCatch = "Catch"
+    case parachute = "Parachute"
+    case returnToLaunchSite = "RTLS"
+    case splashdown = "Splashdown"
     case notAvailable = "NA"
 }
 
