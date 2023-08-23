@@ -14,26 +14,26 @@ import Foundation
      "missionName" : "",
      "alternativeMissionName" : "",
      "abbreviatedMissionName" : "",
-     "liftOffTime" : "YYYY-MM-DDThh:mm:ss+0000",
+     "liftOffTime" : "YYYY-MM-DDT00:00:00+0000",
      "orbitalDestination" : "",
      "launchProvider" : "SpaceX",
      "launchSiteName" : "",
      "launchSitePad" : "",
      "vehicleName" : "Falcon 9",
      "vehicleVariant" : "Block 5",
-     "missionOutcome" : "Success",
-     "crewedLaunch" : "",
+     "missionOutcome" : "Upcoming",
+     "crewedLaunch" : "false",
      "staticFireGap" : "",
      "boosterName" : ["B"],
      "boosterRecoveryMethod" : [""],
      "boosterRecoveryLocation" : [""],
      "boosterRecoveryDistance" : [""],
-     "boosterRecoveryOutcome" : [""],
+     "boosterRecoveryOutcome" : ["Upcoming"],
      "numberOfFairingFlights" : ["", ""],
      "fairingRecoveryMethod" : ["", ""],
      "fairingRecoveryLocation" : ["", ""],
      "fairingRecoveryDistance" : "",
-     "fairingRecoveryOutcome" : ["", ""],
+     "fairingRecoveryOutcome" : ["Upcoming", "Upcoming"],
      "supportVessel" : [""],
      "supportVesselRole" : [[""]],
      "description" : [""],
@@ -83,12 +83,14 @@ struct Launch: Identifiable, Codable {
 enum OrbitDestination: String, Codable {
     case leo = "LEO" //Low Earth Orbit
     case pleo = "PLEO" //Polar Low Earth Orbit
+    case plro = "PLRO" //Polar Orbit
     case meo = "MEO" //Medium Earth Orbit
     case geo = "GEO" //Geostationary Equatorial Orbit
     case gto = "GTO" //Geostationary Transfer Orbit
     case iss = "ISS" //International Space Station
     case sso = "SSO" //Sun-Synchronous Orbit
     case heo = "HEO" //High Earth Orbit
+    case helo = "HELO" //Highly Elliptical Orbit
     case sub = "SUB" //Suborbital Trajectory
     case tli = "TLI" //Trans-Lunar Injection Orbit
     case sel1 = "SEL1" //Sun-Earth Lagrange Point 1
@@ -119,6 +121,7 @@ enum Outcome: String, Codable {
     case success = "Success"
     case transit = "Transit"
     case unknown = "Unknown"
+    case upcoming = "Upcoming"
     case notAvailable = "NA"
 }
 
