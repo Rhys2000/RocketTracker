@@ -91,6 +91,7 @@ enum OrbitDestination: String, Codable {
     case sub = "SUB" //Suborbital Trajectory
     case tli = "TLI" //Trans-Lunar Injection Orbit
     case sel1 = "SEL1" //Sun-Earth Lagrange Point 1
+    case sel2 = "SEL2" //Sun-Earth Lagrange Point 2
     case helio = "HELIO" //Heliocentric Orbit
 }
 
@@ -110,10 +111,11 @@ enum RecoveryMethod: String, Codable {
 
 enum Outcome: String, Codable {
     case aborted = "Aborted"
+    case explosion = "Explosion"
     case failure = "Failure"
     case partialSuccess = "Partial Success"
-    case Explosion = "Explosion"
     case success = "Success"
+    case transit = "Transit"
     case unknown = "Unknown"
     case notAvailable = "NA"
 }
