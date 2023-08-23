@@ -67,7 +67,7 @@ struct Launch: Identifiable, Codable {
     let boosterRecoveryLocation: [String]
     let boosterRecoveryDistance: [String]
     let boosterRecoveryOutcome: [Outcome]
-    let numberOfFairingFlights: [String]
+    let numberOfFairingFlights: [String] //Look for values of 0
     let fairingRecoveryAttempted: [String]
     let fairingRecoveryMethod: [RecoveryMethod]
     let fairingRecoveryLocation: [String]
