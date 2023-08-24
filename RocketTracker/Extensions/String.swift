@@ -19,6 +19,10 @@ extension String {
         return CharacterSet(charactersIn: self).isSubset(of: letterCharacters)
     }
     
+    func isBetween(_ startingValue: Int, _ endingValue: Int) -> Bool {
+        return (Int(self)! >= startingValue && Int(self)! <= endingValue)
+    }
+    
     func isEqual(_ string: String) -> Bool {
         return self == string
     }
