@@ -58,7 +58,7 @@ extension LaunchRowView {
     }
     
     private var missionText: some View {
-        Text(launch.abbreviatedMissionName.isEmpty ? launch.missionName : launch.abbreviatedMissionName)
+        Text(launch.abbrMissionName.isEmpty ? launch.missionName : launch.abbrMissionName)
             .bold()
             .font(.title2)
             .frame(minHeight: 25)
