@@ -10,7 +10,8 @@ import Combine
 
 class LaunchViewModel: ObservableObject {
     
-    @Published var allLaunches: [Launch] = []
+    @Published var pastLaunches: [Launch] = []
+    @Published var futureLaunches: [Launch] = []
     
     private var dataService = LaunchDataService()
     private var cancellables = Set<AnyCancellable>()
@@ -20,9 +21,14 @@ class LaunchViewModel: ObservableObject {
     }
     
     func addSubscribers() {
-        dataService.$allLaunches
-            .sink { [weak self] (returnedLaunches) in
-                self?.allLaunches = returnedLaunches
+        dataService.$futureLaunches
+            .sink { [weak self] (futureLaunches) in
+                self?.futureLaunches = futureLaunches
+            }
+            .store(in: &cancellables)
+        dataService.$pastLaunches
+            .sink { [weak self] (pastLaunches) in
+                self?.pastLaunches = pastLaunches
             }
             .store(in: &cancellables)
     }

@@ -25,6 +25,7 @@
 		90DDC7D12A8EB91A004B532E /* LaunchDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDC7D02A8EB91A004B532E /* LaunchDataService.swift */; };
 		90DDC7D42A8EBAC9004B532E /* spacex.json in Resources */ = {isa = PBXBuildFile; fileRef = 90DDC7D32A8EBAC9004B532E /* spacex.json */; };
 		90DDC7D82A8EE2AB004B532E /* Vessel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDC7D72A8EE2AB004B532E /* Vessel.swift */; };
+		90DDC7ED2A96DDDE004B532E /* LaunchListBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDC7EC2A96DDDE004B532E /* LaunchListBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		90DDC7D02A8EB91A004B532E /* LaunchDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDataService.swift; sourceTree = "<group>"; };
 		90DDC7D32A8EBAC9004B532E /* spacex.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = spacex.json; sourceTree = "<group>"; };
 		90DDC7D72A8EE2AB004B532E /* Vessel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vessel.swift; sourceTree = "<group>"; };
+		90DDC7EC2A96DDDE004B532E /* LaunchListBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				90A5F0422A8A738400ECE789 /* LaunchView.swift */,
 				90A5F0782A8C33CC00ECE789 /* LaunchRowView.swift */,
 				90A5F07A2A8C3F4C00ECE789 /* RecoveryLabelView.swift */,
+				90DDC7EC2A96DDDE004B532E /* LaunchListBarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				90A5F0432A8A738400ECE789 /* LaunchView.swift in Sources */,
 				90DDC7CC2A8E5D16004B532E /* Color.swift in Sources */,
 				90A5F0792A8C33CD00ECE789 /* LaunchRowView.swift in Sources */,
+				90DDC7ED2A96DDDE004B532E /* LaunchListBarView.swift in Sources */,
 				90A5F0482A8A75D700ECE789 /* Launch.swift in Sources */,
 				90A5F0772A8C2F9600ECE789 /* PreviewProvider.swift in Sources */,
 				90A5F0302A8A70D700ECE789 /* RocketTrackerApp.swift in Sources */,
