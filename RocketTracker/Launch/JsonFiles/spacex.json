@@ -544,7 +544,7 @@
         "missionName" : "Commercial Resupply Services - 7",
         "altMissionName" : "SpaceX CRS-7",
         "abbrMissionName" : "CRS-7",
-        "liftOffTime" : "2015-06-28T14:21:000+0000",
+        "liftOffTime" : "2015-06-28T14:21:00+0000",
         "orbitalDestination" : "ISS",
         "launchProvider" : "SpaceX",
         "launchSiteName" : "Cape Canaveral",
