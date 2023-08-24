@@ -12,8 +12,8 @@ import Foundation
  {
      "id" : "",
      "missionName" : "",
-     "alternativeMissionName" : "",
-     "abbreviatedMissionName" : "",
+     "altMissionName" : "",
+     "abbrMissionName" : "",
      "liftOffTime" : "YYYY-MM-DDT00:00:00+0000",
      "orbitalDestination" : "",
      "launchProvider" : "SpaceX",
@@ -44,8 +44,8 @@ import Foundation
 struct Launch: Identifiable, Codable {
     let cosparCode: String
     let missionName: String
-    let alternativeMissionName: String
-    let abbreviatedMissionName: String
+    let altMissionName: String
+    let abbrMissionName: String
     let liftOffTime: String
     let orbitalDestination: OrbitDestination
     let launchProvider: LaunchProvider
@@ -80,7 +80,11 @@ struct Launch: Identifiable, Codable {
     let livestreamLink: String
     
     var id: String {
-        cosparCode + missionName
+        cosparCode + " + " + missionName
+    }
+    
+    var time: Time {
+        missionOutcome.determineTime()
     }
 }
 
@@ -122,11 +126,38 @@ enum Outcome: String, Codable {
     case aborted = "Aborted"
     case explosion = "Explosion"
     case failure = "Failure"
+    case inFlight = "In Flight"
     case partialSuccess = "Partial Success"
     case success = "Success"
     case transit = "Transit"
     case unknown = "Unknown"
     case upcoming = "Upcoming"
     case notAvailable = "NA"
+    
+    func determineTime() -> Time {
+        switch self {
+        case .upcoming, .inFlight:
+            return .future
+        case .aborted, .explosion, .failure, .partialSuccess, .success, .transit, .unknown, .notAvailable:
+            return .past
+        }
+    }
+}
+
+enum Time: String {
+    case past = "Past"
+    case future = "Future"
+    
+    //Return a Boolean for the Launch Data Validation Tree
+    func getBool() -> Bool {
+        
+        // If launch was in the past return true to run through a more stringent set of data validation. If in the future, data can be missing so return false
+        switch self {
+        case .future:
+            return false
+        case .past:
+            return true
+        }
+    }
 }
 
