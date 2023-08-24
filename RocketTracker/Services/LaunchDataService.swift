@@ -78,8 +78,8 @@ class LaunchDataService {
             
             //Check to make sure the first 4 characters in cosparCode are made of numbers (0-9)
             var currentString = cosparCode.subString(from: 0, to: 4)
-            showValidationSteps ? print("\tValue: (\(currentString)) -> isNumber: \(currentString.isNumber)") : nil
-            if(!currentString.isNumber) {
+            showValidationSteps ? print("\tValue: (\(currentString)) -> isNumber: \(currentString.isDigit)") : nil
+            if(!currentString.isDigit) {
                 goodData = false
             }
             
@@ -94,15 +94,15 @@ class LaunchDataService {
             
             //Check to make sure the sixth character in cosparCode is either a number (0-9) and the sixth character is not an uppercase english letter
             currentString = cosparCode.subString(from: 5, to: 6)
-            showValidationSteps ? print("\tValue: (\(currentString)) -> isNumber: \(currentString.isNumber), isCapitalLetter: \(currentString.isCapitalLetter)") : nil
-            if(!currentString.isNumber && !currentString.isCapitalLetter) {
+            showValidationSteps ? print("\tValue: (\(currentString)) -> isNumber: \(currentString.isDigit), isCapitalLetter: \(currentString.isCapitalLetter)") : nil
+            if(!currentString.isDigit && !currentString.isCapitalLetter) {
                 goodData = false
             }
             
             //Check to make sure the last two characters in cosparCode are made of numbers (0-9)
             currentString = cosparCode.subString(from: 6, to: 8)
-            showValidationSteps ? print("\tValue: (\(currentString)) -> isNumber: \(currentString.isNumber)") : nil
-            if(!currentString.isNumber) {
+            showValidationSteps ? print("\tValue: (\(currentString)) -> isNumber: \(currentString.isDigit)") : nil
+            if(!currentString.isDigit) {
                 goodData = false
             }
             
