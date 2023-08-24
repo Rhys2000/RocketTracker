@@ -104,7 +104,7 @@ enum OrbitDestination: String, Codable {
     case sel1 = "SEL1" //Sun-Earth Lagrange Point 1
     case sel2 = "SEL2" //Sun-Earth Lagrange Point 2
     case helio = "HELIO" //Heliocentric Orbit
-    case notAvailale = "NA"
+    case notAvailable = "NA"
 }
 
 enum LaunchProvider: String, Codable {

@@ -44,9 +44,6 @@ class LaunchDataService {
     
     private func validateLaunchData() {
         
-        //Modify this value to print the validation steps to the console. True = Output to console, false = Output only if Errors
-        showValidationSteps = true
-        
         //Iterate through each launch in the list of launches (allLaunches)
         for (launch, launchNumber) in zip(allLaunches, 0..<allLaunches.count) {
             
@@ -57,10 +54,11 @@ class LaunchDataService {
             let cosparBool = validateCosparCode(time: launch.time, cosparCode: launch.cosparCode)
             let nameBool = validateMissionNames(missionName: launch.missionName, altMissionName: launch.altMissionName, abbrMissionName: launch.abbrMissionName)
             let liftOffBool = validateLiftOffTime(liftOffTime: launch.liftOffTime)
+            let orbitBool = validateOrbitDestination(time: launch.time, orbitDestination: launch.orbitalDestination)
             
             
-            if(!cosparBool || !nameBool || !liftOffBool) {
-                print("\(launchNumber): \(launch.id) -> \(cosparBool), \(nameBool), \(liftOffBool)\n\n\n")
+            if(!cosparBool || !nameBool || !liftOffBool || !orbitBool) {
+                print("\(launchNumber): \(launch.id) -> \(cosparBool), \(nameBool), \(liftOffBool), \(orbitBool)\n\n\n")
             }
         }
     }
@@ -246,5 +244,27 @@ class LaunchDataService {
         
         return goodData
 
+    }
+    
+    private func validateOrbitDestination(time: Time, orbitDestination: OrbitDestination) -> Bool {
+        
+        var goodData = true
+        
+        showValidationSteps ? print("Orbit Destination Section") : nil
+        
+        showValidationSteps ? print("\tValue: (\(orbitDestination.rawValue)) isNotEmpty: \(!orbitDestination.rawValue.isEmpty)") : nil
+        if(orbitDestination.rawValue.isEmpty) {
+            goodData = false
+        }
+        
+        if(time.getBool()) {
+            
+            showValidationSteps ? print("\tValue: (\(orbitDestination.rawValue)) isAvailable: \(orbitDestination != .notAvailable)") : nil
+            if(orbitDestination == .notAvailable) {
+                goodData = false
+            }
+        }
+        
+        return goodData
     }
 }
