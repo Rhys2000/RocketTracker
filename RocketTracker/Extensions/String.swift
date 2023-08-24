@@ -8,24 +8,42 @@
 import Foundation
 
 extension String {
-    private var inputDateFormatter: DateFormatter {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        formatter.locale = Locale(identifier: "en-US")
-        return formatter
+    
+    var isDigit: Bool {
+        let digitCharactres = CharacterSet(charactersIn: "0123456789")
+        return CharacterSet(charactersIn: self).isSubset(of: digitCharactres)
     }
     
-    private var outputDateFormatter: DateFormatter {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "E, MMMM d, yyyy h:mm:ss a (zzz)"
-        formatter.locale = Locale(identifier: "en-US")
-        return formatter
+    var isCapitalLetter: Bool {
+        let letterCharacters = CharacterSet.uppercaseLetters
+        return CharacterSet(charactersIn: self).isSubset(of: letterCharacters)
+    }
+    
+    func isEqual(_ string: String) -> Bool {
+        return self == string
+    }
+    
+    func subString(from: Int, to: Int) -> String {
+        let startingIndex = self.index(self.startIndex, offsetBy: from)
+        let endingIndex = self.index(self.startIndex, offsetBy: to)
+        return String(self[startingIndex..<endingIndex])
     }
     
     func stringAsADate() -> String {
+        
+        let inputFormatter = DateFormatter()
+        inputFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        inputFormatter.locale = Locale(identifier: "en-US") //Change the locale to be user specific
+        
+        let outputFormatter = DateFormatter()
+        outputFormatter.dateFormat = "E, MMMM d, yyyy h:mm:ss a (zzz)"
+        outputFormatter.locale = Locale(identifier: "en-US") //Change the locale to be user specific
+        
         let calendar = Calendar.current
-        let localComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second, .timeZone], from: inputDateFormatter.date(from: self)!)
-        return outputDateFormatter.string(from: calendar.date(from: localComponents)!)
+        
+        let localComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second, .timeZone], from: inputFormatter.date(from: self)!)
+        
+        return outputFormatter.string(from: calendar.date(from: localComponents)!)
     }
     
 }
