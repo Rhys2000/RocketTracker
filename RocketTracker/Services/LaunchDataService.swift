@@ -58,7 +58,7 @@ class LaunchDataService {
             let nameBool = validateMissionNames(missionName: launch.missionName, altMissionName: launch.altMissionName, abbrMissionName: launch.abbrMissionName)
             let liftOffBool = validateLiftOffTime(liftOffTime: launch.liftOffTime)
             let orbitBool = validateOrbitDestination(time: launch.time, orbitDestination: launch.orbitalDestination)
-            let launchSiteBool = validateLaunchSite(time: launch.time, launchSiteName: launch.launchSiteName, launchSitePad: launch.launchSitePad)
+            let launchSiteBool = validateLaunchSite(time: launch.time, launchSite: launch.launchSite, launchSitePad: launch.launchSitePad)
             
             
             if(!cosparBool || !nameBool || !liftOffBool || !orbitBool || !launchSiteBool) {
@@ -272,27 +272,27 @@ class LaunchDataService {
         return goodData
     }
     
-    private func validateLaunchSite(time: Time, launchSiteName: String, launchSitePad: String) -> Bool {
+    private func validateLaunchSite(time: Time, launchSite: String, launchSitePad: String) -> Bool {
         
         var goodData: Bool = true
         
         showValidationSteps ? print("Launch Site Section") : nil
         
         if(time.getBool()) {
-            showValidationSteps ? print("\tValue: (\(launchSiteName)) isNotEmpty: \(!launchSiteName.isEmpty), hasLaunchSite: \(hasLaunchSite(time, launchSiteName))") : nil
-            if(launchSiteName.isEmpty && !hasLaunchSite(time, launchSiteName)) {
+            showValidationSteps ? print("\tValue: (\(launchSite)) isNotEmpty: \(!launchSite.isEmpty), hasLaunchSite: \(hasLaunchSite(time, launchSite))") : nil
+            if(launchSite.isEmpty && !hasLaunchSite(time, launchSite)) {
                 goodData = false
             }
             
-            showValidationSteps ? print("\tValue: (\(launchSitePad)) isNotEmpty: \(!launchSitePad.isEmpty), hasLaunchPad: \(hasLaunchPad(time, launchSiteName, launchSitePad))") : nil
-            if(launchSitePad.isEmpty && !hasLaunchPad(time, launchSiteName, launchSitePad)) {
+            showValidationSteps ? print("\tValue: (\(launchSitePad)) isNotEmpty: \(!launchSitePad.isEmpty), hasLaunchPad: \(hasLaunchPad(time, launchSite, launchSitePad))") : nil
+            if(launchSitePad.isEmpty && !hasLaunchPad(time, launchSite, launchSitePad)) {
                 goodData = false
             }
         }
         
         else {
-            showValidationSteps ? print("\tValue: (\(launchSiteName)) isNotEmpty: \(!launchSiteName.isEmpty), hasLaunchSite: \(hasLaunchSite(time, launchSiteName))") : nil
-            if(launchSiteName.isEmpty && !hasLaunchSite(time, launchSiteName)) {
+            showValidationSteps ? print("\tValue: (\(launchSite)) isNotEmpty: \(!launchSite.isEmpty), hasLaunchSite: \(hasLaunchSite(time, launchSite))") : nil
+            if(launchSite.isEmpty && !hasLaunchSite(time, launchSite)) {
                 goodData = false
             }
         }

@@ -81,7 +81,7 @@ extension LaunchRowView {
     }
     
     private var locationText: some View {
-        Text(launch.launchSitePad + ", " + launch.launchSiteName)
+        Text(launch.launchSitePad + ", " + launch.launchSite)
             .frame(minHeight: 0)
             .font(.headline)
             .foregroundColor(Color.theme.secondaryText)
