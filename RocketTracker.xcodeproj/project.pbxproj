@@ -26,6 +26,8 @@
 		90DDC7D42A8EBAC9004B532E /* spacex.json in Resources */ = {isa = PBXBuildFile; fileRef = 90DDC7D32A8EBAC9004B532E /* spacex.json */; };
 		90DDC7D82A8EE2AB004B532E /* Vessel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDC7D72A8EE2AB004B532E /* Vessel.swift */; };
 		90DDC7ED2A96DDDE004B532E /* LaunchListBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDC7EC2A96DDDE004B532E /* LaunchListBarView.swift */; };
+		90DDC7F22A99291C004B532E /* launchsite.json in Resources */ = {isa = PBXBuildFile; fileRef = 90DDC7F12A99291C004B532E /* launchsite.json */; };
+		90DDC7F42A992C35004B532E /* LaunchSiteDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDC7F32A992C35004B532E /* LaunchSiteDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		90DDC7D32A8EBAC9004B532E /* spacex.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = spacex.json; sourceTree = "<group>"; };
 		90DDC7D72A8EE2AB004B532E /* Vessel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vessel.swift; sourceTree = "<group>"; };
 		90DDC7EC2A96DDDE004B532E /* LaunchListBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListBarView.swift; sourceTree = "<group>"; };
+		90DDC7F12A99291C004B532E /* launchsite.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = launchsite.json; sourceTree = "<group>"; };
+		90DDC7F32A992C35004B532E /* LaunchSiteDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchSiteDataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +108,9 @@
 		90A5F03D2A8A72D000ECE789 /* LaunchSite */ = {
 			isa = PBXGroup;
 			children = (
-				90A5F04D2A8A761100ECE789 /* LaunchSite.swift */,
-				90A5F04F2A8A762400ECE789 /* LaunchSiteViewModel.swift */,
+				90DDC7F02A9927F9004B532E /* JsonFile */,
+				90DDC7EE2A9927C1004B532E /* Model */,
+				90DDC7EF2A9927CE004B532E /* ViewModel */,
 				90A5F04B2A8A75FB00ECE789 /* Views */,
 			);
 			path = LaunchSite;
@@ -115,8 +120,8 @@
 			isa = PBXGroup;
 			children = (
 				90DDC7D22A8EBA5F004B532E /* JsonFiles */,
-				90A5F0742A8C25E000ECE789 /* ViewModel */,
 				90A5F0732A8C25D200ECE789 /* Model */,
+				90A5F0742A8C25E000ECE789 /* ViewModel */,
 				90A5F0462A8A755500ECE789 /* Views */,
 			);
 			path = Launch;
@@ -172,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				90DDC7D02A8EB91A004B532E /* LaunchDataService.swift */,
+				90DDC7F32A992C35004B532E /* LaunchSiteDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -198,6 +204,30 @@
 				90DDC7D72A8EE2AB004B532E /* Vessel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		90DDC7EE2A9927C1004B532E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				90A5F04D2A8A761100ECE789 /* LaunchSite.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		90DDC7EF2A9927CE004B532E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				90A5F04F2A8A762400ECE789 /* LaunchSiteViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		90DDC7F02A9927F9004B532E /* JsonFile */ = {
+			isa = PBXGroup;
+			children = (
+				90DDC7F12A99291C004B532E /* launchsite.json */,
+			);
+			path = JsonFile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +291,7 @@
 				90DDC7D42A8EBAC9004B532E /* spacex.json in Resources */,
 				90A5F0372A8A70D800ECE789 /* Preview Assets.xcassets in Resources */,
 				90A5F0342A8A70D800ECE789 /* Assets.xcassets in Resources */,
+				90DDC7F22A99291C004B532E /* launchsite.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				90A5F07B2A8C3F4C00ECE789 /* RecoveryLabelView.swift in Sources */,
+				90DDC7F42A992C35004B532E /* LaunchSiteDataService.swift in Sources */,
 				90DDC7CE2A8E6035004B532E /* String.swift in Sources */,
 				90A5F0502A8A762400ECE789 /* LaunchSiteViewModel.swift in Sources */,
 				90A5F0402A8A734E00ECE789 /* LaunchSiteView.swift in Sources */,

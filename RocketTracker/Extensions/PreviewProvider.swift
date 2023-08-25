@@ -22,4 +22,8 @@ class DevelopmentPreview {
     let launchVM = LaunchViewModel()
     
     let launch = Launch(cosparCode: "2020-101", missionName: "National Reconnaisance Office Launch - 108", altMissionName: "USA-321 / USA-313", abbrMissionName: "NROL-108", liftOffTime: "2020-12-19T14:00:00+0000", orbitalDestination: .leo, launchProvider: "SpaceX", launchSite: "Kennedy", launchSitePad: "LC-39A", vehicleName: "Falcon 9", vehicleVariant: "Block 5", missionOutcome: .failure, crewedLaunch: "false", staticFireGap: "0", boosterName: ["B1059-5"], boosterRecoveryMethod: [.droneship], boosterRecoveryLocation: ["LZ-1"], boosterRecoveryDistance: ["14.75"], boosterRecoveryOutcome: [.success], numberOfFairingFlights: ["1", "1"], fairingRecoveryMethod: [.splashdown, .splashdown], fairingRecoveryLocation: ["Atlantic", "Atlantic"], fairingRecoveryDistance: "328", fairingRecoveryOutcome: [.success, .success], supportVessel: ["Go Ms. Tree", "Go Searcher"], supportVesselRole: [[.dsv], [.dsv]], payloadDescription: ["SpaceX is targeting Thursday, December 17 for the launch of the NROL-108 mission, which will launch from Launch Complex 39A (LC-39A) at Kennedy Space Center, Florida."], livestreamLink: "https://www.youtube.com/watch?v=9OeVwaFBkfE")
+    
+    let launchSiteVM = LaunchSiteViewModel()
+    
+    let launchSite = LaunchSite(shortName: "Starbase", fullName: "SpaceX South Texas Launch Site", abbrName: "SBTX", previousNames: ["Boca Chica"], latitude: 13.45, longitude: 3.23, territory: "Virginia", country: "United Kingdom", launchPads: [LaunchPad(shortName: "SP-A", fullName: "Suborbital Pad - A", latitude: 5.67, longitude: -2.93)])
 }
