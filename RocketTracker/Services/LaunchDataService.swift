@@ -17,8 +17,13 @@ class LaunchDataService {
     var allLaunches: [Launch] = []
     private var showValidationSteps: Bool = false
     
-    private let knownLaunchSite: [String: Set<String>] = ["Kennedy": ["LC-39A"], "Cape Canaveral": ["SLC-40"], "Vandenberg": ["SLC-4E"]]
-    private let unknownLaunchSite: [String: Set<String>] = ["Florida": [""]]
+    private let knownLaunchSite: [String: Set<String>] = [
+        "Kennedy": ["LC-39A"],
+        "Cape Canaveral": ["SLC-40"],
+        "Vandenberg": ["SLC-4E"]]
+    
+    private let unknownLaunchSite: [String: Set<String>] = [
+        "Florida": [""]]
     
     private let launchProviders: [String: [String: [String]]] = [
         "SpaceX": [
