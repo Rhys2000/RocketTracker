@@ -15,7 +15,7 @@ class LaunchDataService {
     @Published var futureLaunches: [Launch] = []
     
     var allLaunches: [Launch] = []
-    private var showValidationSteps: Bool = false
+    private var showValidationSteps: Bool = true
     
     private let knownLaunchSite: [String: Set<String>] = ["Kennedy": ["LC-39A"], "Cape Canaveral": ["SLC-40"], "Vandenberg": ["SLC-4E"]]
     private let unknownLaunchSite: [String: Set<String>] = ["Florida": [""]]
@@ -68,10 +68,11 @@ class LaunchDataService {
             let launchSiteBool = validateLaunchSite(time: launch.time, launchSite: launch.launchSite, launchSitePad: launch.launchSitePad)
             let providerBool = validateLaunchVehicleAndProvider(launchProvider: launch.launchProvider, vehicleName: launch.vehicleName, vehicleVariant: launch.vehicleVariant)
             let missionBool = validateMissionOutcome(time: launch.time, missionOutcome: launch.missionOutcome)
+            let crewBool = validateCrewedMission(crewedLaunch: launch.crewedLaunch)
             
             
-            if(!cosparBool || !nameBool || !liftOffBool || !orbitBool || !launchSiteBool || !providerBool || !missionBool) {
-                print("\(launchNumber): \(launch.id) -> \(cosparBool), \(nameBool), \(liftOffBool), \(orbitBool), \(launchSiteBool), \(providerBool), \(missionBool)\n\n\n")
+            if(!cosparBool || !nameBool || !liftOffBool || !orbitBool || !launchSiteBool || !providerBool || !missionBool || !crewBool) {
+                print("\(launchNumber): \(launch.id) -> \(cosparBool), \(nameBool), \(liftOffBool), \(orbitBool), \(launchSiteBool), \(providerBool), \(missionBool), \(crewBool)\n\n\n")
             }
         }
     }
@@ -358,6 +359,20 @@ class LaunchDataService {
             if(missionOutcome != .upcoming) {
                 goodData = false
             }
+        }
+        
+        return goodData
+    }
+    
+    private func validateCrewedMission(crewedLaunch: String) -> Bool {
+        
+        var goodData = true
+        
+        showValidationSteps ? print("Crewed Mission Section") : nil
+        
+        showValidationSteps ? print("\tValue: (\(crewedLaunch)) isNotEmpty: \(!crewedLaunch.isEmpty), isBool: \(crewedLaunch.isBool)") : nil
+        if(crewedLaunch.isEmpty && !crewedLaunch.isBool) {
+            goodData = false
         }
         
         return goodData

@@ -9312,7 +9312,7 @@
         "vehicleName" : "Falcon 9",
         "vehicleVariant" : "Block 5",
         "missionOutcome" : "Upcoming",
-        "crewedLaunch" : "",
+        "crewedLaunch" : "false",
         "staticFireGap" : "",
         "boosterName" : ["B"],
         "boosterRecoveryMethod" : ["RTLS"],
