@@ -67,7 +67,7 @@ extension LaunchRowView {
     }
     
     private var providerText: some View {
-        Text(launch.launchProvider.rawValue)
+        Text(launch.launchProvider)
             .frame(minHeight: 0)
             .font(.headline)
             .foregroundColor(Color.theme.secondaryText)

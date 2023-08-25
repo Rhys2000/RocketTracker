@@ -15,10 +15,17 @@ class LaunchDataService {
     @Published var futureLaunches: [Launch] = []
     
     var allLaunches: [Launch] = []
-    private var showValidationSteps: Bool = false
+    private var showValidationSteps: Bool = true
     
     private let knownLaunchSite: [String: Set<String>] = ["Kennedy": ["LC-39A"], "Cape Canaveral": ["SLC-40"], "Vandenberg": ["SLC-4E"]]
     private let unknownLaunchSite: [String: Set<String>] = ["Florida": [""]]
+    
+    private let launchProviders: [String: [String: [String]]] = [
+        "SpaceX": [
+            "Falcon 9": ["Block 1", "Block 2", "Block 3", "Block 4", "Block 5"],
+            "Falcon Heavy": [""]
+        ],
+    ]
     
     init() {
         loadLaunches()
@@ -59,10 +66,11 @@ class LaunchDataService {
             let liftOffBool = validateLiftOffTime(liftOffTime: launch.liftOffTime)
             let orbitBool = validateOrbitDestination(time: launch.time, orbitDestination: launch.orbitalDestination)
             let launchSiteBool = validateLaunchSite(time: launch.time, launchSite: launch.launchSite, launchSitePad: launch.launchSitePad)
+            let providerBool = validateLaunchVehicleAndProvider(launchProvider: launch.launchProvider, vehicleName: launch.vehicleName, vehicleVariant: launch.vehicleVariant)
             
             
-            if(!cosparBool || !nameBool || !liftOffBool || !orbitBool || !launchSiteBool) {
-                print("\(launchNumber): \(launch.id) -> \(cosparBool), \(nameBool), \(liftOffBool), \(orbitBool), \(launchSiteBool)\n\n\n")
+            if(!cosparBool || !nameBool || !liftOffBool || !orbitBool || !launchSiteBool || !providerBool) {
+                print("\(launchNumber): \(launch.id) -> \(cosparBool), \(nameBool), \(liftOffBool), \(orbitBool), \(launchSiteBool), \(providerBool)\n\n\n")
             }
         }
     }
@@ -301,6 +309,30 @@ class LaunchDataService {
         return goodData
     }
     
+    private func validateLaunchVehicleAndProvider(launchProvider: String, vehicleName: String, vehicleVariant: String) -> Bool {
+        
+        var goodData: Bool = true
+        
+        showValidationSteps ? print("Launch Provider and Vehicle Section") : nil
+        
+        showValidationSteps ? print("\tValue: (\(launchProvider)) isNotEmpty: \(!launchProvider.isEmpty), hasLaunchProvider: \(hasLaunchProvider(launchProvider))") : nil
+        if(!launchProvider.isEmpty && !hasLaunchProvider(launchProvider)) {
+            goodData = false
+        }
+        
+        showValidationSteps ? print("\tValue: (\(vehicleName)) isNotEmpty: \(!vehicleName.isEmpty), hasVehicleName: \(hasVehicleName(launchProvider, vehicleName))") : nil
+        if(!launchProvider.isEmpty && !hasVehicleName(launchProvider, vehicleName)) {
+            goodData = false
+        }
+        
+        showValidationSteps ? print("\tValue: (\(vehicleVariant)) hasVehicleVariant: \(hasVehicleVariant(launchProvider, vehicleName, vehicleVariant))") : nil
+        if(!hasVehicleVariant(launchProvider, vehicleName, vehicleVariant)) {
+            goodData = false
+        }
+        
+        return goodData
+    }
+    
     func hasLaunchSite(_ time: Time, _ key: String) -> Bool {
         return time.getBool() ? knownLaunchSite.keys.contains(key) : knownLaunchSite.keys.contains(key) || unknownLaunchSite.keys.contains(key)
     }
@@ -329,5 +361,25 @@ class LaunchDataService {
             
             return (pastBool || futureBool)
         }
+    }
+    
+    func hasLaunchProvider(_ provider: String) -> Bool {
+        return launchProviders.keys.contains(provider)
+    }
+    
+    func hasVehicleName(_ provider: String, _ vehicle: String) -> Bool {
+        
+        if let providerData = launchProviders[provider], providerData[vehicle] != nil {
+            return true
+        }
+        return false
+    }
+    
+    func hasVehicleVariant(_ provider: String, _ vehicle: String, _ variant: String) -> Bool {
+        
+        if let providerData = launchProviders[provider], let vehicleData = providerData[vehicle] {
+            return vehicleData.contains(variant)
+        }
+        return false
     }
 }
