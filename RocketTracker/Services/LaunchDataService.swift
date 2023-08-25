@@ -15,7 +15,7 @@ class LaunchDataService {
     @Published var futureLaunches: [Launch] = []
     
     var allLaunches: [Launch] = []
-    private var showValidationSteps: Bool = true
+    private var showValidationSteps: Bool = false
     
     private let knownLaunchSite: [String: Set<String>] = ["Kennedy": ["LC-39A"], "Cape Canaveral": ["SLC-40"], "Vandenberg": ["SLC-4E"]]
     private let unknownLaunchSite: [String: Set<String>] = ["Florida": [""]]
@@ -69,10 +69,11 @@ class LaunchDataService {
             let providerBool = validateLaunchVehicleAndProvider(launchProvider: launch.launchProvider, vehicleName: launch.vehicleName, vehicleVariant: launch.vehicleVariant)
             let missionBool = validateMissionOutcome(time: launch.time, missionOutcome: launch.missionOutcome)
             let crewBool = validateCrewedMission(crewedLaunch: launch.crewedLaunch)
+            let staticBool = validateStaticFire(time: launch.time, staticFireGap: launch.staticFireGap)
             
             
-            if(!cosparBool || !nameBool || !liftOffBool || !orbitBool || !launchSiteBool || !providerBool || !missionBool || !crewBool) {
-                print("\(launchNumber): \(launch.id) -> \(cosparBool), \(nameBool), \(liftOffBool), \(orbitBool), \(launchSiteBool), \(providerBool), \(missionBool), \(crewBool)\n\n\n")
+            if(!cosparBool || !nameBool || !liftOffBool || !orbitBool || !launchSiteBool || !providerBool || !missionBool || !crewBool || !staticBool) {
+                print("\(launchNumber): \(launch.id) -> \(cosparBool), \(nameBool), \(liftOffBool), \(orbitBool), \(launchSiteBool), \(providerBool), \(missionBool), \(crewBool), \(staticBool)\n\n\n")
             }
         }
     }
@@ -373,6 +374,30 @@ class LaunchDataService {
         showValidationSteps ? print("\tValue: (\(crewedLaunch)) isNotEmpty: \(!crewedLaunch.isEmpty), isBool: \(crewedLaunch.isBool)") : nil
         if(crewedLaunch.isEmpty && !crewedLaunch.isBool) {
             goodData = false
+        }
+        
+        return goodData
+    }
+    
+    private func validateStaticFire(time: Time, staticFireGap: String) -> Bool {
+        
+        var goodData = true
+        
+        showValidationSteps ? print("Static Fire Section") : nil
+        
+        if(time.getBool()) {
+            
+            showValidationSteps ? print("\tValue: (\(staticFireGap)) isDigit: \(staticFireGap.isDigit)") : nil
+            if(!staticFireGap.isDigit) {
+                goodData = false
+            }
+        }
+        
+        else {
+            showValidationSteps ? print("\tValue: (\(staticFireGap)) isEmpty: \(staticFireGap.isEmpty)") : nil
+            if(!staticFireGap.isEmpty) {
+                goodData = false
+            }
         }
         
         return goodData

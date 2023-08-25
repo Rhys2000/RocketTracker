@@ -86,6 +86,10 @@ struct Launch: Identifiable, Codable {
     var time: Time {
         missionOutcome.determineTime()
     }
+    
+    var staticFire: Bool {
+        staticFireGap.isEmpty ? false : true
+    }
 }
 
 enum OrbitDestination: String, Codable {

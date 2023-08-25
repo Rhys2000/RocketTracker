@@ -7693,7 +7693,7 @@
         "vehicleVariant" : "Block 5",
         "missionOutcome" : "Upcoming",
         "crewedLaunch" : "true",
-        "staticFireGap" : "3",
+        "staticFireGap" : "",
         "boosterName" : ["B1081-1"],
         "boosterRecoveryMethod" : ["RTLS"],
         "boosterRecoveryLocation" : ["LZ-1"],
