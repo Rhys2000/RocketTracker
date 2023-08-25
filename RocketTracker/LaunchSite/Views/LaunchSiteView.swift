@@ -8,14 +8,28 @@
 import SwiftUI
 
 struct LaunchSiteView: View {
+    
+    @EnvironmentObject private var vm: LaunchSiteViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-            .foregroundColor(Color.red)
+        ZStack {
+            Color.theme.primaryBackground
+                .ignoresSafeArea()
+            VStack {
+                Text("Hello")
+                    .foregroundColor(Color.purple)
+                ForEach(vm.allLaunchSites) { launchSite in
+                    Text("hello")
+                        .foregroundColor(Color.theme.primaryText)
+                }
+            }
+        }
     }
 }
 
 struct LaunchSiteView_Previews: PreviewProvider {
     static var previews: some View {
         LaunchSiteView()
+            .environmentObject(dev.launchSiteVM)
     }
 }
