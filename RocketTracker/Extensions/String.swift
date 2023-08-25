@@ -23,6 +23,11 @@ extension String {
         return CharacterSet(charactersIn: self).isSubset(of: letterCharacters)
     }
     
+    var isAlphaNumericDash: Bool {
+        let alphaNumericDashCharcaters = CharacterSet(charactersIn: "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-")
+        return CharacterSet(charactersIn: self).isSubset(of: alphaNumericDashCharcaters)
+    }
+    
     func isBetween(_ startingValue: Int, _ endingValue: Int) -> Bool {
         return (Int(self)! >= startingValue && Int(self)! <= endingValue)
     }
