@@ -14,6 +14,10 @@ extension String {
         return CharacterSet(charactersIn: self).isSubset(of: digitCharactres)
     }
     
+    var isBool: Bool {
+        return Bool(self)!
+    }
+    
     var isCapitalLetter: Bool {
         let letterCharacters = CharacterSet.uppercaseLetters
         return CharacterSet(charactersIn: self).isSubset(of: letterCharacters)
