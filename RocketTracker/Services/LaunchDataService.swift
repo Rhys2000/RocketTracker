@@ -70,17 +70,16 @@ class LaunchDataService {
             let missionBool = validateMissionOutcome(time: launch.time, missionOutcome: launch.missionOutcome)
             let crewBool = validateCrewedMission(crewedLaunch: launch.crewedLaunch)
             let staticBool = validateStaticFire(time: launch.time, staticFireGap: launch.staticFireGap)
+            let boosterNameBool = validateBoosterName(boosterNames: launch.boosterName)
             
             
-            if(!cosparBool || !nameBool || !liftOffBool || !orbitBool || !launchSiteBool || !providerBool || !missionBool || !crewBool || !staticBool) {
-                print("\(launchNumber): \(launch.id) -> \(cosparBool), \(nameBool), \(liftOffBool), \(orbitBool), \(launchSiteBool), \(providerBool), \(missionBool), \(crewBool), \(staticBool)\n\n\n")
+            if(!cosparBool || !nameBool || !liftOffBool || !orbitBool || !launchSiteBool || !providerBool || !missionBool || !crewBool || !staticBool || !boosterNameBool) {
+                print("\(launchNumber): \(launch.id) -> \(cosparBool), \(nameBool), \(liftOffBool), \(orbitBool), \(launchSiteBool), \(providerBool), \(missionBool), \(crewBool), \(staticBool), \(boosterNameBool)\n\n\n")
             }
         }
     }
     
     private func validateCosparCode(time: Time, cosparCode: String) -> Bool {
-        
-        var goodData: Bool = true
         
         showValidationSteps ? print("Cospar Code Section") : nil
         
@@ -90,14 +89,14 @@ class LaunchDataService {
             //Check to make sure that cosparCode is the right length
             showValidationSteps ? print("\tValue: (\(cosparCode)) -> Count: \(cosparCode.count), isNotEmpty: \(!cosparCode.isEmpty)") : nil
             if(cosparCode.count != 8 || cosparCode.isEmpty) {
-                goodData = false
+                return false
             }
             
             //Check to make sure the first 4 characters in cosparCode are made of numbers (0-9)
             var currentString = cosparCode.subString(from: 0, to: 4)
             showValidationSteps ? print("\tValue: (\(currentString)) -> isDigit: \(currentString.isDigit)") : nil
             if(!currentString.isDigit) {
-                goodData = false
+                return false
             }
             
             //Change. Add additional check that cosparCode is equal to year within liftOffTime
@@ -106,282 +105,263 @@ class LaunchDataService {
             currentString = cosparCode.subString(from: 4, to: 5)
             showValidationSteps ? print("\tValue: (\(currentString)) -> isEqual: \(currentString.isEqual("-"))") : nil
             if(!currentString.isEqual("-")) {
-                goodData = false
+                return false
             }
             
             //Check to make sure the sixth character in cosparCode is either a number (0-9) and the sixth character is not an uppercase english letter
             currentString = cosparCode.subString(from: 5, to: 6)
             showValidationSteps ? print("\tValue: (\(currentString)) -> isDigit: \(currentString.isDigit), isCapitalLetter: \(currentString.isCapitalLetter)") : nil
             if(!currentString.isDigit && !currentString.isCapitalLetter) {
-                goodData = false
+                return false
             }
             
             //Check to make sure the last two characters in cosparCode are made of numbers (0-9)
             currentString = cosparCode.subString(from: 6, to: 8)
             showValidationSteps ? print("\tValue: (\(currentString)) -> isDigit: \(currentString.isDigit)") : nil
             if(!currentString.isDigit) {
-                goodData = false
+                return false
             }
-            
-            return goodData
         }
         
-        //Future Launches
         else {
             
             //Check to make sure that cosparCode is empty (blank string)
             showValidationSteps ? print("\tValue: (\(cosparCode)) -> isEmpty: \(cosparCode.isEmpty)") : nil
             if(!cosparCode.isEmpty) {
-                goodData = false
+                return false
             }
-
-            return goodData
         }
+        
+        return true
     }
     
     private func validateMissionNames(missionName: String, altMissionName: String, abbrMissionName: String) -> Bool {
-        
-        var goodData: Bool = true
         
         showValidationSteps ? print("Mission Name Section") : nil
         
         //Check to make sure that there is a value inside of missionName
         showValidationSteps ? print("\tValue: (\(missionName)) -> isNotEmpty: \(!missionName.isEmpty)") : nil
         if(missionName.isEmpty) {
-            goodData = false
+            return false
         }
         
         //Check to make sure that if there is a value inside of abbrevMissionName there is also one inside of missionName
         showValidationSteps ? print("\tValue: (\(abbrMissionName)) -> isNotEmpty: \(!abbrMissionName.isEmpty), so (missionName) isNotEmpty: \(!missionName.isEmpty)") : nil
         if(missionName.isEmpty && !abbrMissionName.isEmpty) {
-            goodData = false
+            return false
         }
         
         //Check to make sure that if there is a value inside of altMissionName there is also one inside of missionName
         showValidationSteps ? print("\tValue: (\(altMissionName)) -> isNotEmpty: \(!altMissionName.isEmpty), so (missionName) isNotEmpty: \(!missionName.isEmpty)") : nil
         if(missionName.isEmpty && !altMissionName.isEmpty) {
-            goodData = false
+            return false
         }
         
-        return goodData
+        return true
     }
     
     private func validateLiftOffTime(liftOffTime: String) -> Bool {
-        
-        var goodData: Bool = true
         
         showValidationSteps ? print("Lift Off Time Section") : nil
         
         //Check to make sure that liftOffTime is the right length and is not an empty string
         showValidationSteps ? print("\tValue: (\(liftOffTime)) -> Count: \(liftOffTime.count), isNotEmpty: \(!liftOffTime.isEmpty)") : nil
         if(liftOffTime.count != 24 || liftOffTime.isEmpty) {
-            goodData = false
+            return false
         }
         
         //Check to make sure that the first 4 characters in liftOffTime are made of digits (0-9)
         var currentString = liftOffTime.subString(from: 0, to: 4)
         showValidationSteps ? print("\tValue: (\(currentString)) -> isDigit: \(currentString.isDigit), isBetween: \(currentString.isBetween(2010, 2028))") : nil
         if(!currentString.isDigit && !currentString.isBetween(2010, 2028)) {
-            goodData = false
+            return false
         }
         
         currentString = liftOffTime.subString(from: 4, to: 5)
         showValidationSteps ? print("\tValue: (\(currentString)) -> isEqual: \(currentString.isEqual("-"))") : nil
         if(!currentString.isEqual("-")) {
-            goodData = false
+            return false
         }
         
         currentString = liftOffTime.subString(from: 5, to: 7)
         showValidationSteps ? print("\tValue: (\(currentString)) -> isDigit: \(currentString.isDigit), isBetween: \(currentString.isBetween(1, 12))") : nil
         if(!currentString.isDigit && !currentString.isBetween(1, 12)) {
-            goodData = false
+            return false
         }
         
         currentString = liftOffTime.subString(from: 7, to: 8)
         showValidationSteps ? print("\tValue: (\(currentString)) -> isEqual: \(currentString.isEqual("-"))") : nil
         if(!currentString.isEqual("-")) {
-            goodData = false
+            return false
         }
         
         currentString = liftOffTime.subString(from: 8, to: 10)
         showValidationSteps ? print("\tValue: (\(currentString)) -> isDigit: \(currentString.isDigit), isBetween: \(currentString.isBetween(1, 31))") : nil
         if(!currentString.isDigit && !currentString.isBetween(1, 31)) {
-            goodData = false
+            return false
         }
         
         currentString = liftOffTime.subString(from: 10, to: 11)
         showValidationSteps ? print("\tValue: (\(currentString)) -> isCapitalLetter: \(currentString.isCapitalLetter)") : nil
         if(!currentString.isCapitalLetter) {
-            goodData = false
+            return false
         }
         
         currentString = liftOffTime.subString(from: 11, to: 13)
         showValidationSteps ? print("\tValue: (\(currentString)) -> isDigit: \(currentString.isDigit), isBetween: \(currentString.isBetween(0, 24))") : nil
         if(!currentString.isDigit && !currentString.isBetween(0, 24)) {
-            goodData = false
+            return false
         }
         
         currentString = liftOffTime.subString(from: 13, to: 14)
         showValidationSteps ? print("\tValue: (\(currentString)) -> isEqual: \(currentString.isEqual(":"))") : nil
         if(!currentString.isEqual(":")) {
-            goodData = false
+            return false
         }
         
         currentString = liftOffTime.subString(from: 14, to: 16)
         showValidationSteps ? print("\tValue: (\(currentString)) -> isDigit: \(currentString.isDigit), isBetween: \(currentString.isBetween(0, 59))") : nil
         if(!currentString.isDigit && !currentString.isBetween(0, 59)) {
-            goodData = false
+            return false
         }
         
         currentString = liftOffTime.subString(from: 16, to: 17)
         showValidationSteps ? print("\tValue: (\(currentString)) -> isEqual: \(currentString.isEqual(":"))") : nil
         if(!currentString.isEqual(":")) {
-            goodData = false
+            return false
         }
         
         currentString = liftOffTime.subString(from: 17, to: 19)
         showValidationSteps ? print("\tValue: (\(currentString)) -> isDigit: \(currentString.isDigit), isBetween: \(currentString.isBetween(0, 59))") : nil
         if(!currentString.isDigit && !currentString.isBetween(0, 59)) {
-            goodData = false
+            return false
         }
         
         currentString = liftOffTime.subString(from: 19, to: 20)
         showValidationSteps ? print("\tValue: (\(currentString)) -> isEqual: \(currentString.isEqual("+"))") : nil
         if(!currentString.isEqual("+")) {
-            goodData = false
+            return false
         }
         
         currentString = liftOffTime.subString(from: 20, to: 24)
         showValidationSteps ? print("\tValue: (\(currentString)) -> isDigit: \(currentString.isDigit), isEqual: \(currentString.isEqual("0000"))") : nil
         if(!currentString.isDigit && currentString.isEqual("0000")) {
-            goodData = false
+            return false
         }
         
-        return goodData
+        return true
 
     }
     
     private func validateOrbitDestination(time: Time, orbitDestination: OrbitDestination) -> Bool {
         
-        var goodData = true
-        
         showValidationSteps ? print("Orbit Destination Section") : nil
         
         showValidationSteps ? print("\tValue: (\(orbitDestination.rawValue)) isNotEmpty: \(!orbitDestination.rawValue.isEmpty)") : nil
         if(orbitDestination.rawValue.isEmpty) {
-            goodData = false
+            return false
         }
         
         if(time.getBool()) {
             
             showValidationSteps ? print("\tValue: (\(orbitDestination.rawValue)) isAvailable: \(orbitDestination != .notAvailable)") : nil
             if(orbitDestination == .notAvailable) {
-                goodData = false
+                return false
             }
         }
         
-        return goodData
+        return true
     }
     
     private func validateLaunchSite(time: Time, launchSite: String, launchSitePad: String) -> Bool {
-        
-        var goodData: Bool = true
         
         showValidationSteps ? print("Launch Site Section") : nil
         
         if(time.getBool()) {
             showValidationSteps ? print("\tValue: (\(launchSite)) isNotEmpty: \(!launchSite.isEmpty), hasLaunchSite: \(hasLaunchSite(time, launchSite))") : nil
             if(launchSite.isEmpty && !hasLaunchSite(time, launchSite)) {
-                goodData = false
+                return false
             }
             
             showValidationSteps ? print("\tValue: (\(launchSitePad)) isNotEmpty: \(!launchSitePad.isEmpty), hasLaunchPad: \(hasLaunchPad(time, launchSite, launchSitePad))") : nil
             if(launchSitePad.isEmpty && !hasLaunchPad(time, launchSite, launchSitePad)) {
-                goodData = false
+                return false
             }
         }
         
         else {
             showValidationSteps ? print("\tValue: (\(launchSite)) isNotEmpty: \(!launchSite.isEmpty), hasLaunchSite: \(hasLaunchSite(time, launchSite))") : nil
             if(launchSite.isEmpty && !hasLaunchSite(time, launchSite)) {
-                goodData = false
+                return false
             }
         }
             
         
-        return goodData
+        return true
     }
     
     private func validateLaunchVehicleAndProvider(launchProvider: String, vehicleName: String, vehicleVariant: String) -> Bool {
-        
-        var goodData: Bool = true
         
         showValidationSteps ? print("Launch Provider and Vehicle Section") : nil
         
         showValidationSteps ? print("\tValue: (\(launchProvider)) isNotEmpty: \(!launchProvider.isEmpty), hasLaunchProvider: \(hasLaunchProvider(launchProvider))") : nil
         if(!launchProvider.isEmpty && !hasLaunchProvider(launchProvider)) {
-            goodData = false
+            return false
         }
         
         showValidationSteps ? print("\tValue: (\(vehicleName)) isNotEmpty: \(!vehicleName.isEmpty), hasVehicleName: \(hasVehicleName(launchProvider, vehicleName))") : nil
         if(!launchProvider.isEmpty && !hasVehicleName(launchProvider, vehicleName)) {
-            goodData = false
+            return false
         }
         
         showValidationSteps ? print("\tValue: (\(vehicleVariant)) hasVehicleVariant: \(hasVehicleVariant(launchProvider, vehicleName, vehicleVariant))") : nil
         if(!hasVehicleVariant(launchProvider, vehicleName, vehicleVariant)) {
-            goodData = false
+            return false
         }
         
-        return goodData
+        return true
     }
     
     private func validateMissionOutcome(time: Time, missionOutcome: Outcome) -> Bool {
-        
-        var goodData = true
         
         showValidationSteps ? print("Mission Outcome Section") : nil
         
         showValidationSteps ? print("\tValue: (\(missionOutcome.rawValue)) isNotEmpty: \(!missionOutcome.rawValue.isEmpty)") : nil
         if(missionOutcome.rawValue.isEmpty) {
-            goodData = false
+            return false
         }
         
         if(time.getBool()) {
             
             showValidationSteps ? print("\tValue: (\(missionOutcome.rawValue)) hasOutcome: \(missionOutcome != .upcoming)") : nil
             if(missionOutcome == .upcoming) {
-                goodData = false
+                return false
             }
         }
         
         else {
             showValidationSteps ? print("\tValue: (\(missionOutcome.rawValue)) isUpcoming: \(missionOutcome == .upcoming)") : nil
             if(missionOutcome != .upcoming) {
-                goodData = false
+                return false
             }
         }
         
-        return goodData
+        return true
     }
     
     private func validateCrewedMission(crewedLaunch: String) -> Bool {
-        
-        var goodData = true
         
         showValidationSteps ? print("Crewed Mission Section") : nil
         
         showValidationSteps ? print("\tValue: (\(crewedLaunch)) isNotEmpty: \(!crewedLaunch.isEmpty), isBool: \(crewedLaunch.isBool)") : nil
         if(crewedLaunch.isEmpty && !crewedLaunch.isBool) {
-            goodData = false
+            return false
         }
         
-        return goodData
+        return true
     }
     
     private func validateStaticFire(time: Time, staticFireGap: String) -> Bool {
-        
-        var goodData = true
         
         showValidationSteps ? print("Static Fire Section") : nil
         
@@ -389,18 +369,31 @@ class LaunchDataService {
             
             showValidationSteps ? print("\tValue: (\(staticFireGap)) isDigit: \(staticFireGap.isDigit)") : nil
             if(!staticFireGap.isDigit) {
-                goodData = false
+                return false
             }
         }
         
         else {
             showValidationSteps ? print("\tValue: (\(staticFireGap)) isEmpty: \(staticFireGap.isEmpty)") : nil
             if(!staticFireGap.isEmpty) {
-                goodData = false
+                return false
             }
         }
         
-        return goodData
+        return true
+    }
+    
+    private func validateBoosterName(boosterNames: [String]) -> Bool {
+        
+        showValidationSteps ? print("Booster Name Section") : nil
+        
+        for booster in boosterNames {
+            showValidationSteps ? print("\tValue: (\(booster)) isAlphaNumericDash: \(booster.isAlphaNumericDash)") : nil
+            if(!booster.isAlphaNumericDash) {
+                return false
+            }
+        }
+        return true
     }
     
     
