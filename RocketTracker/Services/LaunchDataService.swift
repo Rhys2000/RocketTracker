@@ -15,7 +15,7 @@ class LaunchDataService {
     @Published var futureLaunches: [Launch] = []
     
     var allLaunches: [Launch] = []
-    private var showValidationSteps: Bool = true
+    private var showValidationSteps: Bool = false
     
     private let knownLaunchSite: [String: Set<String>] = ["Kennedy": ["LC-39A"], "Cape Canaveral": ["SLC-40"], "Vandenberg": ["SLC-4E"]]
     private let unknownLaunchSite: [String: Set<String>] = ["Florida": [""]]
@@ -67,10 +67,11 @@ class LaunchDataService {
             let orbitBool = validateOrbitDestination(time: launch.time, orbitDestination: launch.orbitalDestination)
             let launchSiteBool = validateLaunchSite(time: launch.time, launchSite: launch.launchSite, launchSitePad: launch.launchSitePad)
             let providerBool = validateLaunchVehicleAndProvider(launchProvider: launch.launchProvider, vehicleName: launch.vehicleName, vehicleVariant: launch.vehicleVariant)
+            let missionBool = validateMissionOutcome(time: launch.time, missionOutcome: launch.missionOutcome)
             
             
-            if(!cosparBool || !nameBool || !liftOffBool || !orbitBool || !launchSiteBool || !providerBool) {
-                print("\(launchNumber): \(launch.id) -> \(cosparBool), \(nameBool), \(liftOffBool), \(orbitBool), \(launchSiteBool), \(providerBool)\n\n\n")
+            if(!cosparBool || !nameBool || !liftOffBool || !orbitBool || !launchSiteBool || !providerBool || !missionBool) {
+                print("\(launchNumber): \(launch.id) -> \(cosparBool), \(nameBool), \(liftOffBool), \(orbitBool), \(launchSiteBool), \(providerBool), \(missionBool)\n\n\n")
             }
         }
     }
@@ -332,6 +333,49 @@ class LaunchDataService {
         
         return goodData
     }
+    
+    private func validateMissionOutcome(time: Time, missionOutcome: Outcome) -> Bool {
+        
+        var goodData = true
+        
+        showValidationSteps ? print("Mission Outcome Section") : nil
+        
+        showValidationSteps ? print("\tValue: (\(missionOutcome.rawValue)) isNotEmpty: \(!missionOutcome.rawValue.isEmpty)") : nil
+        if(missionOutcome.rawValue.isEmpty) {
+            goodData = false
+        }
+        
+        if(time.getBool()) {
+            
+            showValidationSteps ? print("\tValue: (\(missionOutcome.rawValue)) hasOutcome: \(missionOutcome != .upcoming)") : nil
+            if(missionOutcome == .upcoming) {
+                goodData = false
+            }
+        }
+        
+        else {
+            showValidationSteps ? print("\tValue: (\(missionOutcome.rawValue)) isUpcoming: \(missionOutcome == .upcoming)") : nil
+            if(missionOutcome != .upcoming) {
+                goodData = false
+            }
+        }
+        
+        return goodData
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     func hasLaunchSite(_ time: Time, _ key: String) -> Bool {
         return time.getBool() ? knownLaunchSite.keys.contains(key) : knownLaunchSite.keys.contains(key) || unknownLaunchSite.keys.contains(key)
