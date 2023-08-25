@@ -17,6 +17,9 @@ class LaunchDataService {
     var allLaunches: [Launch] = []
     private var showValidationSteps: Bool = false
     
+    private let knownLaunchSite: [String: Set<String>] = ["Kennedy": ["LC-39A"], "Cape Canaveral": ["SLC-40"], "Vandenberg": ["SLC-4E"]]
+    private let unknownLaunchSite: [String: Set<String>] = ["Florida": [""]]
+    
     init() {
         loadLaunches()
         validateLaunchData()
@@ -47,18 +50,19 @@ class LaunchDataService {
         //Iterate through each launch in the list of launches (allLaunches)
         for (launch, launchNumber) in zip(allLaunches, 0..<allLaunches.count) {
             
-            
-            showValidationSteps ? print("*--- Validating Launch: \(launch.missionName) ---*\n") : nil
+            //Change
+            showValidationSteps ? print("\n\n\n*--- Validating Launch: \(launch.missionName) ---*\n") : nil
             
             
             let cosparBool = validateCosparCode(time: launch.time, cosparCode: launch.cosparCode)
             let nameBool = validateMissionNames(missionName: launch.missionName, altMissionName: launch.altMissionName, abbrMissionName: launch.abbrMissionName)
             let liftOffBool = validateLiftOffTime(liftOffTime: launch.liftOffTime)
             let orbitBool = validateOrbitDestination(time: launch.time, orbitDestination: launch.orbitalDestination)
+            let launchSiteBool = validateLaunchSite(time: launch.time, launchSiteName: launch.launchSiteName, launchSitePad: launch.launchSitePad)
             
             
-            if(!cosparBool || !nameBool || !liftOffBool || !orbitBool) {
-                print("\(launchNumber): \(launch.id) -> \(cosparBool), \(nameBool), \(liftOffBool), \(orbitBool)\n\n\n")
+            if(!cosparBool || !nameBool || !liftOffBool || !orbitBool || !launchSiteBool) {
+                print("\(launchNumber): \(launch.id) -> \(cosparBool), \(nameBool), \(liftOffBool), \(orbitBool), \(launchSiteBool)\n\n\n")
             }
         }
     }
@@ -266,5 +270,64 @@ class LaunchDataService {
         }
         
         return goodData
+    }
+    
+    private func validateLaunchSite(time: Time, launchSiteName: String, launchSitePad: String) -> Bool {
+        
+        var goodData: Bool = true
+        
+        showValidationSteps ? print("Launch Site Section") : nil
+        
+        if(time.getBool()) {
+            showValidationSteps ? print("\tValue: (\(launchSiteName)) isNotEmpty: \(!launchSiteName.isEmpty), hasLaunchSite: \(hasLaunchSite(time, launchSiteName))") : nil
+            if(launchSiteName.isEmpty && !hasLaunchSite(time, launchSiteName)) {
+                goodData = false
+            }
+            
+            showValidationSteps ? print("\tValue: (\(launchSitePad)) isNotEmpty: \(!launchSitePad.isEmpty), hasLaunchPad: \(hasLaunchPad(time, launchSiteName, launchSitePad))") : nil
+            if(launchSitePad.isEmpty && !hasLaunchPad(time, launchSiteName, launchSitePad)) {
+                goodData = false
+            }
+        }
+        
+        else {
+            showValidationSteps ? print("\tValue: (\(launchSiteName)) isNotEmpty: \(!launchSiteName.isEmpty), hasLaunchSite: \(hasLaunchSite(time, launchSiteName))") : nil
+            if(launchSiteName.isEmpty && !hasLaunchSite(time, launchSiteName)) {
+                goodData = false
+            }
+        }
+            
+        
+        return goodData
+    }
+    
+    func hasLaunchSite(_ time: Time, _ key: String) -> Bool {
+        return time.getBool() ? knownLaunchSite.keys.contains(key) : knownLaunchSite.keys.contains(key) || unknownLaunchSite.keys.contains(key)
+    }
+    
+    func hasLaunchPad(_ time: Time, _ key: String, _ value: String) -> Bool {
+        
+        //Past Launches
+        if(time.getBool()) {
+            if let values = knownLaunchSite[key] {
+                return values.contains(value)
+            }
+            return false
+        }
+        
+        //Future Launches
+        else {
+            var pastBool: Bool = false
+            if let values = knownLaunchSite[key] {
+                pastBool = values.contains(value)
+            }
+            
+            var futureBool: Bool = false
+            if let values = unknownLaunchSite[key] {
+                futureBool = values.contains(value)
+            }
+            
+            return (pastBool || futureBool)
+        }
     }
 }
