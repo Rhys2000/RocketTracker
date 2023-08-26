@@ -28,6 +28,10 @@
 		90DDC7ED2A96DDDE004B532E /* LaunchListBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDC7EC2A96DDDE004B532E /* LaunchListBarView.swift */; };
 		90DDC7F22A99291C004B532E /* launchsite.json in Resources */ = {isa = PBXBuildFile; fileRef = 90DDC7F12A99291C004B532E /* launchsite.json */; };
 		90DDC7F42A992C35004B532E /* LaunchSiteDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDC7F32A992C35004B532E /* LaunchSiteDataService.swift */; };
+		90DDC8132A994833004B532E /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDC8122A994833004B532E /* CircleButtonView.swift */; };
+		90DDC8152A9949C7004B532E /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDC8142A9949C7004B532E /* SearchBarView.swift */; };
+		90DDC8172A994BE3004B532E /* ScopeBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDC8162A994BE3004B532E /* ScopeBarView.swift */; };
+		90DDC8192A996E0F004B532E /* LaunchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDC8182A996E0F004B532E /* LaunchListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +57,10 @@
 		90DDC7EC2A96DDDE004B532E /* LaunchListBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListBarView.swift; sourceTree = "<group>"; };
 		90DDC7F12A99291C004B532E /* launchsite.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = launchsite.json; sourceTree = "<group>"; };
 		90DDC7F32A992C35004B532E /* LaunchSiteDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchSiteDataService.swift; sourceTree = "<group>"; };
+		90DDC8122A994833004B532E /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
+		90DDC8142A9949C7004B532E /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		90DDC8162A994BE3004B532E /* ScopeBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScopeBarView.swift; sourceTree = "<group>"; };
+		90DDC8182A996E0F004B532E /* LaunchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,11 +94,12 @@
 			isa = PBXGroup;
 			children = (
 				90A5F02F2A8A70D700ECE789 /* RocketTrackerApp.swift */,
+				90DDC8112A9947F8004B532E /* Components */,
+				90A5F0752A8C2F6D00ECE789 /* Extensions */,
 				90A5F0412A8A736F00ECE789 /* Launch */,
 				90A5F03D2A8A72D000ECE789 /* LaunchSite */,
-				90DDC7D52A8EE27F004B532E /* Vessel */,
-				90A5F0752A8C2F6D00ECE789 /* Extensions */,
 				90DDC7CF2A8EB8DF004B532E /* Services */,
+				90DDC7D52A8EE27F004B532E /* Vessel */,
 				90A5F0332A8A70D800ECE789 /* Assets.xcassets */,
 				90A5F0352A8A70D800ECE789 /* Preview Content */,
 			);
@@ -134,6 +143,7 @@
 				90A5F0782A8C33CC00ECE789 /* LaunchRowView.swift */,
 				90A5F07A2A8C3F4C00ECE789 /* RecoveryLabelView.swift */,
 				90DDC7EC2A96DDDE004B532E /* LaunchListBarView.swift */,
+				90DDC8182A996E0F004B532E /* LaunchListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -230,6 +240,16 @@
 			path = JsonFile;
 			sourceTree = "<group>";
 		};
+		90DDC8112A9947F8004B532E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				90DDC8122A994833004B532E /* CircleButtonView.swift */,
+				90DDC8142A9949C7004B532E /* SearchBarView.swift */,
+				90DDC8162A994BE3004B532E /* ScopeBarView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -308,17 +328,21 @@
 				90A5F0502A8A762400ECE789 /* LaunchSiteViewModel.swift in Sources */,
 				90A5F0402A8A734E00ECE789 /* LaunchSiteView.swift in Sources */,
 				90DDC7D82A8EE2AB004B532E /* Vessel.swift in Sources */,
+				90DDC8192A996E0F004B532E /* LaunchListView.swift in Sources */,
+				90DDC8132A994833004B532E /* CircleButtonView.swift in Sources */,
 				90A5F04E2A8A761100ECE789 /* LaunchSite.swift in Sources */,
 				90A5F0432A8A738400ECE789 /* LaunchView.swift in Sources */,
 				90DDC7CC2A8E5D16004B532E /* Color.swift in Sources */,
 				90A5F0792A8C33CD00ECE789 /* LaunchRowView.swift in Sources */,
 				90DDC7ED2A96DDDE004B532E /* LaunchListBarView.swift in Sources */,
+				90DDC8152A9949C7004B532E /* SearchBarView.swift in Sources */,
 				90A5F0482A8A75D700ECE789 /* Launch.swift in Sources */,
 				90A5F0772A8C2F9600ECE789 /* PreviewProvider.swift in Sources */,
 				90A5F0302A8A70D700ECE789 /* RocketTrackerApp.swift in Sources */,
 				908D91D72A8D3B5D00AF36CA /* View.swift in Sources */,
 				90DDC7D12A8EB91A004B532E /* LaunchDataService.swift in Sources */,
 				90A5F04A2A8A75E500ECE789 /* LaunchViewModel.swift in Sources */,
+				90DDC8172A994BE3004B532E /* ScopeBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
