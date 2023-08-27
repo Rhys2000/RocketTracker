@@ -12,6 +12,8 @@ struct LaunchView: View {
     @EnvironmentObject private var vm: LaunchViewModel
     
     @State private var showFutureLaunches: Bool = true
+    @State private var isInfoPresented: Bool = false
+    @State private var isSettingsPresented: Bool = false
     
     var body: some View {
         ZStack {
@@ -46,6 +48,12 @@ extension LaunchView {
     private var headerBar: some View {
         HStack {
             CircleButtonView(iconName: "info")
+                .sheet(isPresented: $isInfoPresented, content: {
+                    Text("Info Presented")
+                })
+                .onTapGesture {
+                    isInfoPresented.toggle()
+                }
             Spacer()
             Text("Launches")
                 .font(.headline)
@@ -53,6 +61,12 @@ extension LaunchView {
                 .foregroundColor(Color.theme.primaryText)
             Spacer()
             CircleButtonView(iconName: "gear")
+                .sheet(isPresented: $isSettingsPresented, content: {
+                    Text("Settings Presented")
+                })
+                .onTapGesture {
+                    isSettingsPresented.toggle()
+                }
         }
         .padding(.horizontal)
     }
