@@ -32,6 +32,7 @@
 		90DDC8152A9949C7004B532E /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDC8142A9949C7004B532E /* SearchBarView.swift */; };
 		90DDC8172A994BE3004B532E /* ScopeBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDC8162A994BE3004B532E /* ScopeBarView.swift */; };
 		90DDC8192A996E0F004B532E /* LaunchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDC8182A996E0F004B532E /* LaunchListView.swift */; };
+		90DDC81E2A9C1231004B532E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90DDC81D2A9C1231004B532E /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		90DDC8142A9949C7004B532E /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		90DDC8162A994BE3004B532E /* ScopeBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScopeBarView.swift; sourceTree = "<group>"; };
 		90DDC8182A996E0F004B532E /* LaunchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListView.swift; sourceTree = "<group>"; };
+		90DDC81D2A9C1231004B532E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90DDC81E2A9C1231004B532E /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +82,7 @@
 			children = (
 				90A5F02E2A8A70D700ECE789 /* RocketTracker */,
 				90A5F02D2A8A70D700ECE789 /* Products */,
+				90DDC81C2A9C1231004B532E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -248,6 +252,14 @@
 				90DDC8162A994BE3004B532E /* ScopeBarView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		90DDC81C2A9C1231004B532E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				90DDC81D2A9C1231004B532E /* CoreData.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -477,8 +489,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -506,8 +517,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
