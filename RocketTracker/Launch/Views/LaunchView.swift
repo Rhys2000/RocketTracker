@@ -11,7 +11,7 @@ struct LaunchView: View {
     
     @EnvironmentObject private var vm: LaunchViewModel
     
-    @State private var showFutureLaunches: Bool = false
+    @State private var showFutureLaunches: Bool = true
     
     var body: some View {
         ZStack {
@@ -23,9 +23,9 @@ struct LaunchView: View {
                 
                 SearchBarView(searchText: .constant(""))
                 
-                ScopeBarView()
+                ScopeBarView(overlayBool: $showFutureLaunches)
                 
-                !showFutureLaunches ? LaunchListView(list: vm.futureLaunches) : LaunchListView(list: vm.pastLaunches)
+                showFutureLaunches ? LaunchListView(list: vm.futureLaunches) : LaunchListView(list: vm.pastLaunches)
                 
                 Spacer(minLength: 0)
             }
