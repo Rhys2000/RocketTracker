@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ScopeBarView: View {
     
-    @State private var isOverlayVisible = false
+    @Binding var overlayBool: Bool
     
     var body: some View {
         ZStack {
@@ -19,13 +19,13 @@ struct ScopeBarView: View {
                     .foregroundColor(Color.theme.secondaryBackground)
                     .cornerRadius(20, corners: [.topLeft, .bottomLeft])
                     .onTapGesture {
-                        self.isOverlayVisible.toggle()
+                        self.overlayBool.toggle()
                     }
                     .overlay(
                         Text("Upcoming")
                             .foregroundColor(Color.theme.primaryText)
                     )
-                    .disabled(!isOverlayVisible)
+                    .disabled(overlayBool)
                 Rectangle()
                     .frame(width: 1, height: 40)
                 Rectangle()
@@ -33,13 +33,13 @@ struct ScopeBarView: View {
                     .foregroundColor(Color.theme.secondaryBackground)
                     .cornerRadius(20, corners: [.topRight, .bottomRight])
                     .onTapGesture {
-                        self.isOverlayVisible.toggle()
+                        self.overlayBool.toggle()
                     }
                     .overlay(
                         Text("Previous")
                             .foregroundColor(Color.theme.primaryText)
                     )
-                    .disabled(isOverlayVisible)
+                    .disabled(!overlayBool)
             }
             .padding(.horizontal)
             .shadow(color: Color.theme.accent.opacity(0.4), radius: 10)
@@ -49,26 +49,26 @@ struct ScopeBarView: View {
                     .frame(height: 40)
                     .background(Color.black)
                     .cornerRadius(20, corners: [.topLeft, .bottomLeft])
-                    .opacity(isOverlayVisible ? 0.3 : 0.0)
+                    .opacity(overlayBool ? 0.0 : 0.3)
                     .transition(.move(edge: .trailing))
-                    .animation(.easeInOut, value: isOverlayVisible)
+                    .animation(.easeInOut, value: overlayBool)
                 Rectangle()
                     .frame(width: 1, height: 40)
                 Rectangle()
                     .frame(height: 40)
                     .background(Color.black)
                     .cornerRadius(20, corners: [.topRight, .bottomRight])
-                    .opacity(isOverlayVisible ? 0.0 : 0.3)
+                    .opacity(overlayBool ? 0.3 : 0.0)
                     .transition(.move(edge: .leading))
-                    .animation(.easeInOut, value: !isOverlayVisible)
+                    .animation(.easeInOut, value: !overlayBool)
             }
             .padding(.horizontal)
         }
     }
 }
 
-struct ScopeBarView_Previews: PreviewProvider {
-    static var previews: some View {
-        ScopeBarView()
-    }
-}
+//struct ScopeBarView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ScopeBarView(overlayBool: )
+//    }
+//}
