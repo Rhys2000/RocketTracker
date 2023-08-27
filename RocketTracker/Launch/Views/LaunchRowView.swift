@@ -25,7 +25,6 @@ struct LaunchRowView: View {
                 recoveryText
                 liftOffTimeText
             }
-            //.background(Color.orange)
             .padding(.leading, 8)
             .overlay(
                 GeometryReader(content: { geometry in
