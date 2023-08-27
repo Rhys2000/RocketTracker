@@ -54,6 +54,7 @@ class LaunchDataService {
         for launch in allLaunches {
             (launch.time == .future) ? futureLaunches.append(launch) : pastLaunches.append(launch)
         }
+        pastLaunches.reverse()
         
     }
     
