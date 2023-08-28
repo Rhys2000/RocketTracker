@@ -7744,7 +7744,7 @@
         "missionName" : "Transport and Tracking Layer (Tranche 0B)",
         "altMissionName" : "",
         "abbrMissionName" : "Tranche 0 Flight 2",
-        "liftOffTime" : "2023-08-31T14:00:00+0000",
+        "liftOffTime" : "2023-08-31T14:30:00+0000",
         "orbitalDestination" : "LEO",
         "launchProvider" : "SpaceX",
         "launchSite" : "Vandenberg",
