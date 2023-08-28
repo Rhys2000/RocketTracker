@@ -49,7 +49,7 @@ extension LaunchView {
         HStack {
             CircleButtonView(iconName: "info")
                 .sheet(isPresented: $isInfoPresented, content: {
-                    Text("Info Presented")
+                    Text("Info Presented ")
                 })
                 .onTapGesture {
                     isInfoPresented.toggle()
