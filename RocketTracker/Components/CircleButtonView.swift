@@ -21,12 +21,14 @@ struct CircleButtonView: View {
                     .foregroundColor(Color.theme.secondaryBackground)
             )
             .shadow(color: Color.theme.accent.opacity(0.4), radius: 10)
-            .padding()
+            .padding(.vertical, 6)
+            .padding(.horizontal, 4)
     }
 }
 
 struct CircleButtonView_Previews: PreviewProvider {
     static var previews: some View {
         CircleButtonView(iconName: "heart.fill")
+            .previewLayout(.sizeThatFits)
     }
 }

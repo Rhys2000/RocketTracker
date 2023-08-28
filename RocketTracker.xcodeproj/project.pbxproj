@@ -19,6 +19,7 @@
 		90A5F0502A8A762400ECE789 /* LaunchSiteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5F04F2A8A762400ECE789 /* LaunchSiteViewModel.swift */; };
 		90A5F0772A8C2F9600ECE789 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5F0762A8C2F9600ECE789 /* PreviewProvider.swift */; };
 		90A5F0792A8C33CD00ECE789 /* LaunchRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5F0782A8C33CC00ECE789 /* LaunchRowView.swift */; };
+		90AD7B6F2A9CFD6300357090 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AD7B6E2A9CFD6300357090 /* InfoView.swift */; };
 		90DDC7CC2A8E5D16004B532E /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDC7CB2A8E5D16004B532E /* Color.swift */; };
 		90DDC7CE2A8E6035004B532E /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDC7CD2A8E6035004B532E /* String.swift */; };
 		90DDC7D12A8EB91A004B532E /* LaunchDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDC7D02A8EB91A004B532E /* LaunchDataService.swift */; };
@@ -47,6 +48,7 @@
 		90A5F04F2A8A762400ECE789 /* LaunchSiteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchSiteViewModel.swift; sourceTree = "<group>"; };
 		90A5F0762A8C2F9600ECE789 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		90A5F0782A8C33CC00ECE789 /* LaunchRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRowView.swift; sourceTree = "<group>"; };
+		90AD7B6E2A9CFD6300357090 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		90DDC7CB2A8E5D16004B532E /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		90DDC7CD2A8E6035004B532E /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		90DDC7D02A8EB91A004B532E /* LaunchDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDataService.swift; sourceTree = "<group>"; };
@@ -58,7 +60,6 @@
 		90DDC8142A9949C7004B532E /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		90DDC8162A994BE3004B532E /* ScopeBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScopeBarView.swift; sourceTree = "<group>"; };
 		90DDC8182A996E0F004B532E /* LaunchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListView.swift; sourceTree = "<group>"; };
-		90DDC81D2A9C1231004B532E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		90DDC8282A9CE162004B532E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,7 +79,6 @@
 			children = (
 				90A5F02E2A8A70D700ECE789 /* RocketTracker */,
 				90A5F02D2A8A70D700ECE789 /* Products */,
-				90DDC81C2A9C1231004B532E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,10 +139,10 @@
 		90A5F0462A8A755500ECE789 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				90AD7B6D2A9CFD2F00357090 /* HeaderBarViews */,
 				90A5F0422A8A738400ECE789 /* LaunchView.swift */,
 				90A5F0782A8C33CC00ECE789 /* LaunchRowView.swift */,
 				90DDC8182A996E0F004B532E /* LaunchListView.swift */,
-				90DDC8282A9CE162004B532E /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -180,6 +180,15 @@
 				90DDC7CD2A8E6035004B532E /* String.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		90AD7B6D2A9CFD2F00357090 /* HeaderBarViews */ = {
+			isa = PBXGroup;
+			children = (
+				90DDC8282A9CE162004B532E /* SettingsView.swift */,
+				90AD7B6E2A9CFD6300357090 /* InfoView.swift */,
+			);
+			path = HeaderBarViews;
 			sourceTree = "<group>";
 		};
 		90DDC7CF2A8EB8DF004B532E /* Services */ = {
@@ -247,14 +256,6 @@
 				90DDC8162A994BE3004B532E /* ScopeBarView.swift */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		90DDC81C2A9C1231004B532E /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				90DDC81D2A9C1231004B532E /* CoreData.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,6 +343,7 @@
 				90DDC7CC2A8E5D16004B532E /* Color.swift in Sources */,
 				90A5F0792A8C33CD00ECE789 /* LaunchRowView.swift in Sources */,
 				90DDC8152A9949C7004B532E /* SearchBarView.swift in Sources */,
+				90AD7B6F2A9CFD6300357090 /* InfoView.swift in Sources */,
 				90A5F0482A8A75D700ECE789 /* Launch.swift in Sources */,
 				90A5F0772A8C2F9600ECE789 /* PreviewProvider.swift in Sources */,
 				90A5F0302A8A70D700ECE789 /* RocketTrackerApp.swift in Sources */,
@@ -484,6 +486,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -512,6 +515,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
