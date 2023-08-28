@@ -14,6 +14,8 @@ struct LaunchView: View {
     @State private var showFutureLaunches: Bool = true
     @State private var isInfoPresented: Bool = false
     @State private var isSettingsPresented: Bool = false
+    @State private var isCalendarPresented: Bool = false
+    @State private var isFavoritesPresented: Bool = false
     
     var body: some View {
         ZStack {
@@ -49,17 +51,19 @@ extension LaunchView {
         HStack {
             CircleButtonView(iconName: "info")
                 .sheet(isPresented: $isInfoPresented, content: {
-                    Text("Info Presented")
+                    InfoView(showSheet: $isInfoPresented)
                 })
                 .onTapGesture {
                     isInfoPresented.toggle()
                 }
+            CircleButtonView(iconName: "calendar")
             Spacer()
             Text("Launches")
                 .font(.headline)
                 .fontWeight(.heavy)
                 .foregroundColor(Color.theme.primaryText)
             Spacer()
+            CircleButtonView(iconName: "star.fill")
             CircleButtonView(iconName: "gear")
                 .sheet(isPresented: $isSettingsPresented, content: {
                     SettingsView()
