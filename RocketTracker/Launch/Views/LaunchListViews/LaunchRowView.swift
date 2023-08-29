@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LaunchRowView: View {
     
+    @EnvironmentObject private var vm: LaunchViewModel
     let launch: Launch
     
     @State var textHeight = CGFloat.zero
@@ -38,6 +39,11 @@ struct LaunchRowView: View {
         }
         .background(Color.theme.secondaryBackground)
         .cornerRadius(15, corners: [.allCorners])
+        .onTapGesture {
+            vm.currentLaunch = launch
+            vm.getLocation(location: launch.launchSite)
+            vm.getPad(pad: launch.launchSitePad)
+        }
     }
 }
 
@@ -94,7 +100,7 @@ extension LaunchRowView {
     }
     
     private var liftOffTimeText: some View {
-        Text(launch.liftOffTime.stringAsADate() + "  ")
+        Text(launch.liftOffTime.expandedTime(timezone: TimeZone.current) + "  ")
             .font(.headline)
             .foregroundColor(Color.theme.primaryText)
             .padding(.bottom, 5)
