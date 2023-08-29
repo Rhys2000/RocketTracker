@@ -42,21 +42,25 @@ extension String {
         return String(self[startingIndex..<endingIndex])
     }
     
-    func stringAsADate() -> String {
-        
-        let inputFormatter = DateFormatter()
-        inputFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        inputFormatter.locale = Locale(identifier: "en-US") //Change the locale to be user specific
-        
-        let outputFormatter = DateFormatter()
-        outputFormatter.dateFormat = "E, MMMM d, yyyy h:mm:ss a (zzz)"
-        outputFormatter.locale = Locale(identifier: "en-US") //Change the locale to be user specific
+    func expandedTime(timezone: TimeZone) -> String {
         
         let calendar = Calendar.current
         
-        let localComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second, .timeZone], from: inputFormatter.date(from: self)!)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        dateFormatter.timeZone = timezone
         
-        return outputFormatter.string(from: calendar.date(from: localComponents)!)
+        let localComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second, .timeZone], from: dateFormatter.date(from: self)!)
+        
+        dateFormatter.dateFormat = "E, MMMM d, yyyy h:mm:ss a (zzz)"
+        
+                                                      
+        
+//        let outputFormatter = DateFormatter()
+//        outputFormatter.dateFormat = "E, MMMM d, yyyy h:mm:ss a (zzz)"
+//        outputFormatter.locale = Locale(identifier: "en-US") //Change the locale to be user specific
+        
+        return dateFormatter.string(from: calendar.date(from: localComponents)!)
     }
     
 }
