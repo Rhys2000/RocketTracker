@@ -6601,7 +6601,7 @@
     },
     {
         "cosparCode" : "2023-050",
-        "missionName" : "Transport and Tracking Layer (Tranche 0A)",
+        "missionName" : "Transport and Tracking Layer Tranche 0A",
         "altMissionName" : "",
         "abbrMissionName" : "Tranche 0 Flight 1",
         "liftOffTime" : "2023-04-02T14:29:00+0000",
@@ -7741,7 +7741,7 @@
     },
     {
         "cosparCode" : "",
-        "missionName" : "Transport and Tracking Layer (Tranche 0B)",
+        "missionName" : "Transport and Tracking Layer Tranche 0B",
         "altMissionName" : "",
         "abbrMissionName" : "Tranche 0 Flight 2",
         "liftOffTime" : "2023-08-31T14:30:00+0000",
@@ -9841,7 +9841,7 @@
     },
     {
         "cosparCode" : "",
-        "missionName" : "Transport and Tracking Layer (Tranche 1A)",
+        "missionName" : "Transport and Tracking Layer Tranche 1A",
         "altMissionName" : "",
         "abbrMissionName" : "Tranche 1 Layer A",
         "liftOffTime" : "2024-09-01T00:00:00+0000",
@@ -10171,7 +10171,7 @@
     },
     {
         "cosparCode" : "",
-        "missionName" : "Transport and Tracking Layer (Tranche 1B)",
+        "missionName" : "Transport and Tracking Layer Tranche 1B",
         "altMissionName" : "",
         "abbrMissionName" : "Tranche 1 Layer B",
         "liftOffTime" : "2025-01-01T00:00:00+0000",
@@ -10201,7 +10201,7 @@
     },
     {
         "cosparCode" : "",
-        "missionName" : "Transport and Tracking Layer (Tranche 1C)",
+        "missionName" : "Transport and Tracking Layer Tranche 1C",
         "altMissionName" : "",
         "abbrMissionName" : "Tranche 1 Layer C",
         "liftOffTime" : "2025-01-01T00:00:00+0000",
@@ -10231,7 +10231,7 @@
     },
     {
         "cosparCode" : "",
-        "missionName" : "Transport and Tracking Layer (Tranche 1D)",
+        "missionName" : "Transport and Tracking Layer Tranche 1D",
         "altMissionName" : "",
         "abbrMissionName" : "Tranche 1 Layer D",
         "liftOffTime" : "2025-01-01T00:00:00+0000",
@@ -10261,7 +10261,7 @@
     },
     {
         "cosparCode" : "",
-        "missionName" : "Transport and Tracking Layer (Tranche 1E)",
+        "missionName" : "Transport and Tracking Layer Tranche 1E",
         "altMissionName" : "",
         "abbrMissionName" : "Tranche 1 Layer E",
         "liftOffTime" : "2025-01-01T00:00:00+0000",
@@ -10291,7 +10291,7 @@
     },
     {
         "cosparCode" : "",
-        "missionName" : "Transport and Tracking Layer (Tranche 1F)",
+        "missionName" : "Transport and Tracking Layer Tranche 1F",
         "altMissionName" : "",
         "abbrMissionName" : "Tranche 1 Layer F",
         "liftOffTime" : "2025-01-01T00:00:00+0000",
