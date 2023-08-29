@@ -9,7 +9,7 @@ import SwiftUI
 
 struct InfoView: View {
     
-    @Binding var showSheet: Bool
+    @EnvironmentObject private var vm: LaunchViewModel
     
     var body: some View {
         NavigationView {
@@ -26,20 +26,7 @@ struct InfoView: View {
             .toolbarBackground(Color.theme.primaryBackground)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        showSheet.toggle()
-                    } label: {
-                        Image(systemName: "xmark")
-                            .font(.subheadline)
-                            .bold()
-                            .padding(8)
-                            .foregroundColor(Color.theme.primaryText)
-                            .background(.ultraThinMaterial)
-                            .cornerRadius(10)
-                            .shadow(radius: 4)
-                            .padding(.trailing, 4)
-                            .padding(.top, 8)
-                    }
+                    CloseSheetButton(closeSheet: $vm.isInfoPresented)
                 }
             }
         }
@@ -48,7 +35,7 @@ struct InfoView: View {
 
 struct InfoView_Previews: PreviewProvider {
     static var previews: some View {
-        InfoView(showSheet: .constant(true))
+        InfoView().environmentObject(LaunchViewModel())
     }
 }
 
@@ -83,6 +70,7 @@ extension InfoView {
         Section(header: sectionHeader("Acknowledgements")) {
             sectionRow("NextSpaceFlight.com", "NextSpaceflight.com is a comprehensive online platform offering real-time updates and information on upcoming spaceflights and rocket launches worldwide.", "https://nextspaceflight.com")
             sectionRow("EverydayAstronaut.com", "EverydayAstronaut.com is an engaging and informative website created by Tim Dodd, featuring space exploration articles, educational resources, and entertaining content designed to make learning about space accessible to everyone.", "https://everydayastronaut.com")
+            sectionRow("SpaceX Flickr", "SpaceX frequently updates its Flickr account with stunning photographs of its rocket launches and space missions, offering a captivating glimpse into the realm of space exploration.", "https://www.flickr.com/photos/spacex/")
             sectionRow("Gunter's Space Page", "Gunter's Space Page is an extensive online resource providing detailed information and tracking data on space missions, launch vehicles, and satellites, curated by author and space enthusiast Gunter Krebs.", "https://space.skyrocket.de/index.html")
             sectionRow("planet4589.org", "Planet4589.org is a prominent online repository managed by Jonathan McDowell, offering a wealth of data and documentation related to space objects, including satellites, rockets, and orbital debris, serving as a valuable resource for space researchers and enthusiasts.", "http://planet4589.org")
             sectionRow("Encyclopedia Austronautica", "Astronautix is a comprehensive online resource providing detailed information and historical context about space exploration, space technology, and space-related events.", "http://www.astronautix.com")
@@ -101,23 +89,6 @@ extension InfoView {
             sectionRow("Frequently Asked Questions", "A concise compilation of frequently asked questions and their corresponding answers, designed to provide quick and helpful information to users about a particular topic or service.", "")
         }
         .listRowBackground(Color.theme.secondaryBackground)
-    }
-    
-    private var backButton: some View {
-        Button {
-            showSheet.toggle()
-        } label: {
-            Image(systemName: "xmark")
-                .font(.headline)
-                .padding(12)
-                .foregroundColor(.primary)
-                .background(.ultraThinMaterial)
-                .cornerRadius(10)
-                .shadow(radius: 4)
-                .padding()
-                .offset(x: -25, y: -50)
-        }
-
     }
     
     private func sectionHeader(_ header: String) -> some View {
