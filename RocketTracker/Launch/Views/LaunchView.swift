@@ -11,12 +11,6 @@ struct LaunchView: View {
     
     @EnvironmentObject private var vm: LaunchViewModel
     
-    @State private var showFutureLaunches: Bool = true
-    @State private var isInfoPresented: Bool = false
-    @State private var isSettingsPresented: Bool = false
-    @State private var isCalendarPresented: Bool = false
-    @State private var isFavoritesPresented: Bool = false
-    
     var body: some View {
         ZStack {
             Color.theme.primaryBackground
@@ -27,11 +21,14 @@ struct LaunchView: View {
                 
                 SearchBarView(searchText: .constant(""))
                 
-                ScopeBarView(overlayBool: $showFutureLaunches)
+                ScopeBarView(overlayBool: $vm.showFutureLaunches)
                 
-                showFutureLaunches ? LaunchListView(list: vm.futureLaunches) : LaunchListView(list: vm.pastLaunches)
+                vm.showFutureLaunches ? LaunchListView(list: vm.futureLaunches) : LaunchListView(list: vm.pastLaunches)
                 
                 Spacer(minLength: 0)
+            }
+            .sheet(item: $vm.currentLaunch, onDismiss: nil) { launch in
+                LaunchDetailView(launch: launch)
             }
             
         }
@@ -50,12 +47,13 @@ extension LaunchView {
     private var headerBar: some View {
         HStack {
             CircleButtonView(iconName: "info")
-                .sheet(isPresented: $isInfoPresented, content: {
-                    InfoView(showSheet: $isInfoPresented)
-                })
-                .onTapGesture {
-                    isInfoPresented.toggle()
+                .sheet(isPresented: $vm.isInfoPresented) {
+                    InfoView()
                 }
+                .onTapGesture {
+                    vm.isInfoPresented.toggle()
+                }
+            
             CircleButtonView(iconName: "calendar")
             Spacer()
             Text("Launches")
@@ -65,11 +63,11 @@ extension LaunchView {
             Spacer()
             CircleButtonView(iconName: "star.fill")
             CircleButtonView(iconName: "gear")
-                .sheet(isPresented: $isSettingsPresented, content: {
+                .sheet(isPresented: $vm.isSettingsPresented) {
                     SettingsView()
-                })
+                }
                 .onTapGesture {
-                    isSettingsPresented.toggle()
+                    vm.isSettingsPresented.toggle()
                 }
         }
         .padding(.horizontal)
