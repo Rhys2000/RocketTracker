@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 /*
  JSON Format
@@ -177,6 +178,52 @@ enum Outcome: String, Codable {
             return .future
         case .aborted, .explosion, .failure, .partialSuccess, .success, .transit, .unknown, .notAvailable:
             return .past
+        }
+    }
+    
+    func getBackgroundColor() -> Color {
+        switch self {
+        case .aborted:
+            return Color.yellow
+        case .explosion:
+            return Color.orange
+        case .failure:
+            return Color.red
+        case .inFlight:
+            return Color.purple
+        case .partialSuccess:
+            return Color.mint
+        case .success:
+            return Color.green
+        case .transit:
+            return Color.blue
+        case .unknown:
+            return Color.gray
+        case .upcoming:
+            return Color.cyan
+        case .notAvailable:
+            return Color.clear
+        }
+    }
+    
+    func getMissionOutcomeDescription() -> String {
+        switch self {
+        case .explosion:
+            return "Exploded before the launch began"
+        case .failure:
+            return "The vehicle experienced a failure in flight"
+        case .inFlight:
+            <#code#>
+        case .partialSuccess:
+            <#code#>
+        case .success:
+            <#code#>
+        case .transit:
+            <#code#>
+        case .upcoming:
+            <#code#>
+        default:
+            return ""
         }
     }
 }

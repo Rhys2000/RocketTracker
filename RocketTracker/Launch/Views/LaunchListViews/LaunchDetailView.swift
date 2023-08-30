@@ -17,7 +17,20 @@ struct LaunchDetailView: View {
             VStack(alignment: .leading) {
                 imageSection
                 
-                sectionHeader("Status")
+                HStack {
+                    sectionHeader("Status")
+                    Spacer()
+                    Text("  \(launch.missionOutcome.rawValue)  ")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.white)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .foregroundColor(launch.missionOutcome.getBackgroundColor())
+                        )
+                        .padding(.trailing, 8)
+                }
+                .padding(.bottom, 1)
                 roundedBackground(statusBody)
                 
                 sectionHeader("Details")
@@ -31,10 +44,10 @@ struct LaunchDetailView: View {
                 
                 sectionHeader("Milestones")
                 
-                sectionHeader("Rocket")
                 
             }
             VStack {
+                sectionHeader("Rocket")
                 sectionHeader("Location")
             }
             .frame(maxWidth: .infinity, alignment: .leading)
