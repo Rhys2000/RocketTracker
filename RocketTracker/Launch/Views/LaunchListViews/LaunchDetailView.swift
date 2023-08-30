@@ -135,7 +135,7 @@ extension LaunchDetailView {
             
             labelDataStack("Liftoff:", [launch.liftOffTime.expandedTime(timezone: TimeZone.current), launch.liftOffTime.expandedTime(timezone: TimeZone(abbreviation: "UTC")!)])
             
-            labelDataStack("Outcome:", [launch.missionOutcome.rawValue])
+            labelDataStack("Outcome:", [launch.missionOutcome.getMissionOutcomeDescription()])
         }
         .padding(.vertical, 8)
     }

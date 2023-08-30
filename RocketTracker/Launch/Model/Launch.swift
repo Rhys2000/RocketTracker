@@ -211,17 +211,15 @@ enum Outcome: String, Codable {
         case .explosion:
             return "Exploded before the launch began"
         case .failure:
-            return "The vehicle experienced a failure in flight"
+            return "The launch experienced a failure in flight"
         case .inFlight:
-            <#code#>
+            return "Launch is currently still in flight"
         case .partialSuccess:
-            <#code#>
+            return "Not all payloads were deployed successfully"
         case .success:
-            <#code#>
-        case .transit:
-            <#code#>
+            return "Launch was succesfully completed"
         case .upcoming:
-            <#code#>
+            return "Launch has not happened yet"
         default:
             return ""
         }
