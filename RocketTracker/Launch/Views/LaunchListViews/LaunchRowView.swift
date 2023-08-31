@@ -100,7 +100,7 @@ extension LaunchRowView {
     }
     
     private var liftOffTimeText: some View {
-        Text(launch.liftOffTime.expandedTime(timezone: TimeZone.current) + "  ")
+        Text(launch.liftOffTime.statusTime(timezone: TimeZone.current) + "  ")
             .font(.headline)
             .foregroundColor(Color.theme.primaryText)
             .padding(.bottom, 5)
