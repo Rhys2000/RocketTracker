@@ -42,7 +42,7 @@ import SwiftUI
  },
  */
 
-struct Launch: Identifiable, Codable {
+struct Launch: Identifiable, Equatable, Codable {
     let cosparCode: String
     let missionName: String
     let altMissionName: String
@@ -58,7 +58,7 @@ struct Launch: Identifiable, Codable {
     
     let crewedLaunch: String
     let staticFireGap: String
-    let boosterName: [String]
+    let boosterData: [String]
     let boosterRecoveryMethod: [RecoveryMethod]
     let boosterRecoveryLocation: [String]
     let boosterRecoveryDistance: [String]
@@ -70,7 +70,7 @@ struct Launch: Identifiable, Codable {
     let fairingRecoveryOutcome: [Outcome]
     let supportVessel: [String]
     let supportVesselRole: [[VesselRole]]
-    let payloadDescription: [String]
+    let description: [String]
     //Case 1 - Future: <Launch Provider> are targeting no earlier than <Day of the Week>, <Month> <Day> at <Time hh:mm> <Time Abbreviation x.m.> <TimeZone in LaunchSite LocalTime>, (<Time hh:mm> UTC), for <Launch Vehicle>'s launch to <OrbitDestination> from <LaunchSitePad Full Name> (LaunchSitePad) at <LaunchSite Full Name> in <LaunchSite State>. This mission is launching
     // SpaceX are targeting no earlier than Friday, August 25 at 3:50 a.m. EST, (7:50 UTC), for Falcon 9's launch to International Space Station from Launch Complex 39A (LC-39A) at Kennedy Space Center in Florida. This mission is launching
     
@@ -91,6 +91,39 @@ struct Launch: Identifiable, Codable {
     var staticFire: Bool {
         staticFireGap.isEmpty ? false : true
     }
+    
+    var boosterNames: [String] {
+        generateBoosterNames(data: boosterData)
+    }
+    
+    var numberOfFlights: [Int] {
+        generateNumberOfFlights(data: boosterData)
+    }
+    
+    //Equatable
+    static func == (lhs: Launch, rhs: Launch) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    func generateBoosterNames(data: [String]) -> [String] {
+        var returnedArray: [String] = []
+        for booster in data {
+            let components = booster.components(separatedBy: "-")
+            returnedArray.append(components[0])
+        }
+        return returnedArray
+    }
+    
+    func generateNumberOfFlights(data: [String]) -> [Int] {
+        var returnedArray: [Int] = []
+        for booster in data {
+            let components = booster.components(separatedBy: "-")
+            returnedArray.append(Int(components[1])!)
+        }
+        return returnedArray
+    }
+    
+    
 }
 
 enum OrbitDestination: String, Codable {
