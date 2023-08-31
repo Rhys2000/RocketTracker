@@ -76,7 +76,7 @@ class LaunchDataService {
             let missionBool = validateMissionOutcome(time: launch.time, missionOutcome: launch.missionOutcome)
             let crewBool = validateCrewedMission(crewedLaunch: launch.crewedLaunch)
             let staticBool = validateStaticFire(time: launch.time, staticFireGap: launch.staticFireGap)
-            let boosterNameBool = validateBoosterName(boosterNames: launch.boosterName)
+            let boosterNameBool = validateBoosterName(boosterNames: launch.boosterData)
             
             
             if(!cosparBool || !nameBool || !liftOffBool || !orbitBool || !launchSiteBool || !providerBool || !missionBool || !crewBool || !staticBool || !boosterNameBool) {
