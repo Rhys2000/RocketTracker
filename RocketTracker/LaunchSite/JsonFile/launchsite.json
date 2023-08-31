@@ -8,6 +8,7 @@
         "longitude" : -80.650833,
         "territory" : "Florida",
         "country" : "United States",
+        "abbrTimezone" : "EST",
         "launchPads" : [
             {
                 "shortName" : "LC-39A",
@@ -26,6 +27,7 @@
         "longitude" : -80.577778,
         "territory" : "Florida",
         "country" : "United States",
+        "abbrTimezone" : "EST",
         "launchPads" : [
             {
                  "shortName" : "SLC-40",
@@ -44,6 +46,7 @@
         "longitude" : -120.568056,
         "territory" : "California",
         "country" : "United States",
+        "abbrTimezone" : "PST",
         "launchPads" : [
             {
                  "shortName" : "SLC-4E",
