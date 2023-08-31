@@ -40,10 +40,15 @@ struct LaunchSite: Identifiable, Codable {
     let longitude: Double
     let territory: String
     let country: String
+    let abbrTimezone: String
     let launchPads: [LaunchPad]
     
     var id: String {
         shortName
+    }
+    
+    var timezone: TimeZone {
+        TimeZone(abbreviation: abbrTimezone)!
     }
 }
 
