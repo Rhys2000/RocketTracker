@@ -42,7 +42,7 @@ extension String {
         return String(self[startingIndex..<endingIndex])
     }
     
-    func expandedTime(timezone: TimeZone) -> String {
+    func statusTime(timezone: TimeZone) -> String {
         
         let calendar = Calendar.current
         
@@ -53,12 +53,6 @@ extension String {
         let localComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second, .timeZone], from: dateFormatter.date(from: self)!)
         
         dateFormatter.dateFormat = "E, MMMM d, yyyy h:mm:ss a (zzz)"
-        
-                                                      
-        
-//        let outputFormatter = DateFormatter()
-//        outputFormatter.dateFormat = "E, MMMM d, yyyy h:mm:ss a (zzz)"
-//        outputFormatter.locale = Locale(identifier: "en-US") //Change the locale to be user specific
         
         return dateFormatter.string(from: calendar.date(from: localComponents)!)
     }
