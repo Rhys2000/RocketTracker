@@ -30,13 +30,13 @@ struct LaunchDetailView: View {
                 roundedBackground(descriptionBody)
                 
                 sectionHeader("Recovery")
+                roundedBackground(recoveryBody)
                 
                 sectionHeader("Payloads")
-                
-                sectionHeader("Vehicles")
             }
             
             VStack(alignment: .leading) {
+                sectionHeader("Vehicles")
                 sectionHeader("Milestones")
                 sectionHeader("Rocket")
                 sectionHeader("Location")
@@ -74,53 +74,109 @@ struct LaunchDetailView: View {
         return returnedString
     }
     
-//    func compressDescription(count: Int) -> String {
-//
-//        var returnedString: String = ""
-//
-//        for index in 0..<count {
-//            let element = launch.description[index]
-//            if(element == launch.description.last) {
-//                returnedString += "\t\(element)"
-//            } else {
-//                returnedString += "\t\(element)\n\n"
-//            }
-//        }
-//
-//        return returnedString
-//    }
+    func addNumberEnding(_ number: Int) -> String {
+        // Handle special cases for 11, 12, and 13 which use "th" ending.
+        if number % 100 == 11 || number % 100 == 12 || number % 100 == 13 {
+            return "\(number)th"
+        }
+        
+        // For other numbers, determine the ending based on the last digit.
+        switch number % 10 {
+        case 1:
+            return "\(number)st"
+        case 2:
+            return "\(number)nd"
+        case 3:
+            return "\(number)rd"
+        default:
+            return "\(number)th"
+        }
+    }
     
-    //Currently unused but super useful function to understand
-//    func gatherPreviousMissions() -> String {
-//        let allLaunches = LaunchDataService().allLaunches
-//        var endIndex = allLaunches.firstIndex(where: { $0.missionName == launch.missionName })! + 1
-//
-//        var returnedString: String = ""
-//        var launchNames: [String] = []
-//
-//        for index in 0..<endIndex {
-//            let element = allLaunches[index]
-//            for booster in launch.boosterNames {
-//                if(element.boosterNames.contains(booster)) {
-//                    launchNames.append(element.abbrMissionName.isEmpty ? element.missionName : element.abbrMissionName)
-//                }
-//            }
-//        }
-//
-//        for missionName in launchNames {
-//            if(missionName == launchNames.last) {
-//                returnedString += "and \(missionName) mission"
-//            } else {
-//                returnedString += "\(missionName), "
-//            }
-//        }
-//
-//        if(launchNames.count > 1) {
-//            returnedString += "s"
-//        }
-//
-//        return returnedString + "."
-//    }
+    func boosterRecoveryData(_ index: Int) -> [String] {
+        
+        var stringArray: [String] = []
+        
+        var tempString = "\(addNumberEnding(launch.numberOfFlights[index])) launch for this booster"
+        stringArray.append(tempString)
+        
+        if(launch.numberOfFlights[index] != 1) {
+            let allLaunches = LaunchDataService().allLaunches
+            let currentIndex = allLaunches.firstIndex(where: { $0.missionName == launch.missionName })!
+            let previousLaunches = allLaunches[0..<currentIndex].reversed()
+            let previousIndex = previousLaunches.firstIndex(where: { $0.boosterNames.contains(launch.boosterNames[index])})!
+            let previousLaunchLiftOff = previousLaunches[previousIndex].liftOffTime
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+            let timeDifference = (dateFormatter.date(from: launch.liftOffTime)! - dateFormatter.date(from: previousLaunchLiftOff)!) / 86400
+            
+            let numberFormatter = NumberFormatter()
+            numberFormatter.usesSignificantDigits = true
+            numberFormatter.maximumSignificantDigits = 4
+            
+            
+            tempString = "\(numberFormatter.string(from: NSNumber(value: timeDifference))!) days since last launch"
+            stringArray.append(tempString)
+        }
+        
+        tempString = launch.boosterRecoveryMethod[index].recoveryMethodBooster(launch: launch, index: index)
+        stringArray.append(tempString)
+        
+        if(launch.numberOfFlights[index] > 1) {
+            stringArray.append(gatherPreviousMissions())
+        }
+        
+        return stringArray
+    }
+    
+    func fairingRecoveryData() -> [String] {
+        var stringArray: [String] = []
+        let time = launch.time.getBool()
+        
+        if(launch.numberOfFairingFlights[0] == "0" && launch.numberOfFairingFlights[1] == "0") {
+            stringArray.append("The number of flights for these fairing halves is unknown")
+        } else if(launch.numberOfFairingFlights[0] == launch.numberOfFairingFlights[1]) {
+            let tempString = time ? "was" : "will be"
+            stringArray.append("This \(tempString) the \(addNumberEnding(Int(launch.numberOfFairingFlights[0])!)) flight for both of these fairing halves")
+        } else {
+            let tempString = time ? " flew " : "is flying"
+            stringArray.append("One fairing half \(tempString) for the \(addNumberEnding(Int(launch.numberOfFairingFlights[0])!)) time and the other half \(tempString) for the \(addNumberEnding(Int(launch.numberOfFairingFlights[1])!))")
+        }
+        
+        return stringArray
+    }
+    
+    func gatherPreviousMissions() -> String {
+        let allLaunches = LaunchDataService().allLaunches
+        let endIndex = allLaunches.firstIndex(where: { $0.missionName == launch.missionName })! + 1
+
+        var returnedString: String = "Previously launched the "
+        var launchNames: [String] = []
+
+        for index in 0..<endIndex {
+            let element = allLaunches[index]
+            for booster in launch.boosterNames {
+                if(element.boosterNames.contains(booster)) {
+                    launchNames.append(element.abbrMissionName.isEmpty ? element.missionName : element.abbrMissionName)
+                }
+            }
+        }
+
+        for missionName in launchNames {
+            if(missionName == launchNames.last) {
+                returnedString += "and \(missionName) mission"
+            } else {
+                returnedString += "\(missionName), "
+            }
+        }
+
+        if(launchNames.count > 1) {
+            returnedString += "s"
+        }
+
+        return returnedString + "."
+    }
 }
 
 struct LaunchDetailView_Previews: PreviewProvider {
@@ -150,7 +206,16 @@ extension LaunchDetailView {
                 .foregroundColor(Color.theme.secondaryBackground)
         )
         .padding(.horizontal, 8)
-        .padding(.bottom, 8)
+    }
+    
+    private func roundedBackground(_ view: some View, _ color: Color) -> some View {
+        view
+        .padding(.horizontal, 8)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(
+            RoundedRectangle(cornerRadius: 10)
+                .foregroundColor(color)
+        )
     }
     
     private func labelDataStack(_ labelName: String, _ data: [String]) -> some View {
@@ -166,6 +231,46 @@ extension LaunchDetailView {
             }
             .frame(alignment: .leading)
         }
+    }
+    
+    private func boosterDataStack(_ labelName: String, _ data: [String], _ outcome: Outcome) -> some View {
+        VStack(alignment: .leading, spacing: 5) {
+            Text(labelName + ":")
+                .font(.headline)
+                .foregroundColor(Color.theme.secondaryText)
+            ForEach(data, id: \.self) { datam in
+                Text(datam)
+                    .foregroundColor(Color.purple)
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .overlay(outcome != .notAvailable ? recoveryLabel(outcome: outcome) : nil, alignment: .topTrailing)
+        .padding(.vertical, 8)
+    }
+    
+    private func fairingDataStack(_ data: [String]) -> some View {
+        VStack(alignment: .leading, spacing: 5) {
+            Text("Version: " + launch.fairingRecoveryDistance)
+                .font(.headline)
+                .foregroundColor(Color.theme.secondaryText)
+            ForEach(data, id: \.self) { datam in
+                Text(datam)
+                    .foregroundColor(Color.brown)
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.vertical, 8)
+    }
+    
+    private func recoveryLabel(outcome: Outcome) -> some View {
+        Text("  \(outcome.rawValue)  ")
+            .font(.headline)
+            .foregroundColor(Color.white)
+            .fontWeight(.bold)
+            .background(
+                RoundedRectangle(cornerRadius: 8)
+                    .foregroundColor(outcome.getBackgroundColor())
+            )
     }
     
     private var imageSection: some View {
@@ -267,6 +372,28 @@ extension LaunchDetailView {
             } else {
                 Text(compressDescription())
                     .foregroundColor(Color.gray)
+            }
+        }
+        .padding(.vertical, 8)
+    }
+    
+    private var recoveryBody: some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text("Booster Recovery")
+                .font(.title3)
+                .bold()
+                .foregroundColor(Color.white)
+            ForEach(launch.boosterNames, id: \.self) { booster in
+                let index = launch.boosterNames.firstIndex(of: booster)!
+                roundedBackground(boosterDataStack(booster, boosterRecoveryData(index), launch.boosterRecoveryOutcome[index]), Color.teal)
+            }
+            
+            if(launch.fairingRecoveryAttempted) {
+                Text("Fairing Recovery")
+                    .font(.title3)
+                    .bold()
+                    .foregroundColor(Color.white)
+                roundedBackground(fairingDataStack(fairingRecoveryData()), Color.yellow)
             }
         }
         .padding(.vertical, 8)
