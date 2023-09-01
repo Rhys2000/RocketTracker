@@ -144,6 +144,7 @@ struct LaunchDetailView: View {
             stringArray.append("One fairing half \(tempString) for the \(addNumberEnding(Int(launch.numberOfFairingFlights[0])!)) time and the other half \(tempString) for the \(addNumberEnding(Int(launch.numberOfFairingFlights[1])!))")
         }
         
+        //
         return stringArray
     }
     
