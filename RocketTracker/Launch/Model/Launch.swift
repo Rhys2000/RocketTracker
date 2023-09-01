@@ -71,13 +71,6 @@ struct Launch: Identifiable, Equatable, Codable {
     let supportVessel: [String]
     let supportVesselRole: [[VesselRole]]
     let description: [String]
-    //Case 1 - Future: <Launch Provider> are targeting no earlier than <Day of the Week>, <Month> <Day> at <Time hh:mm> <Time Abbreviation x.m.> <TimeZone in LaunchSite LocalTime>, (<Time hh:mm> UTC), for <Launch Vehicle>'s launch to <OrbitDestination> from <LaunchSitePad Full Name> (LaunchSitePad) at <LaunchSite Full Name> in <LaunchSite State>. This mission is launching
-    // SpaceX are targeting no earlier than Friday, August 25 at 3:50 a.m. EST, (7:50 UTC), for Falcon 9's launch to International Space Station from Launch Complex 39A (LC-39A) at Kennedy Space Center in Florida. This mission is launching
-    
-    //Case 2 - Past: On <Day of the Week>, <Month> <Day> at <Time hh:mm> <Time Abbreviation x.m.> <TimeZone in LaunchSite LocalTime>, (<Time hh:mm> UTC), <Launch Provider> <MissionOutcome> launched <LaunchVehicle> from <LaunchSitePad Full Name> (LaunchSitePad) at <LaunchSite Full Name> in <LaunchSite State>. This mission launched 
-    // On Saturday, June 13 at 5:21 a.m. EDT, (9:21 UTC), SpaceX successfully launched Falcon 9 from Space Launch Complex 40 (SLC-40) at Cape Canaveral Space Force Station in Florida. This mission launched
-    
-    //Case 3 - In Flight:
     let livestreamLink: String
     
     var id: String {
@@ -98,6 +91,20 @@ struct Launch: Identifiable, Equatable, Codable {
     
     var numberOfFlights: [Int] {
         generateNumberOfFlights(data: boosterData)
+    }
+    
+    var fairingRecoveryAttempted: Bool {
+        var returnedBool: Bool = false
+        
+        for element in fairingRecoveryMethod {
+            switch(element) {
+                case .netCatch, .splashdown:
+                    returnedBool = true
+                default:
+                    break
+            }
+        }
+        return returnedBool
     }
     
     //Equatable
@@ -122,7 +129,6 @@ struct Launch: Identifiable, Equatable, Codable {
         }
         return returnedArray
     }
-    
     
 }
 
@@ -191,6 +197,24 @@ enum RecoveryMethod: String, Codable {
     case returnToLaunchSite = "RTLS"
     case splashdown = "Splashdown"
     case notAvailable = "NA"
+    
+    func recoveryMethodBooster(launch: Launch, index: Int) -> String {
+        let time = launch.time.getBool()
+        switch self {
+        case .droneship:
+            return time ? "\(launch.boosterRecoveryOutcome[index].getDronehsipOutcome()) the booster \(launch.boosterRecoveryDistance[index]) km downrange aboard the droneship \(launch.boosterRecoveryLocation[index])" : "Will attempt to land \(launch.boosterRecoveryDistance[index]) km downrange aboard the droneship \(launch.boosterRecoveryLocation[index])"
+        case .expended:
+            return time ? "The booster was expended during this launch" : "The booster will be expended after this launch"
+        case .hoverslam:
+            return time ? "Performed a hoverslam \(launch.boosterRecoveryDistance[index]) km downrange in the \(launch.boosterRecoveryLocation[index]) to gather landing data" : "Will perform a hoverslam \(launch.boosterRecoveryDistance[index]) km downrange in the \(launch.boosterRecoveryLocation[index]) to gather landing data"
+        case .parachute:
+            return time ? "\(launch.boosterRecoveryOutcome[index].getDronehsipOutcome()) the booster softly \(launch.boosterRecoveryDistance[index]) km downrange in the \(launch.boosterRecoveryLocation[index]) using parachutes" : "Will attempt to land the booster softly \(launch.boosterRecoveryDistance[index]) km downrange in the \(launch.boosterRecoveryLocation[index]) using parachutes"
+        case .returnToLaunchSite:
+            return time ? "\(launch.boosterRecoveryOutcome[index].getReturnToLaunchSiteOutcome()) a Return to Launch Site maneuver and land \(launch.boosterRecoveryDistance[index]) km downrange at \(launch.boosterRecoveryLocation[index])" : "Will perform a Return to Launch Site maneuver and attempt to land \(launch.boosterRecoveryDistance[index]) km downrange at \(launch.boosterRecoveryLocation[index])"
+        default:
+            return ""
+        }
+    }
 }
 
 enum Outcome: String, Codable {
@@ -211,6 +235,28 @@ enum Outcome: String, Codable {
             return .future
         case .aborted, .explosion, .failure, .partialSuccess, .success, .transit, .unknown, .notAvailable:
             return .past
+        }
+    }
+    
+    func getDronehsipOutcome() -> String {
+        switch self {
+        case .success:
+            return "Successfully landed"
+        case .failure:
+            return "Failed to land"
+        default:
+            return ""
+        }
+    }
+    
+    func getReturnToLaunchSiteOutcome() -> String {
+        switch self {
+        case .success:
+            return "Successfully performed"
+        case .failure:
+            return "Failed to perform"
+        default:
+            return ""
         }
     }
     
