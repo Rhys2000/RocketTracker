@@ -18,7 +18,7 @@ struct LaunchDetailView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
-                imageSection
+                ImageTabView(height: 300, vehicleName: launch.vehicleName)
                 
                 statusHeader
                 roundedBackground(statusBody)
@@ -47,16 +47,6 @@ struct LaunchDetailView: View {
         .background(Color.theme.primaryBackground)
         .overlay(backButton, alignment: .topTrailing)
         .overlay(shortMissionName, alignment: .topLeading)
-    }
-    
-    func generateUniqueRandomNumbers() -> [String] {
-        var randomNumbers = Set<String>()
-        
-        while randomNumbers.count < 4 {
-            let randomNumber = Int.random(in: 1...20)
-            randomNumbers.insert("\(launch.vehicleName)-\(randomNumber)".replacingOccurrences(of: " ", with: ""))
-        }
-        return Array(randomNumbers)
     }
     
     func compressDescription() -> String {
@@ -273,21 +263,6 @@ extension LaunchDetailView {
                 RoundedRectangle(cornerRadius: 8)
                     .foregroundColor(outcome.getBackgroundColor())
             )
-    }
-    
-    private var imageSection: some View {
-        TabView {
-            let imageNames = generateUniqueRandomNumbers()
-            ForEach(imageNames, id: \.self) { imageName in
-                Image(imageName)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: UIScreen.main.bounds.width)
-                    .clipped()
-            }
-        }
-        .frame(height: 400)
-        .tabViewStyle(PageTabViewStyle())
     }
     
     private var statusHeader: some View {
