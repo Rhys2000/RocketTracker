@@ -15,11 +15,13 @@ extension Color {
 
 struct ColorTheme {
     
-    let accent = Color("AccentColor")
-    let primaryBackground = Color("PrimaryBackgroundColor")
-    let secondaryBackground = Color("SecondaryBackgroundColor")
-    let primaryText = Color("PrimaryTextColor")
-    let secondaryText = Color("SecondaryTextColor")
+    let accent = Color("Accent")
+    let primaryBackground = Color("PrimaryBackground")
+    let secondaryBackground = Color("SecondaryBackground")
+    let tertiaryBackground = Color("TertiaryBackground")
+    let primaryText = Color("PrimaryText")
+    let secondaryText = Color("SecondaryText")
+    let tertiaryText = Color("TertiaryText")
 }
 
 struct LaunchTheme {
