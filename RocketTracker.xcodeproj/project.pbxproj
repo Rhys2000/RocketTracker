@@ -80,6 +80,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		902731D12AA2CA120003FE8A /* LaunchDetailViews */ = {
+			isa = PBXGroup;
+			children = (
+				90AD7B742A9D413100357090 /* LaunchDetailView.swift */,
+			);
+			path = LaunchDetailViews;
+			sourceTree = "<group>";
+		};
 		90A5F0232A8A70D700ECE789 = {
 			isa = PBXGroup;
 			children = (
@@ -146,8 +154,9 @@
 			isa = PBXGroup;
 			children = (
 				90A5F0422A8A738400ECE789 /* LaunchView.swift */,
-				90AD7B732A9D410B00357090 /* LaunchListViews */,
 				90AD7B6D2A9CFD2F00357090 /* HeaderBarViews */,
+				90AD7B732A9D410B00357090 /* LaunchListViews */,
+				902731D12AA2CA120003FE8A /* LaunchDetailViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -202,7 +211,6 @@
 			children = (
 				90A5F0782A8C33CC00ECE789 /* LaunchRowView.swift */,
 				90DDC8182A996E0F004B532E /* LaunchListView.swift */,
-				90AD7B742A9D413100357090 /* LaunchDetailView.swift */,
 			);
 			path = LaunchListViews;
 			sourceTree = "<group>";
