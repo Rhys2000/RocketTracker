@@ -17,7 +17,7 @@ struct LaunchView: View {
                 .ignoresSafeArea()
             
             VStack {
-                headerBar//
+                headerBar
                 
                 SearchBarView(searchText: .constant(""))
                 
