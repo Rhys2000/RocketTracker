@@ -12,6 +12,28 @@ extension View {
     func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
         clipShape(RoundedCorner(radius: radius, corners: corners))
     }
+    
+    func roundedBackground(_ view: some View) -> some View {
+        view
+        .padding(.horizontal, 8)
+        //.frame(maxWidth: .infinity, alignment: .leading)
+        .background(
+            RoundedRectangle(cornerRadius: 10)
+                .foregroundColor(Color.theme.secondaryBackground)
+        )
+        .padding(.horizontal, 8)
+    }
+    
+    func roundedBackground(_ view: some View, _ color: Color) -> some View {
+        view
+        .padding(.horizontal, 8)
+        //.frame(maxWidth: .infinity, alignment: .leading)
+        .background(
+            RoundedRectangle(cornerRadius: 10)
+                .foregroundColor(color)
+        )
+        .padding(.horizontal, 8)
+    }
 }
 
 struct RoundedCorner: Shape {
