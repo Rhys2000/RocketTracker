@@ -10,7 +10,8 @@ import SwiftUI
 struct ImageTabView: View {
     
     let height: CGFloat
-    let vehicleName: String
+    let name: String
+    let numberOfImages: Int
     
     var body: some View {
         TabView {
@@ -31,9 +32,9 @@ struct ImageTabView: View {
         
         var randomNumbers = Set<String>()
         
-        while randomNumbers.count < 4 {
+        while randomNumbers.count < numberOfImages {
             let randomNumber = Int.random(in: 1...20)
-            randomNumbers.insert("\(vehicleName)-\(randomNumber)".replacingOccurrences(of: " ", with: ""))
+            randomNumbers.insert("\(name)-\(randomNumber)".replacingOccurrences(of: " ", with: ""))
         }
         return Array(randomNumbers)
     }
@@ -41,6 +42,6 @@ struct ImageTabView: View {
 
 struct ImageTabView_Previews: PreviewProvider {
     static var previews: some View {
-        ImageTabView(height: 300, vehicleName: "Falcon 9")
+        ImageTabView(height: 300, name: "Falcon 9", numberOfImages: 9)
     }
 }

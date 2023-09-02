@@ -18,7 +18,7 @@ struct LaunchDetailView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
-                ImageTabView(height: 300, vehicleName: launch.vehicleName)
+                ImageTabView(height: 300, name: launch.vehicleName, numberOfImages: 4)
                 
                 statusHeader
                 roundedBackground(statusBody)
