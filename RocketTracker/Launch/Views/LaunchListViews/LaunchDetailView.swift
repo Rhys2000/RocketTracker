@@ -395,7 +395,8 @@ extension LaunchDetailView {
                     .font(.title3)
                     .bold()
                     .foregroundColor(Color.white)
-                roundedBackground(fairingDataStack(fairingRecoveryData()), Color.yellow)
+                //Very funky. Need to change the way things are handled
+                //roundedBackground(fairingDataStack(fairingRecoveryData()), Color.yellow)
             }
         }
         .padding(.vertical, 8)
