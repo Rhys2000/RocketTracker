@@ -23,25 +23,26 @@ struct LaunchDetailView: View {
                 statusHeader
                 roundedBackground(statusBody)
                 
-                sectionHeader("Details")
-                roundedBackground(detailsBody)
                 
-                sectionHeader("Description")
-                roundedBackground(descriptionBody)
-                
-                sectionHeader("Recovery")
-                roundedBackground(recoveryBody)
-                
-                sectionHeader("Payloads")
+//                sectionHeader("Details")
+//                roundedBackground(detailsBody)
+//
+//                sectionHeader("Description")
+//                roundedBackground(descriptionBody)
+//
+//                sectionHeader("Recovery")
+//                roundedBackground(recoveryBody)
+//
+//                sectionHeader("Payloads")
             }
             
-            VStack(alignment: .leading) {
-                sectionHeader("Vehicles")
-                sectionHeader("Milestones")
-                sectionHeader("Rocket")
-                sectionHeader("Location")
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
+//            VStack(alignment: .leading) {
+//                sectionHeader("Vehicles")
+//                sectionHeader("Milestones")
+//                sectionHeader("Rocket")
+//                sectionHeader("Location")
+//            }
+//            .frame(maxWidth: .infinity, alignment: .leading)
         }
         .ignoresSafeArea()
         .background(Color.theme.primaryBackground)
@@ -133,9 +134,6 @@ struct LaunchDetailView: View {
             let tempString = time ? " flew " : "is flying"
             stringArray.append("One fairing half \(tempString) for the \(addNumberEnding(Int(launch.numberOfFairingFlights[0])!)) time and the other half \(tempString) for the \(addNumberEnding(Int(launch.numberOfFairingFlights[1])!))")
         }
-        
-        // There is not a lot to add
-        //HI
         return stringArray
     }
     
@@ -180,35 +178,6 @@ struct LaunchDetailView_Previews: PreviewProvider {
 
 extension LaunchDetailView {
     
-    private func sectionHeader(_ name: String) -> some View {
-        Text(name)
-            .font(.title)
-            .fontWeight(.bold)
-            .foregroundColor(Color.theme.primaryText)
-            .padding(.leading, 8)
-            .padding(.bottom, 1)
-    }
-    
-    private func roundedBackground(_ view: some View) -> some View {
-        view
-        .padding(.horizontal, 8)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(
-            RoundedRectangle(cornerRadius: 10)
-                .foregroundColor(Color.theme.secondaryBackground)
-        )
-        .padding(.horizontal, 8)
-    }
-    
-    private func roundedBackground(_ view: some View, _ color: Color) -> some View {
-        view
-        .padding(.horizontal, 8)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(
-            RoundedRectangle(cornerRadius: 10)
-                .foregroundColor(color)
-        )
-    }
     
     private func labelDataStack(_ labelName: String, _ data: [String]) -> some View {
         HStack(alignment: .top) {
@@ -225,20 +194,20 @@ extension LaunchDetailView {
         }
     }
     
-    private func boosterDataStack(_ labelName: String, _ data: [String], _ outcome: Outcome) -> some View {
-        VStack(alignment: .leading, spacing: 5) {
-            Text(labelName + ":")
-                .font(.headline)
-                .foregroundColor(Color.theme.secondaryText)
-            ForEach(data, id: \.self) { datam in
-                Text(datam)
-                    .foregroundColor(Color.purple)
-            }
-        }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .overlay(outcome != .notAvailable ? recoveryLabel(outcome: outcome) : nil, alignment: .topTrailing)
-        .padding(.vertical, 8)
-    }
+//    private func boosterDataStack(_ labelName: String, _ data: [String], _ outcome: Outcome) -> some View {
+//        VStack(alignment: .leading, spacing: 5) {
+//            Text(labelName + ":")
+//                .font(.headline)
+//                .foregroundColor(Color.theme.secondaryText)
+//            ForEach(data, id: \.self) { datam in
+//                Text(datam)
+//                    .foregroundColor(Color.purple)
+//            }
+//        }
+//        .frame(maxWidth: .infinity, alignment: .leading)
+//        .overlay(outcome != .notAvailable ? recoveryLabel(outcome: outcome) : nil, alignment: .topTrailing)
+//        .padding(.vertical, 8)
+//    }
     
     private func fairingDataStack(_ data: [String]) -> some View {
         VStack(alignment: .leading, spacing: 5) {
@@ -254,42 +223,24 @@ extension LaunchDetailView {
         .padding(.vertical, 8)
     }
     
-    private func recoveryLabel(outcome: Outcome) -> some View {
-        Text("  \(outcome.rawValue)  ")
-            .font(.headline)
-            .foregroundColor(Color.white)
-            .fontWeight(.bold)
-            .background(
-                RoundedRectangle(cornerRadius: 8)
-                    .foregroundColor(outcome.getBackgroundColor())
-            )
-    }
-    
     private var statusHeader: some View {
         HStack {
-            sectionHeader("Status")
+            DetailSectionHeaderView(sectionName: "Status")
             Spacer()
-            Text("  \(launch.missionOutcome.rawValue)  ")
-                .font(.title)
-                .fontWeight(.bold)
-                .foregroundColor(Color.white)
-                .background(
-                    RoundedRectangle(cornerRadius: 10)
-                        .foregroundColor(launch.missionOutcome.getBackgroundColor())
-                )
-                .padding(.trailing, 8)
+            RecoveryOutcomeLabelView(outcome: launch.missionOutcome, font: .title)
         }
         .padding(.bottom, 1)
     }
     
     private var statusBody: some View {
         
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(spacing: 10) {
             
             labelDataStack("Liftoff:", [launch.liftOffTime.statusTime(timezone: TimeZone.current), launch.liftOffTime.statusTime(timezone: TimeZone(abbreviation: "UTC")!)])
             
             labelDataStack("Outcome:", [launch.missionOutcome.getMissionOutcomeDescription()])
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.vertical, 8)
     }
     
@@ -354,28 +305,28 @@ extension LaunchDetailView {
         .padding(.vertical, 8)
     }
     
-    private var recoveryBody: some View {
-        VStack(alignment: .leading, spacing: 4) {
-            Text("Booster Recovery")
-                .font(.title3)
-                .bold()
-                .foregroundColor(Color.white)
-            ForEach(launch.boosterNames, id: \.self) { booster in
-                let index = launch.boosterNames.firstIndex(of: booster)!
-                roundedBackground(boosterDataStack(booster, boosterRecoveryData(index), launch.boosterRecoveryOutcome[index]), Color.teal)
-            }
-            
-            if(launch.fairingRecoveryAttempted) {
-                Text("Fairing Recovery")
-                    .font(.title3)
-                    .bold()
-                    .foregroundColor(Color.white)
-                //Very funky. Need to change the way things are handled
-                //roundedBackground(fairingDataStack(fairingRecoveryData()), Color.yellow)
-            }
-        }
-        .padding(.vertical, 8)
-    }
+//    private var recoveryBody: some View {
+//        VStack(alignment: .leading, spacing: 4) {
+//            Text("Booster Recovery")
+//                .font(.title3)
+//                .bold()
+//                .foregroundColor(Color.white)
+//            ForEach(launch.boosterNames, id: \.self) { booster in
+//                let index = launch.boosterNames.firstIndex(of: booster)!
+//                roundedBackground(boosterDataStack(booster, boosterRecoveryData(index), launch.boosterRecoveryOutcome[index]))
+//            }
+//
+//            if(launch.fairingRecoveryAttempted) {
+//                Text("Fairing Recovery")
+//                    .font(.title3)
+//                    .bold()
+//                    .foregroundColor(Color.white)
+//                //Very funky. Need to change the way things are handled
+//                //roundedBackground(fairingDataStack(fairingRecoveryData()), Color.yellow)
+//            }
+//        }
+//        .padding(.vertical, 8)
+//    }
     
     private var backButton: some View {
         Image(systemName: "xmark")
