@@ -21,7 +21,7 @@ struct LaunchDetailView: View {
                 ImageTabView(height: 300, name: launch.vehicleName, numberOfImages: 4)
                 
                 statusHeader
-                roundedBackground(statusBody)
+                roundedBackground(statusBody, Color.theme.secondaryBackground)
                 
                 
 //                sectionHeader("Details")
