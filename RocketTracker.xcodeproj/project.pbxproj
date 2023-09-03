@@ -33,6 +33,7 @@
 		90B396F82AA52091003D35CB /* OrbitDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B396F72AA52091003D35CB /* OrbitDestination.swift */; };
 		90B396FA2AA5213A003D35CB /* RecoveryMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B396F92AA5213A003D35CB /* RecoveryMethod.swift */; };
 		90B396FC2AA521A8003D35CB /* Outcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B396FB2AA521A8003D35CB /* Outcome.swift */; };
+		90B397002AA52853003D35CB /* LaunchPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B396FF2AA52853003D35CB /* LaunchPad.swift */; };
 		90DDC7CC2A8E5D16004B532E /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDC7CB2A8E5D16004B532E /* Color.swift */; };
 		90DDC7CE2A8E6035004B532E /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDC7CD2A8E6035004B532E /* String.swift */; };
 		90DDC7D12A8EB91A004B532E /* LaunchDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDC7D02A8EB91A004B532E /* LaunchDataService.swift */; };
@@ -75,6 +76,7 @@
 		90B396F72AA52091003D35CB /* OrbitDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitDestination.swift; sourceTree = "<group>"; };
 		90B396F92AA5213A003D35CB /* RecoveryMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryMethod.swift; sourceTree = "<group>"; };
 		90B396FB2AA521A8003D35CB /* Outcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Outcome.swift; sourceTree = "<group>"; };
+		90B396FF2AA52853003D35CB /* LaunchPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPad.swift; sourceTree = "<group>"; };
 		90DDC7CB2A8E5D16004B532E /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		90DDC7CD2A8E6035004B532E /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		90DDC7D02A8EB91A004B532E /* LaunchDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDataService.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				90A5F04D2A8A761100ECE789 /* LaunchSite.swift */,
+				90B396FF2AA52853003D35CB /* LaunchPad.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				90A5F0432A8A738400ECE789 /* LaunchView.swift in Sources */,
 				90DDC7CC2A8E5D16004B532E /* Color.swift in Sources */,
 				90A5F0792A8C33CD00ECE789 /* LaunchRowView.swift in Sources */,
+				90B397002AA52853003D35CB /* LaunchPad.swift in Sources */,
 				90DDC8152A9949C7004B532E /* SearchBarView.swift in Sources */,
 				90B396F42AA5185D003D35CB /* Booster.swift in Sources */,
 				90B396F82AA52091003D35CB /* OrbitDestination.swift in Sources */,
