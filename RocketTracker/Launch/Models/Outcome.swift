@@ -42,30 +42,30 @@ enum Outcome: String, Codable {
 //        }
 //    }
 //    
-//    func getBackgroundColor() -> Color {
-//        switch self {
-//        case .aborted:
-//            return Color.yellow
-//        case .explosion:
-//            return Color.orange
-//        case .failure:
-//            return Color.red
-//        case .inFlight:
-//            return Color.purple
-//        case .partialSuccess:
-//            return Color.mint
-//        case .success:
-//            return Color.green
-//        case .transit:
-//            return Color.blue
-//        case .unknown:
-//            return Color.gray
-//        case .upcoming:
-//            return Color.cyan
-//        case .notAvailable:
-//            return Color.clear
-//        }
-//    }
+    func getBackgroundColor() -> Color {
+        switch self {
+        case .aborted:
+            return Color.yellow
+        case .explosion:
+            return Color.orange
+        case .failure:
+            return Color.red
+        case .inFlight:
+            return Color.purple
+        case .partialSuccess:
+            return Color.mint
+        case .success:
+            return Color.green
+        case .transit:
+            return Color.blue
+        case .unknown:
+            return Color.gray
+        case .upcoming:
+            return Color.cyan
+        case .notAvailable:
+            return Color.clear
+        }
+    }
 //    
 //    func getLaunchOutcomeDescription() -> String {
 //        switch self {
