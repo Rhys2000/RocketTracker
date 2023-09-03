@@ -18,8 +18,8 @@ import SwiftUI
      "liftOffTime" : "YYYY-MM-DDThh:mm:ss+0000",
      "orbitalDestination" : "",
      "launchProvider" : "",
-     "launchSiteName" : "",
-     "launchSitePad" : "",
+     "launchSiteShortName" : "",
+     "launchPadAbbr" : "",
      "vehicleName" : "",
      "vehicleVariant" : "",
      "missionOutcome" : "",
@@ -50,8 +50,8 @@ struct Launch: Identifiable, Equatable, Codable {
     let liftOffTime: String
     let orbitalDestination: OrbitDestination
     let launchProvider: String
-    let launchSite: String
-    let launchSitePad: String
+    let launchSiteShortName: String
+    let launchPadAbbr: String
     let vehicleName: String
     let vehicleVariant: String
     let missionOutcome: Outcome
@@ -285,7 +285,7 @@ enum Outcome: String, Codable {
         }
     }
     
-    func getMissionOutcomeDescription() -> String {
+    func getLaunchOutcomeDescription() -> String {
         switch self {
         case .explosion:
             return "Exploded before the launch began"
