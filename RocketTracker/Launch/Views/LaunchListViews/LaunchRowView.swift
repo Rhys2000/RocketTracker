@@ -40,9 +40,9 @@ struct LaunchRowView: View {
         .background(Color.theme.secondaryBackground)
         .cornerRadius(15, corners: [.allCorners])
         .onTapGesture {
-            vm.currentLaunch = launch
-            vm.getLocation(location: launch.launchSite)
-            vm.getPad(pad: launch.launchSitePad)
+            vm.launch = launch
+            vm.getLaunchSite(location: launch.launchSiteShortName)
+            vm.getLaunchPad(pad: launch.launchPadAbbr)
         }
     }
 }
@@ -86,7 +86,7 @@ extension LaunchRowView {
     }
     
     private var locationText: some View {
-        Text(launch.launchSitePad + ", " + launch.launchSite)
+        Text(launch.launchPadAbbr + ", " + launch.launchSiteShortName)
             .frame(minHeight: 0)
             .font(.headline)
             .foregroundColor(Color.theme.secondaryText)
