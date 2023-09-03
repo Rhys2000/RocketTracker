@@ -27,7 +27,7 @@ struct LaunchView: View {
                 
                 Spacer(minLength: 0)
             }
-            .sheet(item: $vm.currentLaunch, onDismiss: nil) { launch in
+            .sheet(item: $vm.launch, onDismiss: nil) { launch in
                 LaunchDetailView(launch: launch)
             }
             
