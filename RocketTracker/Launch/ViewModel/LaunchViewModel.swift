@@ -32,12 +32,12 @@ class LaunchViewModel: ObservableObject {
     }
     
     func addSubscribers() {
-        dataService.$futureLaunches
+        dataService.$upcomingLaunches
             .sink { [weak self] (futureLaunches) in
                 self?.futureLaunches = futureLaunches
             }
             .store(in: &cancellables)
-        dataService.$pastLaunches
+        dataService.$previousLaunches
             .sink { [weak self] (pastLaunches) in
                 self?.pastLaunches = pastLaunches
             }

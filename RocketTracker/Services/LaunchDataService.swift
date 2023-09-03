@@ -11,8 +11,8 @@ import SwiftUI
 
 class LaunchDataService {
     
-    @Published var pastLaunches: [Launch] = []
-    @Published var futureLaunches: [Launch] = []
+    @Published var previousLaunches: [Launch] = []
+    @Published var upcomingLaunches: [Launch] = []
     
     var allLaunches: [Launch] = []
     private var showValidationSteps: Bool = false
@@ -52,9 +52,9 @@ class LaunchDataService {
     
     private func divideLaunchesByDate() {
         for launch in allLaunches {
-            (launch.time == .future) ? futureLaunches.append(launch) : pastLaunches.append(launch)
+            launch.pastLaunch ? upcomingLaunches.append(launch) : previousLaunches.append(launch)
         }
-        pastLaunches.reverse()
+        previousLaunches.reverse()
         
     }
     
