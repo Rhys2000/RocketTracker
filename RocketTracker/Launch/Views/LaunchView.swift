@@ -23,7 +23,7 @@ struct LaunchView: View {
                 
                 ScopeBarView(overlayBool: $vm.showFutureLaunches)
                 
-                vm.showFutureLaunches ? LaunchListView(list: vm.futureLaunches) : LaunchListView(list: vm.pastLaunches)
+                vm.showFutureLaunches ? LaunchListView(list: vm.upcomingLaunches) : LaunchListView(list: vm.previousLaunches)
                 
                 Spacer(minLength: 0)
             }
