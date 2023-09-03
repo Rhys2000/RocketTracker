@@ -55,7 +55,6 @@ struct Launch: Identifiable, Equatable, Codable {
     let vehicleName: String
     let vehicleVariant: String
     let missionOutcome: Outcome
-    
     let crewedLaunch: String
     let staticFireGap: String
     let boosterData: [String]
@@ -63,7 +62,7 @@ struct Launch: Identifiable, Equatable, Codable {
     let boosterRecoveryLocation: [String]
     let boosterRecoveryDistance: [String]
     let boosterRecoveryOutcome: [Outcome]
-    let numberOfFairingFlights: [String] //Look for values of 0
+    let numberOfFairingFlights: [String]
     let fairingRecoveryMethod: [RecoveryMethod]
     let fairingRecoveryLocation: [String]
     let fairingRecoveryDistance: String
@@ -73,62 +72,68 @@ struct Launch: Identifiable, Equatable, Codable {
     let description: [String]
     let livestreamLink: String
     
-    var id: String {
-        cosparCode + " + " + missionName
-    }
+    var id: String { missionName }
     
     var time: Time {
-        missionOutcome.determineTime()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        let launchDate = dateFormatter.date(from: liftOffTime)!
+        let currentTime = Date.now
+        return currentTime > launchDate ? .past : .future
     }
     
-    var staticFire: Bool {
-        staticFireGap.isEmpty ? false : true
-    }
-    
-    var boosterNames: [String] {
-        generateBoosterNames(data: boosterData)
-    }
-    
-    var numberOfFlights: [Int] {
-        generateNumberOfFlights(data: boosterData)
-    }
-    
-    var fairingRecoveryAttempted: Bool {
-        var returnedBool: Bool = false
-        
-        for element in fairingRecoveryMethod {
-            switch(element) {
-                case .netCatch, .splashdown:
-                    returnedBool = true
-                default:
-                    break
-            }
-        }
-        return returnedBool
-    }
-    
-    //Equatable
-    static func == (lhs: Launch, rhs: Launch) -> Bool {
-        lhs.id == rhs.id
-    }
-    
-    func generateBoosterNames(data: [String]) -> [String] {
-        var returnedArray: [String] = []
-        for booster in data {
-            let components = booster.components(separatedBy: "-")
-            returnedArray.append(components[0])
-        }
-        return returnedArray
-    }
-    
-    func generateNumberOfFlights(data: [String]) -> [Int] {
-        var returnedArray: [Int] = []
-        for booster in data {
-            let components = booster.components(separatedBy: "-")
-            returnedArray.append(Int(components[1])!)
-        }
-        return returnedArray
-    }
+//    var time: Time {
+//        missionOutcome.determineTime()
+//    }
+//
+//    var staticFire: Bool {
+//        staticFireGap.isEmpty ? false : true
+//    }
+//
+//    var boosterNames: [String] {
+//        generateBoosterNames(data: boosterData)
+//    }
+//
+//    var numberOfFlights: [Int] {
+//        generateNumberOfFlights(data: boosterData)
+//    }
+//
+//    var fairingRecoveryAttempted: Bool {
+//        var returnedBool: Bool = false
+//
+//        for element in fairingRecoveryMethod {
+//            switch(element) {
+//                case .netCatch, .splashdown:
+//                    returnedBool = true
+//                default:
+//                    break
+//            }
+//        }
+//        return returnedBool
+//    }
+//
+//    //Equatable
+//    static func == (lhs: Launch, rhs: Launch) -> Bool {
+//        lhs.id == rhs.id
+//    }
+//
+//    func generateBoosterNames(data: [String]) -> [String] {
+//        var returnedArray: [String] = []
+//        for booster in data {
+//            let components = booster.components(separatedBy: "-")
+//            returnedArray.append(components[0])
+//        }
+//        return returnedArray
+//    }
+//
+//    func generateNumberOfFlights(data: [String]) -> [Int] {
+//        var returnedArray: [Int] = []
+//        for booster in data {
+//            let components = booster.components(separatedBy: "-")
+//            returnedArray.append(Int(components[1])!)
+//        }
+//        return returnedArray
+//    }
     
 }
 
@@ -198,23 +203,23 @@ enum RecoveryMethod: String, Codable {
     case splashdown = "Splashdown"
     case notAvailable = "NA"
     
-    func recoveryMethodBooster(launch: Launch, index: Int) -> String {
-        let time = launch.time.getBool()
-        switch self {
-        case .droneship:
-            return time ? "\(launch.boosterRecoveryOutcome[index].getDronehsipOutcome()) the booster \(launch.boosterRecoveryDistance[index]) km downrange aboard the droneship \(launch.boosterRecoveryLocation[index])" : "Will attempt to land \(launch.boosterRecoveryDistance[index]) km downrange aboard the droneship \(launch.boosterRecoveryLocation[index])"
-        case .expended:
-            return time ? "The booster was expended during this launch" : "The booster will be expended after this launch"
-        case .hoverslam:
-            return time ? "Performed a hoverslam \(launch.boosterRecoveryDistance[index]) km downrange in the \(launch.boosterRecoveryLocation[index]) to gather landing data" : "Will perform a hoverslam \(launch.boosterRecoveryDistance[index]) km downrange in the \(launch.boosterRecoveryLocation[index]) to gather landing data"
-        case .parachute:
-            return time ? "\(launch.boosterRecoveryOutcome[index].getDronehsipOutcome()) the booster softly \(launch.boosterRecoveryDistance[index]) km downrange in the \(launch.boosterRecoveryLocation[index]) using parachutes" : "Will attempt to land the booster softly \(launch.boosterRecoveryDistance[index]) km downrange in the \(launch.boosterRecoveryLocation[index]) using parachutes"
-        case .returnToLaunchSite:
-            return time ? "\(launch.boosterRecoveryOutcome[index].getReturnToLaunchSiteOutcome()) a Return to Launch Site maneuver and land \(launch.boosterRecoveryDistance[index]) km downrange at \(launch.boosterRecoveryLocation[index])" : "Will perform a Return to Launch Site maneuver and attempt to land \(launch.boosterRecoveryDistance[index]) km downrange at \(launch.boosterRecoveryLocation[index])"
-        default:
-            return ""
-        }
-    }
+//    func recoveryMethodBooster(launch: Launch, index: Int) -> String {
+//        let time = launch.time.getBool()
+//        switch self {
+//        case .droneship:
+//            return time ? "\(launch.boosterRecoveryOutcome[index].getDronehsipOutcome()) the booster \(launch.boosterRecoveryDistance[index]) km downrange aboard the droneship \(launch.boosterRecoveryLocation[index])" : "Will attempt to land \(launch.boosterRecoveryDistance[index]) km downrange aboard the droneship \(launch.boosterRecoveryLocation[index])"
+//        case .expended:
+//            return time ? "The booster was expended during this launch" : "The booster will be expended after this launch"
+//        case .hoverslam:
+//            return time ? "Performed a hoverslam \(launch.boosterRecoveryDistance[index]) km downrange in the \(launch.boosterRecoveryLocation[index]) to gather landing data" : "Will perform a hoverslam \(launch.boosterRecoveryDistance[index]) km downrange in the \(launch.boosterRecoveryLocation[index]) to gather landing data"
+//        case .parachute:
+//            return time ? "\(launch.boosterRecoveryOutcome[index].getDronehsipOutcome()) the booster softly \(launch.boosterRecoveryDistance[index]) km downrange in the \(launch.boosterRecoveryLocation[index]) using parachutes" : "Will attempt to land the booster softly \(launch.boosterRecoveryDistance[index]) km downrange in the \(launch.boosterRecoveryLocation[index]) using parachutes"
+//        case .returnToLaunchSite:
+//            return time ? "\(launch.boosterRecoveryOutcome[index].getReturnToLaunchSiteOutcome()) a Return to Launch Site maneuver and land \(launch.boosterRecoveryDistance[index]) km downrange at \(launch.boosterRecoveryLocation[index])" : "Will perform a Return to Launch Site maneuver and attempt to land \(launch.boosterRecoveryDistance[index]) km downrange at \(launch.boosterRecoveryLocation[index])"
+//        default:
+//            return ""
+//        }
+//    }
 }
 
 enum Outcome: String, Codable {
