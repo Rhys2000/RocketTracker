@@ -26,6 +26,6 @@ struct LaunchListView: View {
 
 struct LaunchListView_Previews: PreviewProvider {
     static var previews: some View {
-        LaunchListView(list: dev.launchVM.futureLaunches)
+        LaunchListView(list: dev.launchVM.upcomingLaunches)
     }
 }
