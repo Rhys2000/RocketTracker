@@ -66,23 +66,23 @@ enum Outcome: String, Codable {
             return Color.clear
         }
     }
-//    
-//    func getLaunchOutcomeDescription() -> String {
-//        switch self {
-//        case .explosion:
-//            return "Exploded before the launch began"
-//        case .failure:
-//            return "The launch experienced a failure in flight"
-//        case .inFlight:
-//            return "Launch is currently still in flight"
-//        case .partialSuccess:
-//            return "Not all payloads were deployed successfully"
-//        case .success:
-//            return "Launch was succesfully completed"
-//        case .upcoming:
-//            return "Launch has not happened yet"
-//        default:
-//            return ""
-//        }
-//    }
+    
+    func getLaunchOutcomeDescription() -> String {
+        switch self {
+        case .explosion:
+            return "Exploded before the launch began"
+        case .failure:
+            return "The launch experienced a failure in flight"
+        case .inFlight:
+            return "Launch is currently still in flight"
+        case .partialSuccess:
+            return "Not all payloads were deployed successfully"
+        case .success:
+            return "Launch was succesfully completed"
+        case .upcoming:
+            return "Launch has not happened yet"
+        default:
+            return ""
+        }
+    }
 }
