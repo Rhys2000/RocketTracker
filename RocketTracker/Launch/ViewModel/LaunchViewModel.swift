@@ -10,8 +10,8 @@ import Combine
 
 class LaunchViewModel: ObservableObject {
     
-    @Published var pastLaunches: [Launch] = []
-    @Published var futureLaunches: [Launch] = []
+    @Published var previousLaunches: [Launch] = []
+    @Published var upcomingLaunches: [Launch] = []
     
     @Published var launch: Launch? = nil
     @Published var launchSite: LaunchSite? = nil
@@ -33,13 +33,13 @@ class LaunchViewModel: ObservableObject {
     
     func addSubscribers() {
         dataService.$upcomingLaunches
-            .sink { [weak self] (futureLaunches) in
-                self?.futureLaunches = futureLaunches
+            .sink { [weak self] (upcomingLaunches) in
+                self?.upcomingLaunches = upcomingLaunches
             }
             .store(in: &cancellables)
         dataService.$previousLaunches
-            .sink { [weak self] (pastLaunches) in
-                self?.pastLaunches = pastLaunches
+            .sink { [weak self] (previousLaunches) in
+                self?.previousLaunches = previousLaunches
             }
             .store(in: &cancellables)
     }
