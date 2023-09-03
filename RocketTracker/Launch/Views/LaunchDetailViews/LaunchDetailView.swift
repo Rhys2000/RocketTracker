@@ -311,6 +311,7 @@ extension LaunchDetailView {
 //        .padding(.vertical, 8)
 //    }
     
+    //Not Fixed
     private var backButton: some View {
         Image(systemName: "xmark")
             .font(.headline)
@@ -321,9 +322,9 @@ extension LaunchDetailView {
             .shadow(radius: 4)
             .padding()
             .onTapGesture {
-                vm.currentLaunch = nil
-                vm.currentLocation = nil
-                vm.currentPad = nil
+                vm.launch = nil
+                vm.launchSite = nil
+                vm.launchPad = nil
             }
     }
     
