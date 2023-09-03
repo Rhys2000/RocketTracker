@@ -27,6 +27,12 @@
 		90B396EA2AA2CD61003D35CB /* ImageTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B396E92AA2CD61003D35CB /* ImageTabView.swift */; };
 		90B396EE2AA2DF71003D35CB /* RecoveryOutcomeLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B396ED2AA2DF71003D35CB /* RecoveryOutcomeLabelView.swift */; };
 		90B396F02AA4004E003D35CB /* LabelDataStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B396EF2AA4004E003D35CB /* LabelDataStackView.swift */; };
+		90B396F22AA51856003D35CB /* Fairing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B396F12AA51856003D35CB /* Fairing.swift */; };
+		90B396F42AA5185D003D35CB /* Booster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B396F32AA5185D003D35CB /* Booster.swift */; };
+		90B396F62AA5186A003D35CB /* Capsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B396F52AA5186A003D35CB /* Capsule.swift */; };
+		90B396F82AA52091003D35CB /* OrbitDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B396F72AA52091003D35CB /* OrbitDestination.swift */; };
+		90B396FA2AA5213A003D35CB /* RecoveryMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B396F92AA5213A003D35CB /* RecoveryMethod.swift */; };
+		90B396FC2AA521A8003D35CB /* Outcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B396FB2AA521A8003D35CB /* Outcome.swift */; };
 		90DDC7CC2A8E5D16004B532E /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDC7CB2A8E5D16004B532E /* Color.swift */; };
 		90DDC7CE2A8E6035004B532E /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDC7CD2A8E6035004B532E /* String.swift */; };
 		90DDC7D12A8EB91A004B532E /* LaunchDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDC7D02A8EB91A004B532E /* LaunchDataService.swift */; };
@@ -63,6 +69,12 @@
 		90B396E92AA2CD61003D35CB /* ImageTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTabView.swift; sourceTree = "<group>"; };
 		90B396ED2AA2DF71003D35CB /* RecoveryOutcomeLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryOutcomeLabelView.swift; sourceTree = "<group>"; };
 		90B396EF2AA4004E003D35CB /* LabelDataStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelDataStackView.swift; sourceTree = "<group>"; };
+		90B396F12AA51856003D35CB /* Fairing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fairing.swift; sourceTree = "<group>"; };
+		90B396F32AA5185D003D35CB /* Booster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Booster.swift; sourceTree = "<group>"; };
+		90B396F52AA5186A003D35CB /* Capsule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capsule.swift; sourceTree = "<group>"; };
+		90B396F72AA52091003D35CB /* OrbitDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitDestination.swift; sourceTree = "<group>"; };
+		90B396F92AA5213A003D35CB /* RecoveryMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryMethod.swift; sourceTree = "<group>"; };
+		90B396FB2AA521A8003D35CB /* Outcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Outcome.swift; sourceTree = "<group>"; };
 		90DDC7CB2A8E5D16004B532E /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		90DDC7CD2A8E6035004B532E /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		90DDC7D02A8EB91A004B532E /* LaunchDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDataService.swift; sourceTree = "<group>"; };
@@ -181,6 +193,12 @@
 			isa = PBXGroup;
 			children = (
 				90A5F0472A8A75D700ECE789 /* Launch.swift */,
+				90B396F12AA51856003D35CB /* Fairing.swift */,
+				90B396F32AA5185D003D35CB /* Booster.swift */,
+				90B396F52AA5186A003D35CB /* Capsule.swift */,
+				90B396F72AA52091003D35CB /* OrbitDestination.swift */,
+				90B396F92AA5213A003D35CB /* RecoveryMethod.swift */,
+				90B396FB2AA521A8003D35CB /* Outcome.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -367,6 +385,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90B396F22AA51856003D35CB /* Fairing.swift in Sources */,
 				90DDC8292A9CE162004B532E /* SettingsView.swift in Sources */,
 				90DDC7F42A992C35004B532E /* LaunchSiteDataService.swift in Sources */,
 				90B396F02AA4004E003D35CB /* LabelDataStackView.swift in Sources */,
@@ -380,10 +399,13 @@
 				90DDC8132A994833004B532E /* CircleButtonView.swift in Sources */,
 				90B396EE2AA2DF71003D35CB /* RecoveryOutcomeLabelView.swift in Sources */,
 				90A5F04E2A8A761100ECE789 /* LaunchSite.swift in Sources */,
+				90B396FC2AA521A8003D35CB /* Outcome.swift in Sources */,
 				90A5F0432A8A738400ECE789 /* LaunchView.swift in Sources */,
 				90DDC7CC2A8E5D16004B532E /* Color.swift in Sources */,
 				90A5F0792A8C33CD00ECE789 /* LaunchRowView.swift in Sources */,
 				90DDC8152A9949C7004B532E /* SearchBarView.swift in Sources */,
+				90B396F42AA5185D003D35CB /* Booster.swift in Sources */,
+				90B396F82AA52091003D35CB /* OrbitDestination.swift in Sources */,
 				90AD7B6F2A9CFD6300357090 /* InfoView.swift in Sources */,
 				90AD7B752A9D413100357090 /* LaunchDetailView.swift in Sources */,
 				90A5F0482A8A75D700ECE789 /* Launch.swift in Sources */,
@@ -391,6 +413,8 @@
 				90AD7B772A9D417500357090 /* CloseSheetButton.swift in Sources */,
 				90A5F0302A8A70D700ECE789 /* RocketTrackerApp.swift in Sources */,
 				9090E5DD2AA1372800242D60 /* Date.swift in Sources */,
+				90B396FA2AA5213A003D35CB /* RecoveryMethod.swift in Sources */,
+				90B396F62AA5186A003D35CB /* Capsule.swift in Sources */,
 				908D91D72A8D3B5D00AF36CA /* View.swift in Sources */,
 				90DDC7D12A8EB91A004B532E /* LaunchDataService.swift in Sources */,
 				90A5F04A2A8A75E500ECE789 /* LaunchViewModel.swift in Sources */,
