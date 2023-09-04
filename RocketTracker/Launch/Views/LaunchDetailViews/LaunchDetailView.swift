@@ -11,7 +11,7 @@ struct LaunchDetailView: View {
     
     @EnvironmentObject private var vm: LaunchViewModel
     
-    @State private var showDescription: Bool = false
+//    @State private var showDescription: Bool = false
     
     let launch: Launch
     
@@ -233,14 +233,18 @@ extension LaunchDetailView {
             if(!launch.altMissionName.isEmpty) {
                 LabelDataStackView(labelName: "Alternative Name:", data: [launch.altMissionName])
             }
+            
+            LabelDataStackView(labelName: "Location:", data: [vm.launchSite?.getLaunchSiteAndLaunchPadFullName(vm.launchPad!) ?? ""])
+            
+            LabelDataStackView(labelName: "Provider:", data: [launch.launchProvider])
+            
+            LabelDataStackView(labelName: "Vehicle:", data: ["\(launch.vehicleName) \(launch.vehicleVariant)"])
+            
+            if(!launch.boosterData[0].isEmpty) {
+                let labelName = (launch.boosterData.count > 1 ? "Boosters:" : "Booster:")
+                LabelDataStackView(labelName: labelName, data: launch.boosterData)
+            }
 
-//            let locationAndPad = "\(vm.currentPad?.fullName ?? "") (\(launch.launchSitePad)), \(vm.currentLocation?.fullName ?? "") (\(vm.currentLocation?.abbrName ?? "")), \(vm.currentLocation?.territory ?? ""), \(vm.currentLocation?.country ?? "")"
-//            labelDataStack("Location:", [locationAndPad])
-//
-//            labelDataStack("Provider:", [launch.launchProvider])
-//
-//            labelDataStack("Vehicle:", ["\(launch.vehicleName) \(launch.vehicleVariant)"])
-//
 //            if(!launch.boosterData[0].isEmpty) { labelDataStack("Booster:", launch.boosterData) }
 //
 //            labelDataStack("Customer:", ["Future Data Goes Here"])
