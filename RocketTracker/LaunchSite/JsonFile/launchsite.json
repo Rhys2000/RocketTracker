@@ -1,7 +1,7 @@
 [
     {
         "shortName" : "Kennedy",
-        "fullName" : "NASA Kennedy Space Center",
+        "fullName" : "Kennedy Space Center",
         "abbrName" : "KSC",
         "previousNames" : ["NASA Launch Operations Center"],
         "latitude" : 28.524167,
