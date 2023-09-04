@@ -15,4 +15,8 @@ struct LaunchPad: Identifiable, Codable {
     let longitude: Double
     
     var id: String { shortName }
+    
+    func getLaunchPadFullName() -> String {
+        return "\(fullName) (\(shortName))"
+    }
 }
