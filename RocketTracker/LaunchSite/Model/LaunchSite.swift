@@ -48,4 +48,12 @@ struct LaunchSite: Identifiable, Codable {
     var timezone: TimeZone {
         TimeZone(abbreviation: abbrTimezone)!
     }
+    
+    func getLaunchSiteAndLaunchPadFullName(_ launchPad: LaunchPad) -> String {
+        var tempString = ""
+        
+        tempString += launchPad.getLaunchPadFullName()
+        tempString += ", \(fullName) (\(abbrName)), \(territory), \(country)"
+        return tempString
+    }
 }
