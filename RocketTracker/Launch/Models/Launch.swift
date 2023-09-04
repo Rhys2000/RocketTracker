@@ -100,7 +100,6 @@ struct Launch: Identifiable, Equatable, Codable {
             booster.outcome = self.boosterRecoveryOutcome[index]
             
             boosterArray.append(booster)
-            
         }
         return boosterArray
     }
@@ -122,7 +121,7 @@ struct Launch: Identifiable, Equatable, Codable {
         
         return fairingArray
     }
-//
+
 //    var staticFire: Bool {
 //        staticFireGap.isEmpty ? false : true
 //    }
