@@ -238,23 +238,23 @@ extension LaunchDetailView {
             
             LabelDataStackView(labelName: "Provider:", data: [launch.launchProvider])
             
-            LabelDataStackView(labelName: "Vehicle:", data: ["\(launch.vehicleName) \(launch.vehicleVariant)"])
+            let launchVehicle = "\(launch.vehicleName) \(launch.vehicleVariant)"
+            LabelDataStackView(labelName: "Vehicle:", data: [launchVehicle])
             
             if(!launch.boosterData[0].isEmpty) {
                 let labelName = (launch.boosterData.count > 1 ? "Boosters:" : "Booster:")
                 LabelDataStackView(labelName: labelName, data: launch.boosterData)
             }
 
-//            if(!launch.boosterData[0].isEmpty) { labelDataStack("Booster:", launch.boosterData) }
-//
 //            labelDataStack("Customer:", ["Future Data Goes Here"])
-//
-//            labelDataStack("Orbit:", ["\(launch.orbitalDestination.getFullName()) (\(launch.orbitalDestination.rawValue))"])
-//
-//            if(launch.staticFire) {
-//                let day: String = (Int(launch.staticFireGap)! > 1) ? "days" : "day"
-//                labelDataStack("Static Fire:", ["Performed \(launch.staticFireGap) \(day) before launch"])
-//            }
+            
+            let orbitData = "\(launch.orbitalDestination.getFullName()) (\(launch.orbitalDestination.rawValue))"
+            LabelDataStackView(labelName: "Orbit:", data: [orbitData])
+            
+            if(!launch.staticFireGap.isEmpty) {
+                let day = (Int(launch.staticFireGap)! > 1) ? "days" : "day"
+                LabelDataStackView(labelName: "Static Fire:", data: ["Performed \(launch.staticFireGap) \(day) before launch"])
+            }
 //
 //            if(Bool(launch.crewedLaunch)!) { labelDataStack("Crewed:", ["Carrying 4 astronauts into space"]) }
 //
