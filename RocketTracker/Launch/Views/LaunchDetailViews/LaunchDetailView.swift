@@ -48,9 +48,6 @@ struct LaunchDetailView: View {
     
 //    func boosterRecoveryData(_ index: Int) -> [String] {
 //
-//        tempString = launch.boosterRecoveryMethod[index].recoveryMethodBooster(launch: launch, index: index)
-//        stringArray.append(tempString)
-//
 //        if(launch.numberOfFlights[index] > 1) {
 //            stringArray.append(gatherPreviousMissions())
 //        }
