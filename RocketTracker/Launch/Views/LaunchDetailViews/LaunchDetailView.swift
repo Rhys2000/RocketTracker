@@ -46,15 +46,6 @@ struct LaunchDetailView: View {
         .overlay(shortMissionName, alignment: .topLeading)
     }
     
-//    func boosterRecoveryData(_ index: Int) -> [String] {
-//
-//        if(launch.numberOfFlights[index] > 1) {
-//            stringArray.append(gatherPreviousMissions())
-//        }
-//
-//        return stringArray
-//    }
-    
 //    func fairingRecoveryData() -> [String] {
 //        var stringArray: [String] = []
 //        let time = launch.time.getBool()
@@ -71,36 +62,7 @@ struct LaunchDetailView: View {
 //        return stringArray
 //    }
     
-//    func gatherPreviousMissions() -> String {
-//        let allLaunches = LaunchDataService().allLaunches
-//        let endIndex = allLaunches.firstIndex(where: { $0.missionName == launch.missionName })! + 1
-//
-//        var returnedString: String = "Previously launched the "
-//        var launchNames: [String] = []
-//
-//        for index in 0..<endIndex {
-//            let element = allLaunches[index]
-//            for booster in launch.boosterNames {
-//                if(element.boosterNames.contains(booster)) {
-//                    launchNames.append(element.abbrMissionName.isEmpty ? element.missionName : element.abbrMissionName)
-//                }
-//            }
-//        }
-//
-//        for missionName in launchNames {
-//            if(missionName == launchNames.last) {
-//                returnedString += "and \(missionName) mission"
-//            } else {
-//                returnedString += "\(missionName), "
-//            }
-//        }
-//
-//        if(launchNames.count > 1) {
-//            returnedString += "s"
-//        }
-//
-//        return returnedString + "."
-//    }
+
 }
 
 struct LaunchDetailView_Previews: PreviewProvider {
