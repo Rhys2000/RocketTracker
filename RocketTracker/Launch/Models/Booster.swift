@@ -44,9 +44,9 @@ struct Booster: Identifiable {
         switch method {
         case .expended:
             if(pastLaunch) {
-                return "The booster was expended at the end of this mission"
+                return "The booster was expended at the end of this launch"
             } else {
-                return "The booster will be expended at the end of this mission"
+                return "The booster will be expended at the end of this launch"
             }
         case .droneship:
             if(pastLaunch) {
