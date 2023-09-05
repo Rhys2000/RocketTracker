@@ -122,15 +122,23 @@ struct Launch: Identifiable, Equatable, Codable {
         return fairingArray
     }
 
-//    var staticFire: Bool {
-//        staticFireGap.isEmpty ? false : true
-//    }
 //
 //    //Equatable
 //    static func == (lhs: Launch, rhs: Launch) -> Bool {
 //        lhs.id == rhs.id
 //    }
 //
-    
+    func formatDescription(stringArray: [String]) -> String {
+        var returnedString = ""
+        
+        for string in stringArray {
+            if(string == stringArray.last) {
+                returnedString += "\t\(string)"
+            } else {
+                returnedString += "\t\(string)\n\n"
+            }
+        }
+        return returnedString
+    }
 }
 
