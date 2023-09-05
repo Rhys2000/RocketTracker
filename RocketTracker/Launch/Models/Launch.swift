@@ -92,7 +92,7 @@ struct Launch: Identifiable, Equatable, Codable {
             
             let components = self.boosterData[index].components(separatedBy: "-")
             booster.name = components[0]
-            booster.flightNumber = components[1]
+            booster.flightNumber = Int(components[1])!
             
             booster.method = self.boosterRecoveryMethod[index]
             booster.location = self.boosterRecoveryLocation[index]
