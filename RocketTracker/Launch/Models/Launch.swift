@@ -81,7 +81,7 @@ struct Launch: Identifiable, Equatable, Codable {
         let currentTime = Date.now
         
         //If currentTime is prior to launch date, set pastLaunch to false, otherwise set to true
-        return currentTime < launchDate ? true : false
+        return currentTime > launchDate ? true : false
     }
     
     var boosters: [Booster] {
