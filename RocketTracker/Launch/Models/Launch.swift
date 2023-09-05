@@ -110,7 +110,7 @@ struct Launch: Identifiable, Equatable, Codable {
         for index in 0..<self.numberOfFairingFlights.count {
             var fairing: Fairing = Fairing()
             
-            fairing.flightNumber = self.numberOfFairingFlights[index]
+            fairing.flightNumber = Int(self.numberOfFairingFlights[index])!
             fairing.method = self.fairingRecoveryMethod[index]
             fairing.location = self.fairingRecoveryLocation[index]
             fairing.distance = self.fairingRecoveryDistance
