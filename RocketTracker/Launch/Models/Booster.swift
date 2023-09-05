@@ -49,19 +49,60 @@ struct Booster: Identifiable {
                 return "The booster will be expended at the end of this mission"
             }
         case .droneship:
-            let tense = pastLaunch ? "\(formatRecoveryOutcome())" : "will attempt to land"
-            return "The booster \(tense) aboard the droneship \(location) positioned \(distance) km downrange"
+            if(pastLaunch) {
+                return "The booster \(formatRecoveryOutcome()) aboard the droneship \(location) positioned \(distance) km downrange"
+            } else {
+                return "The booster will attempt to land aboard the droneship \(location) positioned \(distance) km downrange"
+            }
         case .returnToLaunchSite:
-            let tense = pastLaunch ? "\(formatRecoveryOutcome())" : "will attempt to"
-            return "The booster \(tense) return to launch site"
+            if(pastLaunch) {
+                return "The booster \(formatRecoveryOutcome()) to the launch site \(distance) km downrange at \(location)"
+            } else {
+                return "The booster will attempt to return to launch site and land \(distance) km downrange at \(location)"
+            }
         case .hoverslam:
-            let tense = pastLaunch ? "" : ""
-            return "The booster"
+            if(pastLaunch) {
+                return "The booster \(formatRecoveryOutcome()) \(distance) km downrange in the \(location) ocean"
+            } else {
+                return "The booster will attempt to softly splash down \(distance) km downrange in the \(location) ocean"
+            }
         default:
             print("I have an error \(name)-\(flightNumber)")
             return "Error"
         }
     }
     
-    
+    func formatRecoveryOutcome() -> String {
+        if(method == .droneship) {
+            switch outcome {
+            case .success:
+                return "successfully landed"
+            case .failure:
+                return "failed to land"
+            default:
+                print("I have an error \(name)-\(flightNumber)")
+                return "Error"
+            }
+        } else if(method == .returnToLaunchSite) {
+            switch outcome {
+            case .success:
+                return "successfully returned"
+            case .failure:
+                return "failed to return"
+            default:
+                print("I have an error \(name)-\(flightNumber)")
+                return "Error"
+            }
+        } else {
+            switch outcome {
+            case .success:
+                return "successfully splashed down"
+            case .failure:
+                return "failed to splash down"
+            default:
+                print("I have an error \(name)-\(flightNumber)")
+                return "Error"
+            }
+        }
+    }
 }
