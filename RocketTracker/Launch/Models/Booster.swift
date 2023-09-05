@@ -40,7 +40,28 @@ struct Booster: Identifiable {
         return "\(numberFormatter.string(from: NSNumber(value: timeDifference))!) days since last launch"
     }
     
-    
+    func formatRecoveryMethod(pastLaunch: Bool) -> String {
+        switch method {
+        case .expended:
+            if(pastLaunch) {
+                return "The booster was expended at the end of this mission"
+            } else {
+                return "The booster will be expended at the end of this mission"
+            }
+        case .droneship:
+            let tense = pastLaunch ? "\(formatRecoveryOutcome())" : "will attempt to land"
+            return "The booster \(tense) aboard the droneship \(location) positioned \(distance) km downrange"
+        case .returnToLaunchSite:
+            let tense = pastLaunch ? "\(formatRecoveryOutcome())" : "will attempt to"
+            return "The booster \(tense) return to launch site"
+        case .hoverslam:
+            let tense = pastLaunch ? "" : ""
+            return "The booster"
+        default:
+            print("I have an error \(name)-\(flightNumber)")
+            return "Error"
+        }
+    }
     
     
 }
