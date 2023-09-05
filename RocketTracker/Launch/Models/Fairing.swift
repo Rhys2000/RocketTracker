@@ -8,7 +8,7 @@
 import Foundation
 
 struct Fairing {
-    var flightNumber: String = ""
+    var flightNumber: Int = 0
     var method: RecoveryMethod = .notAvailable
     var location: String = ""
     var distance: String = ""
