@@ -105,4 +105,32 @@ struct Booster: Identifiable {
             }
         }
     }
+    
+    func getPreviousMissions(launch: Launch) -> String {
+        let fullLaunchList = LaunchDataService().allLaunches
+        let currentLaunchIndex = fullLaunchList.firstIndex(where: { $0.missionName == launch.missionName })!
+        
+        var returnedString = "Previously launched the "
+        var previousMissions: [String] = []
+        
+        for launch in fullLaunchList[0..<currentLaunchIndex] {
+            if(launch.boosterData.contains(where: { $0.contains(name)})) {
+                previousMissions.append(launch.abbrMissionName.isEmpty ? launch.missionName : launch.abbrMissionName)
+            }
+        }
+        
+        for mission in previousMissions {
+            if(mission == previousMissions.last) {
+                returnedString += "and \(mission) mission"
+            } else {
+                returnedString += "\(mission), "
+            }
+        }
+        
+        if(previousMissions.count > 1) {
+            returnedString += "s"
+        }
+        
+        return returnedString
+    }
 }
