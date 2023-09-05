@@ -199,10 +199,26 @@ extension LaunchDetailView {
         .frame(maxWidth: .infinity, alignment: .leading)
     }
     
+    private var fairingRecoveryData: some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text("Fairing Recovery")
+                .font(.title3)
+                .bold()
+                .foregroundColor(Color.theme.secondaryText)
+            roundedBackground(FairingDataView(fairings: launch.fairings, pastLaunch: launch.pastLaunch), Color.theme.tertiaryBackground)
+                .padding(.horizontal, -8)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+    
     private var recoveryBody: some View {
         VStack {
             if(!launch.boosterData[0].isEmpty) {
                 boosterRecoveryData
+            }
+            
+            if(!launch.numberOfFairingFlights[0].isEmpty) {
+                fairingRecoveryData
             }
         }
         .padding(.vertical, 8)
