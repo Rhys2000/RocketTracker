@@ -20,7 +20,7 @@ struct LabelDataStackView: View {
             VStack(alignment: .leading) {
                 ForEach(data, id: \.self) { datam in
                     Text(datam)
-                        .foregroundColor(Color.gray)
+                        .foregroundColor(Color.theme.tertiaryText)
                 }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
