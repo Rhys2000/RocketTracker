@@ -10,8 +10,7 @@ import SwiftUI
 struct LaunchDetailView: View {
     
     @EnvironmentObject private var vm: LaunchViewModel
-    
-//    @State private var showDescription: Bool = false
+    @State private var showFullDescription: Bool = false
     
     let launch: Launch
     
@@ -24,16 +23,14 @@ struct LaunchDetailView: View {
                 roundedBackground(statusBody, Color.theme.secondaryBackground)
                 
                 DetailSectionHeaderView(sectionName: "Details")
-                roundedBackground(detailsBody, Color.theme.secondaryBackground)
-//
-//                sectionHeader("Description")
-//                roundedBackground(descriptionBody)
+                roundedBackground(fullDetailBody, Color.theme.secondaryBackground)
 //
 //                sectionHeader("Recovery")
 //                roundedBackground(recoveryBody)
 //
 //                sectionHeader("Payloads")
             }
+            .padding(.bottom, 32)
             
 //            VStack(alignment: .leading) {
 //                sectionHeader("Vehicles")
@@ -48,21 +45,6 @@ struct LaunchDetailView: View {
         .overlay(backButton, alignment: .topTrailing)
         .overlay(shortMissionName, alignment: .topLeading)
     }
-    
-//    func compressDescription() -> String {
-//
-//        var returnedString: String = ""
-//
-//        for item in launch.description {
-//            if(item == launch.description.last) {
-//                returnedString += "\t\(item)"
-//            } else {
-//                returnedString += "\t\(item)\n\n"
-//            }
-//        }
-//
-//        return returnedString
-//    }
     
 //    func addNumberEnding(_ number: Int) -> String {
 //        // Handle special cases for 11, 12, and 13 which use "th" ending.
@@ -226,7 +208,8 @@ extension LaunchDetailView {
         .padding(.vertical, 8)
     }
     
-    private var detailsBody: some View {
+    //Revised
+    private var detailsDataBody: some View {
         VStack(alignment: .leading, spacing: 10) {
             LabelDataStackView(labelName: "Name:", data: ["\(launch.missionName) (\(launch.abbrMissionName))"])
             
@@ -255,11 +238,48 @@ extension LaunchDetailView {
                 let day = (Int(launch.staticFireGap)! > 1) ? "days" : "day"
                 LabelDataStackView(labelName: "Static Fire:", data: ["Performed \(launch.staticFireGap) \(day) before launch"])
             }
-//
-//            if(Bool(launch.crewedLaunch)!) { labelDataStack("Crewed:", ["Carrying 4 astronauts into space"]) }
-//
+            
+            if(Bool(launch.crewedLaunch)!) {
+                LabelDataStackView(labelName: "Crewed:", data: ["Yes, carrying 4 astronauts into space"])
+            }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.bottom, 2)
+    }
+    
+    //Revised
+    private var descriptionDataBody: some View {
+        VStack(spacing: 8) {
+            Text("Description:").font(.headline).foregroundColor(Color.theme.secondaryText) + Text(showFullDescription ? launch.formatDescription(stringArray: launch.description) : launch.formatDescription(stringArray: [launch.description[0]]) ).foregroundColor(Color.theme.tertiaryText)
+            if(launch.description.count > 1) {
+                HStack(spacing: 4) {
+                    Text(showFullDescription ? "  Show Less  " : "  Show More  ")
+                        .font(.title2)
+                        .bold()
+                        .foregroundColor(Color.theme.primaryText)
+                        .background(Color.theme.tertiaryBackground)
+                        .cornerRadius(10, corners: .allCorners)
+                    Image(systemName: "chevron.down")
+                        .rotationEffect(Angle(degrees: showFullDescription ? 180 : 0))
+                        .foregroundColor(Color.theme.primaryText)
+                }
+                .onTapGesture {
+                    withAnimation(.easeInOut(duration: 0.5)) {
+                        showFullDescription.toggle()
+                    }
+                }
+            }
+        }
+    }
+    
+    //Revised
+    private var fullDetailBody: some View {
+        VStack {
+            detailsDataBody
+            if(!launch.description[0].isEmpty) {
+                descriptionDataBody
+            }
+        }
         .padding(.vertical, 8)
     }
 
@@ -315,7 +335,7 @@ extension LaunchDetailView {
 //        .padding(.vertical, 8)
 //    }
     
-    //Not Fixed
+    //Revised
     private var backButton: some View {
         Image(systemName: "xmark")
             .font(.headline)
@@ -332,6 +352,7 @@ extension LaunchDetailView {
             }
     }
     
+    //Not Fixed
     private var shortMissionName: some View {
         Text(launch.abbrMissionName.isEmpty ? launch.missionName : launch.abbrMissionName)
             .font(.headline)
