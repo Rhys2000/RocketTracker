@@ -13,7 +13,7 @@ struct BoosterDataView: View {
     let parentLaunch: Launch
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 4) {
             Text(booster.name + ":")
                 .font(.headline)
                 .foregroundColor(Color.theme.secondaryText)
