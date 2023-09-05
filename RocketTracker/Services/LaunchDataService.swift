@@ -52,7 +52,7 @@ class LaunchDataService {
     
     private func divideLaunchesByDate() {
         for launch in allLaunches {
-            launch.pastLaunch ? upcomingLaunches.append(launch) : previousLaunches.append(launch)
+            launch.pastLaunch ? previousLaunches.append(launch) : upcomingLaunches.append(launch)
         }
         previousLaunches.reverse()
         
