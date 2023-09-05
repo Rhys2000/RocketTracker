@@ -17,11 +17,22 @@ struct BoosterDataView: View {
             Text(booster.name + ":")
                 .font(.headline)
                 .foregroundColor(Color.theme.secondaryText)
-            Text(booster.getNumberOfFlights())
+            
+            Text("- " + booster.getNumberOfFlights())
+                .foregroundColor(Color.theme.tertiaryText)
+            
             if(booster.flightNumber > 1) {
-                Text(booster.getDaysSinceLastFlight(launch: parentLaunch))
+                Text("- " + booster.getDaysSinceLastFlight(launch: parentLaunch))
+                    .foregroundColor(Color.theme.tertiaryText)
             }
-            Text(booster.formatRecoveryMethod(pastLaunch: parentLaunch.pastLaunch))
+            
+            Text("- " + booster.formatRecoveryMethod(pastLaunch: parentLaunch.pastLaunch))
+                .foregroundColor(Color.theme.tertiaryText)
+            
+            if(booster.flightNumber > 1) {
+                Text("- " + booster.getPreviousMissions(launch: parentLaunch))
+                    .foregroundColor(Color.theme.tertiaryText)
+            }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.vertical, 4)
