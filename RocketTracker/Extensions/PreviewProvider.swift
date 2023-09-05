@@ -26,4 +26,6 @@ class DevelopmentPreview {
     let launchSiteVM = LaunchSiteViewModel()
     
     let launchSite = LaunchSite(shortName: "Starbase", fullName: "SpaceX South Texas Launch Site", abbrName: "SBTX", previousNames: ["Boca Chica"], latitude: 13.45, longitude: 3.23, territory: "Virginia", country: "United Kingdom", abbrTimezone: "GMT", launchPads: [LaunchPad(shortName: "SP-A", fullName: "Suborbital Pad - A", latitude: 5.67, longitude: -2.93)])
+    
+    let booster = Booster(name: "B1059", method: .droneship, location: "LZ-1", distance: "14.75", outcome: .success, flightNumber: 5)
 }
