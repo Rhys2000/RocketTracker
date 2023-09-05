@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		902404422AA7E1A200D702C3 /* FairingDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902404412AA7E1A200D702C3 /* FairingDataView.swift */; };
 		908D91D72A8D3B5D00AF36CA /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908D91D62A8D3B5D00AF36CA /* View.swift */; };
 		9090E5DD2AA1372800242D60 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9090E5DC2AA1372800242D60 /* Date.swift */; };
 		90A5F0302A8A70D700ECE789 /* RocketTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5F02F2A8A70D700ECE789 /* RocketTrackerApp.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		902404412AA7E1A200D702C3 /* FairingDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairingDataView.swift; sourceTree = "<group>"; };
 		908D91D62A8D3B5D00AF36CA /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		9090E5DC2AA1372800242D60 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		90A5F02C2A8A70D700ECE789 /* RocketTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RocketTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +113,7 @@
 			children = (
 				90AD7B742A9D413100357090 /* LaunchDetailView.swift */,
 				90B397032AA791EA003D35CB /* BoosterDataView.swift */,
+				902404412AA7E1A200D702C3 /* FairingDataView.swift */,
 			);
 			path = LaunchDetailViews;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				90DDC7CE2A8E6035004B532E /* String.swift in Sources */,
 				90A5F0502A8A762400ECE789 /* LaunchSiteViewModel.swift in Sources */,
 				90A5F0402A8A734E00ECE789 /* LaunchSiteView.swift in Sources */,
+				902404422AA7E1A200D702C3 /* FairingDataView.swift in Sources */,
 				90B396E82AA2CCF7003D35CB /* DetailSectionHeaderView.swift in Sources */,
 				90DDC7D82A8EE2AB004B532E /* Vessel.swift in Sources */,
 				90DDC8192A996E0F004B532E /* LaunchListView.swift in Sources */,
