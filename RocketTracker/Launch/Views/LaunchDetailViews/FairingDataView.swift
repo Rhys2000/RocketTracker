@@ -52,25 +52,36 @@ extension FairingDataView {
         if(pastLaunch) {
             if(firstFairing.method == .netCatch && secondFairing.method == .netCatch && firstFairing.outcome == .success && secondFairing.outcome == .success) {
                 return "Both fairing halves were successfully caught and recovered \(firstFairing.distance) km downrange by \(firstFairing.location) and \(secondFairing.location)"
-            } else if(firstFairing.method == .netCatch && secondFairing.method == .netCatch && firstFairing.outcome == .success && secondFairing.outcome == .partialSuccess) {
-                return "One fairing half was successfully caught and recovered by \(firstFairing.location) and the other half was attempted to be caught by \(secondFairing.location) but was recovered from the water \(firstFairing.distance) km downrange"
-            } else if(firstFairing.method == .netCatch && secondFairing.method == .netCatch && firstFairing.outcome == .failure && secondFairing.outcome == .failure) {
+            }
+            else if(firstFairing.method == .netCatch && secondFairing.method == .netCatch && firstFairing.outcome == .success && secondFairing.outcome == .partialSuccess) {
+                return "One fairing half was successfully caught and recovered by \(firstFairing.location) and the other half attempted to be caught by \(secondFairing.location) but was recovered from the water \(firstFairing.distance) km downrange"
+            }
+            else if(firstFairing.method == .netCatch && secondFairing.method == .netCatch && firstFairing.outcome == .partialSuccess && secondFairing.outcome == .partialSuccess) {
+                return "Both fairing halves were attempted to be caught by \(firstFairing.location) and \(secondFairing.location) but were recovered from the water \(firstFairing.distance) km downrange instead"
+            }
+            else if(firstFairing.method == .netCatch && secondFairing.method == .netCatch && firstFairing.outcome == .failure && secondFairing.outcome == .failure) {
                 return "Both fairing halves failed to be caught by \(firstFairing.location) and \(secondFairing.location) \(firstFairing.distance) km downrange and could not be recovered"
-            } else if(firstFairing.method == .netCatch && secondFairing.method == .splashdown && firstFairing.outcome == .partialSuccess && secondFairing.outcome == .success) {
+            }
+            else if(firstFairing.method == .netCatch && secondFairing.method == .splashdown && firstFairing.outcome == .partialSuccess && secondFairing.outcome == .success) {
                 return "One fairing half was attempted to be caught by \(firstFairing.location) but was recovered from the water and the other half successfully splashed down and was recovered \(secondFairing.distance) km downrange in the \(secondFairing.location) ocean"
             }
             
             else if(firstFairing.method == .splashdown && secondFairing.method == .splashdown && firstFairing.outcome == .success && secondFairing.outcome == .success) {
                 return "Both fairing halves successfully splashed down and were recovered \(firstFairing.distance) km downrange in the \(firstFairing.location) ocean"
-            } else if(firstFairing.method == .splashdown && secondFairing.method == .splashdown && firstFairing.outcome == .success && secondFairing.outcome == .partialSuccess) {
+            }
+            else if(firstFairing.method == .splashdown && secondFairing.method == .splashdown && firstFairing.outcome == .success && secondFairing.outcome == .partialSuccess) {
                 return "Both fairing halves successfully splashed down and were recovered \(firstFairing.distance) km downrange in the \(firstFairing.location) ocean but one half will most likely not be reused"
-            } else if(firstFairing.method == .splashdown && secondFairing.method == .splashdown && firstFairing.outcome == .success && secondFairing.outcome == .failure) {
+            }
+            else if(firstFairing.method == .splashdown && secondFairing.method == .splashdown && firstFairing.outcome == .success && secondFairing.outcome == .failure) {
                 return "One fairing half successfully splashed down and was recovered \(firstFairing.distance) km downrange in the \(firstFairing.location) and the other half failed to be recovered"
-            } else if(firstFairing.method == .splashdown && secondFairing.method == .splashdown && firstFairing.outcome == .success && secondFairing.outcome == .unknown) {
+            }
+            else if(firstFairing.method == .splashdown && secondFairing.method == .splashdown && firstFairing.outcome == .success && secondFairing.outcome == .unknown) {
                 return "One fairing half successfully splashed down and was recovered \(firstFairing.distance) km downrange in the \(firstFairing.location) ocean and the other half was expected to splashdown but its outcome is unknown"
-            } else if(firstFairing.method == .splashdown && secondFairing.method == .splashdown && firstFairing.outcome == .partialSuccess && secondFairing.outcome == .partialSuccess) {
+            }
+            else if(firstFairing.method == .splashdown && secondFairing.method == .splashdown && firstFairing.outcome == .partialSuccess && secondFairing.outcome == .partialSuccess) {
                 return "Both fairing halves splashed down and were recovered \(firstFairing.distance) km downrange in the \(firstFairing.location) ocean, but most likely will not be reused"
-            } else if(firstFairing.method == .splashdown && secondFairing.method == .splashdown && firstFairing.outcome == .aborted && secondFairing.outcome == .aborted) {
+            }
+            else if(firstFairing.method == .splashdown && secondFairing.method == .splashdown && firstFairing.outcome == .aborted && secondFairing.outcome == .aborted) {
                 return "Both fairing halves splashed down \(firstFairing.distance) km downrange in the \(firstFairing.location) but the recovery attempt was aborted"
             }
             
