@@ -2241,7 +2241,7 @@
         "boosterRecoveryOutcome" : ["Success"],
         "numberOfFairingFlights" : ["1", "1"],
         "fairingRecoveryMethod" : ["Expended", "Expended"],
-        "fairingRecoveryLocation" : [""],
+        "fairingRecoveryLocation" : ["", ""],
         "fairingRecoveryDistance" : "",
         "fairingRecoveryOutcome" : ["NA", "NA"],
         "supportVessel" : [""],
