@@ -52,10 +52,12 @@ extension FairingDataView {
         if(pastLaunch) {
             if(firstFairing.method == .netCatch && secondFairing.method == .netCatch && firstFairing.outcome == .success && secondFairing.outcome == .success) {
                 return "Both fairing halves were successfully caught and recovered \(firstFairing.distance) km downrange by \(firstFairing.location) and \(secondFairing.location)"
+            } else if(firstFairing.method == .netCatch && secondFairing.method == .netCatch && firstFairing.outcome == .success && secondFairing.outcome == .partialSuccess) {
+                return "One fairing half was successfully caught and recovered by \(firstFairing.location) and the other half was attempted to be caught by \(secondFairing.location) but was recovered from the water \(firstFairing.distance) km downrange"
             } else if(firstFairing.method == .netCatch && secondFairing.method == .netCatch && firstFairing.outcome == .failure && secondFairing.outcome == .failure) {
                 return "Both fairing halves failed to be caught by \(firstFairing.location) and \(secondFairing.location) \(firstFairing.distance) km downrange and could not be recovered"
             } else if(firstFairing.method == .netCatch && secondFairing.method == .splashdown && firstFairing.outcome == .partialSuccess && secondFairing.outcome == .success) {
-                return "One fairing half attempted to be caught by \(firstFairing.location) but was recovered from the water and the other half successfully splashed down and was recovered \(secondFairing.distance) km downrange in the \(secondFairing.location) ocean"
+                return "One fairing half was attempted to be caught by \(firstFairing.location) but was recovered from the water and the other half successfully splashed down and was recovered \(secondFairing.distance) km downrange in the \(secondFairing.location) ocean"
             }
             
             else if(firstFairing.method == .splashdown && secondFairing.method == .splashdown && firstFairing.outcome == .success && secondFairing.outcome == .success) {
