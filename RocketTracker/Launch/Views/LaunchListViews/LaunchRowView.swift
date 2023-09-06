@@ -38,7 +38,7 @@ struct LaunchRowView: View {
             Spacer()
         }
         .background(Color.theme.secondaryBackground)
-        .cornerRadius(15, corners: [.allCorners])
+        .cornerRadius(15, corners: .allCorners)
         .onTapGesture {
             vm.launch = launch
             vm.getLaunchSite(location: launch.launchSiteShortName)
