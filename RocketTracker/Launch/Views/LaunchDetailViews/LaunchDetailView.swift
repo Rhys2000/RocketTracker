@@ -29,6 +29,7 @@ struct LaunchDetailView: View {
                 roundedBackground(recoveryBody, Color.theme.secondaryBackground)
                 
                 DetailSectionHeaderView(sectionName: "Location")
+                roundedBackground(LaunchSiteRowView(launchSite: vm.launchSite!), Color.clear)
 //
 //                sectionHeader("Payloads")
             }
