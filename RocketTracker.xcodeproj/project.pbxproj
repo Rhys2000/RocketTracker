@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		902404422AA7E1A200D702C3 /* FairingDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902404412AA7E1A200D702C3 /* FairingDataView.swift */; };
 		902404452AA91B8000D702C3 /* LaunchSiteRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902404442AA91B8000D702C3 /* LaunchSiteRowView.swift */; };
+		902404472AA92EB500D702C3 /* LaunchSiteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902404462AA92EB500D702C3 /* LaunchSiteListView.swift */; };
+		902404492AA9361900D702C3 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902404482AA9361900D702C3 /* Status.swift */; };
 		908D91D72A8D3B5D00AF36CA /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908D91D62A8D3B5D00AF36CA /* View.swift */; };
 		9090E5DD2AA1372800242D60 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9090E5DC2AA1372800242D60 /* Date.swift */; };
 		90A5F0302A8A70D700ECE789 /* RocketTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5F02F2A8A70D700ECE789 /* RocketTrackerApp.swift */; };
@@ -55,6 +57,8 @@
 /* Begin PBXFileReference section */
 		902404412AA7E1A200D702C3 /* FairingDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairingDataView.swift; sourceTree = "<group>"; };
 		902404442AA91B8000D702C3 /* LaunchSiteRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchSiteRowView.swift; sourceTree = "<group>"; };
+		902404462AA92EB500D702C3 /* LaunchSiteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchSiteListView.swift; sourceTree = "<group>"; };
+		902404482AA9361900D702C3 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		908D91D62A8D3B5D00AF36CA /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		9090E5DC2AA1372800242D60 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		90A5F02C2A8A70D700ECE789 /* RocketTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RocketTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				902404442AA91B8000D702C3 /* LaunchSiteRowView.swift */,
+				902404462AA92EB500D702C3 /* LaunchSiteListView.swift */,
 			);
 			path = LaunchSiteListViews;
 			sourceTree = "<group>";
@@ -301,6 +306,7 @@
 			children = (
 				90A5F04D2A8A761100ECE789 /* LaunchSite.swift */,
 				90B396FF2AA52853003D35CB /* LaunchPad.swift */,
+				902404482AA9361900D702C3 /* Status.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -409,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				90B396F22AA51856003D35CB /* Fairing.swift in Sources */,
+				902404492AA9361900D702C3 /* Status.swift in Sources */,
 				90DDC8292A9CE162004B532E /* SettingsView.swift in Sources */,
 				90DDC7F42A992C35004B532E /* LaunchSiteDataService.swift in Sources */,
 				90B396F02AA4004E003D35CB /* LabelDataStackView.swift in Sources */,
@@ -434,6 +441,7 @@
 				90B396F42AA5185D003D35CB /* Booster.swift in Sources */,
 				90B396F82AA52091003D35CB /* OrbitDestination.swift in Sources */,
 				90AD7B6F2A9CFD6300357090 /* InfoView.swift in Sources */,
+				902404472AA92EB500D702C3 /* LaunchSiteListView.swift in Sources */,
 				90AD7B752A9D413100357090 /* LaunchDetailView.swift in Sources */,
 				90A5F0482A8A75D700ECE789 /* Launch.swift in Sources */,
 				90A5F0772A8C2F9600ECE789 /* PreviewProvider.swift in Sources */,
