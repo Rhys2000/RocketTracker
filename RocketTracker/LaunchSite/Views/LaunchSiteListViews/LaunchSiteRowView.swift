@@ -17,7 +17,6 @@ struct LaunchSiteRowView: View {
             firstRow
             secondRow
         }
-        .padding(.bottom, 8)
         .background(Color.theme.secondaryBackground)
         .cornerRadius(15, corners: .allCorners)
     }
@@ -32,24 +31,33 @@ struct LaunchSiteRowView_Previews: PreviewProvider {
 extension LaunchSiteRowView {
     
     private var imageView: some View {
-        Image(launchSite.shortName)
+        Image(launchSite.shortName.replacingOccurrences(of: " ", with: ""))
             .resizable()
-            .frame(width: .infinity, height: 250)
+            .frame(width: .infinity, height: 200)
     }
     
     private var firstRow: some View {
         HStack {
-            Text("Name:")
             Text(launchSite.fullName)
+                .font(.subheadline)
+                .bold()
+            Spacer()
+            Text(launchSite.status.rawValue)
+                .font(.subheadline)
         }
+        .padding(.top, 6)
         .padding(.horizontal, 8)
     }
     
     private var secondRow: some View {
         HStack {
-            Text("Location:")
             Text("\(launchSite.territory), \(launchSite.country)")
+                .font(.subheadline)
+            Spacer()
+            Text(launchSite.owner)
+                .font(.subheadline)
         }
+        .padding(.bottom, 8)
         .padding(.horizontal, 8)
     }
 }
