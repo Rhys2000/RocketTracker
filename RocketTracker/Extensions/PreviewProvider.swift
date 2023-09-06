@@ -29,5 +29,5 @@ class DevelopmentPreview {
     
     let booster = Booster(name: "B1059", method: .droneship, location: "LZ-1", distance: "14.75", outcome: .success, flightNumber: 5)
     
-    let fairings = [Fairing(flightNumber: 1, method: .splashdown, location: "Pacific", distance: "456", outcome: .success), Fairing(flightNumber: 3, method: .netCatch, location: "Mr. Steven", distance: "456", outcome: .partialSuccess)]
+    let fairings = [Fairing(flightNumber: 1, method: .netCatch, location: "Mr. Steven", distance: "456", outcome: .partialSuccess), Fairing(flightNumber: 3, method: .splashdown, location: "Pacific", distance: "456", outcome: .success)]
 }
