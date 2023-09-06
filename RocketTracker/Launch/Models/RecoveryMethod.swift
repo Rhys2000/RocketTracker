@@ -17,21 +17,29 @@ enum RecoveryMethod: String, Codable {
     case splashdown = "Splashdown"
     case notAvailable = "NA"
     
-//    func recoveryMethodBooster(launch: Launch, index: Int) -> String {
-//        let time = launch.time.getBool()
-//        switch self {
-//        case .droneship:
-//            return time ? "\(launch.boosterRecoveryOutcome[index].getDronehsipOutcome()) the booster \(launch.boosterRecoveryDistance[index]) km downrange aboard the droneship \(launch.boosterRecoveryLocation[index])" : "Will attempt to land \(launch.boosterRecoveryDistance[index]) km downrange aboard the droneship \(launch.boosterRecoveryLocation[index])"
-//        case .expended:
-//            return time ? "The booster was expended during this launch" : "The booster will be expended after this launch"
-//        case .hoverslam:
-//            return time ? "Performed a hoverslam \(launch.boosterRecoveryDistance[index]) km downrange in the \(launch.boosterRecoveryLocation[index]) to gather landing data" : "Will perform a hoverslam \(launch.boosterRecoveryDistance[index]) km downrange in the \(launch.boosterRecoveryLocation[index]) to gather landing data"
-//        case .parachute:
-//            return time ? "\(launch.boosterRecoveryOutcome[index].getDronehsipOutcome()) the booster softly \(launch.boosterRecoveryDistance[index]) km downrange in the \(launch.boosterRecoveryLocation[index]) using parachutes" : "Will attempt to land the booster softly \(launch.boosterRecoveryDistance[index]) km downrange in the \(launch.boosterRecoveryLocation[index]) using parachutes"
-//        case .returnToLaunchSite:
-//            return time ? "\(launch.boosterRecoveryOutcome[index].getReturnToLaunchSiteOutcome()) a Return to Launch Site maneuver and land \(launch.boosterRecoveryDistance[index]) km downrange at \(launch.boosterRecoveryLocation[index])" : "Will perform a Return to Launch Site maneuver and attempt to land \(launch.boosterRecoveryDistance[index]) km downrange at \(launch.boosterRecoveryLocation[index])"
-//        default:
-//            return ""
-//        }
-//    }
+    func upcomingFairingMethod(location: String) -> String {
+        switch self {
+        case .netCatch:
+            return "be caught by \(location)"
+        case .splashdown:
+            return "splashdown in the \(location) ocean"
+        case .expended:
+            return "expended"
+        default:
+            print("I have an error")
+            return "Error"
+        }
+    }
+    
+    func previousFairingMethod() -> String {
+        switch self {
+        case .netCatch:
+            return "caught"
+        case .splashdown:
+            return "splashed down"
+        default:
+            print("I have an error")
+            return "Error"
+        }
+    }
 }
