@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		902404422AA7E1A200D702C3 /* FairingDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902404412AA7E1A200D702C3 /* FairingDataView.swift */; };
+		902404452AA91B8000D702C3 /* LaunchSiteRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902404442AA91B8000D702C3 /* LaunchSiteRowView.swift */; };
 		908D91D72A8D3B5D00AF36CA /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908D91D62A8D3B5D00AF36CA /* View.swift */; };
 		9090E5DD2AA1372800242D60 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9090E5DC2AA1372800242D60 /* Date.swift */; };
 		90A5F0302A8A70D700ECE789 /* RocketTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5F02F2A8A70D700ECE789 /* RocketTrackerApp.swift */; };
@@ -53,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		902404412AA7E1A200D702C3 /* FairingDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairingDataView.swift; sourceTree = "<group>"; };
+		902404442AA91B8000D702C3 /* LaunchSiteRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchSiteRowView.swift; sourceTree = "<group>"; };
 		908D91D62A8D3B5D00AF36CA /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		9090E5DC2AA1372800242D60 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		90A5F02C2A8A70D700ECE789 /* RocketTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RocketTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +110,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		902404432AA91B5A00D702C3 /* LaunchSiteListViews */ = {
+			isa = PBXGroup;
+			children = (
+				902404442AA91B8000D702C3 /* LaunchSiteRowView.swift */,
+			);
+			path = LaunchSiteListViews;
+			sourceTree = "<group>";
+		};
 		902731D12AA2CA120003FE8A /* LaunchDetailViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				90A5F03F2A8A734E00ECE789 /* LaunchSiteView.swift */,
+				902404432AA91B5A00D702C3 /* LaunchSiteListViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -435,6 +446,7 @@
 				90DDC7D12A8EB91A004B532E /* LaunchDataService.swift in Sources */,
 				90A5F04A2A8A75E500ECE789 /* LaunchViewModel.swift in Sources */,
 				90DDC8172A994BE3004B532E /* ScopeBarView.swift in Sources */,
+				902404452AA91B8000D702C3 /* LaunchSiteRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

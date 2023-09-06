@@ -19,14 +19,16 @@ struct LaunchDetailView: View {
             VStack(alignment: .leading) {
                 ImageTabView(height: 300, name: launch.vehicleName, numberOfImages: 4)
                 
-                //statusHeader
-                //roundedBackground(statusBody, Color.theme.secondaryBackground)
+                statusHeader
+                roundedBackground(statusBody, Color.theme.secondaryBackground)
                 
-                //DetailSectionHeaderView(sectionName: "Details")
-                //roundedBackground(fullDetailBody, Color.theme.secondaryBackground)
+                DetailSectionHeaderView(sectionName: "Details")
+                roundedBackground(fullDetailBody, Color.theme.secondaryBackground)
 
                 DetailSectionHeaderView(sectionName: "Recovery")
                 roundedBackground(recoveryBody, Color.theme.secondaryBackground)
+                
+                DetailSectionHeaderView(sectionName: "Location")
 //
 //                sectionHeader("Payloads")
             }
@@ -199,6 +201,7 @@ extension LaunchDetailView {
         .frame(maxWidth: .infinity, alignment: .leading)
     }
     
+    //Revised
     private var fairingRecoveryData: some View {
         VStack(alignment: .leading, spacing: 4) {
             Text("Fairing Recovery")
@@ -211,6 +214,7 @@ extension LaunchDetailView {
         .frame(maxWidth: .infinity, alignment: .leading)
     }
     
+    //Revised
     private var recoveryBody: some View {
         VStack {
             if(!launch.boosterData[0].isEmpty) {
