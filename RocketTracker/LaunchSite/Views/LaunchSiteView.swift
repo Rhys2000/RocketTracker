@@ -15,13 +15,12 @@ struct LaunchSiteView: View {
         ZStack {
             Color.theme.primaryBackground
                 .ignoresSafeArea()
+            
+            
             VStack {
-                Text("Hello")
-                    .foregroundColor(Color.purple)
-                ForEach(vm.allLaunchSites) { launchSite in
-                    Text("hello")
-                        .foregroundColor(Color.theme.primaryText)
-                }
+                SearchBarView(searchText: .constant(""))
+                
+                LaunchSiteListView(launchSiteList: vm.allLaunchSites)
             }
         }
     }
