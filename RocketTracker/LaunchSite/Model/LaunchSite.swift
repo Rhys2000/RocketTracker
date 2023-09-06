@@ -36,6 +36,8 @@ struct LaunchSite: Identifiable, Codable {
     let fullName: String
     let abbrName: String
     let previousNames: [String]
+    let owner: String
+    let status: Status
     let latitude: Double
     let longitude: Double
     let territory: String
