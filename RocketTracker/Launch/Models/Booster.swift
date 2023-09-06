@@ -110,7 +110,7 @@ struct Booster: Identifiable {
         let fullLaunchList = LaunchDataService().allLaunches
         let currentLaunchIndex = fullLaunchList.firstIndex(where: { $0.missionName == launch.missionName })!
         
-        var returnedString = "Previously launched the "
+        var returnedString = "This booster previously supported the "
         var previousMissions: [String] = []
         
         for launch in fullLaunchList[0..<currentLaunchIndex] {
