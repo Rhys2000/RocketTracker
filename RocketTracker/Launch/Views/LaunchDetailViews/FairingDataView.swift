@@ -68,6 +68,9 @@ extension FairingDataView {
             else if(firstFairing.method == .netCatch && secondFairing.method == .splashdown && firstFairing.outcome == .partialSuccess && secondFairing.outcome == .success) {
                 return "One fairing half was attempted to be caught by \(firstFairing.location) but was recovered from the water and the other half successfully splashed down and was recovered \(secondFairing.distance) km downrange in the \(secondFairing.location) ocean"
             }
+            else if(firstFairing.method == .netCatch && secondFairing.method == .splashdown && firstFairing.outcome == .failure && secondFairing.outcome == .success) {
+                return "One fairing half failed to be caught by \(firstFairing.location) and could not be recovered while the other half successfully splashed down and was recovered \(secondFairing.distance) km downrange in the \(secondFairing.location) ocean"
+            }
             
             else if(firstFairing.method == .splashdown && secondFairing.method == .splashdown && firstFairing.outcome == .success && secondFairing.outcome == .success) {
                 return "Both fairing halves successfully splashed down and were recovered \(firstFairing.distance) km downrange in the \(firstFairing.location) ocean"
