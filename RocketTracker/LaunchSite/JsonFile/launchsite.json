@@ -15,6 +15,8 @@
             {
                 "shortName" : "LC-39A",
                 "fullName" : "Launch Complex 39A",
+                "operatorName" : "SpaceX",
+                "status" : "Active",
                 "latitude" : 28.608389,
                 "longitude" : -80.604333,
             }
@@ -36,6 +38,8 @@
             {
                  "shortName" : "SLC-40",
                  "fullName" : "Space Launch Complex 40",
+                 "operatorName" : "SpaceX",
+                 "status" : "Active",
                  "latitude" : 28.562106,
                  "longitude" : -80.57718,
             }
@@ -57,6 +61,8 @@
             {
                  "shortName" : "SLC-4E",
                  "fullName" : "Space Launch Complex 4 East",
+                 "operatorName" : "SpaceX",
+                 "status" : "Active",
                  "latitude" : 34.633,
                  "longitude" : -120.613,
             }
