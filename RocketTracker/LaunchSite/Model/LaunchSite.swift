@@ -37,7 +37,7 @@ struct LaunchSite: Identifiable, Codable {
     let abbrName: String
     let previousNames: [String]
     let owner: String
-    let status: String
+    let status: OperationalStatus
     let latitude: Double
     let longitude: Double
     let territory: String
@@ -57,5 +57,14 @@ struct LaunchSite: Identifiable, Codable {
         tempString += launchPad.getLaunchPadFullName()
         tempString += ", \(fullName) (\(abbrName)), \(territory), \(country)"
         return tempString
+    }
+    
+    func getCountryFlag() -> String {
+        switch country {
+        case "United States":
+            return "🇺🇸"
+        default:
+            return ""
+        }
     }
 }
