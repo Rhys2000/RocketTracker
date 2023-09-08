@@ -15,6 +15,7 @@ struct LaunchDetailView: View {
     let launch: Launch
     
     var body: some View {
+        
         ScrollView {
             VStack(alignment: .leading) {
                 ImageTabView(height: 300, name: launch.vehicleName, numberOfImages: 4)
@@ -30,6 +31,7 @@ struct LaunchDetailView: View {
                 
                 DetailSectionHeaderView(sectionName: "Location")
                 roundedBackground(LaunchSiteRowView(launchSite: vm.launchSite!), Color.clear)
+                roundedBackground(LaunchPadRowView(launchPad: vm.launchPad!), Color.clear)
 //
 //                sectionHeader("Payloads")
             }
@@ -48,24 +50,6 @@ struct LaunchDetailView: View {
         .overlay(backButton, alignment: .topTrailing)
         .overlay(shortMissionName, alignment: .topLeading)
     }
-    
-//    func fairingRecoveryData() -> [String] {
-//        var stringArray: [String] = []
-//        let time = launch.time.getBool()
-//
-//        if(launch.numberOfFairingFlights[0] == "0" && launch.numberOfFairingFlights[1] == "0") {
-//            stringArray.append("The number of flights for these fairing halves is unknown")
-//        } else if(launch.numberOfFairingFlights[0] == launch.numberOfFairingFlights[1]) {
-//            let tempString = time ? "was" : "will be"
-//            stringArray.append("This \(tempString) the \(addNumberEnding(Int(launch.numberOfFairingFlights[0])!)) flight for both of these fairing halves")
-//        } else {
-//            let tempString = time ? " flew " : "is flying"
-//            stringArray.append("One fairing half \(tempString) for the \(addNumberEnding(Int(launch.numberOfFairingFlights[0])!)) time and the other half \(tempString) for the \(addNumberEnding(Int(launch.numberOfFairingFlights[1])!))")
-//        }
-//        return stringArray
-//    }
-    
-
 }
 
 struct LaunchDetailView_Previews: PreviewProvider {
@@ -76,21 +60,6 @@ struct LaunchDetailView_Previews: PreviewProvider {
 }
 
 extension LaunchDetailView {
-    
-    
-//    private func fairingDataStack(_ data: [String]) -> some View {
-//        VStack(alignment: .leading, spacing: 5) {
-//            Text("Version: " + launch.fairingRecoveryDistance)
-//                .font(.headline)
-//                .foregroundColor(Color.theme.secondaryText)
-//            ForEach(data, id: \.self) { datam in
-//                Text(datam)
-//                    .foregroundColor(Color.brown)
-//            }
-//        }
-//        .frame(maxWidth: .infinity, alignment: .leading)
-//        .padding(.vertical, 8)
-//    }
     
     //Revised
     private var statusHeader: some View {
