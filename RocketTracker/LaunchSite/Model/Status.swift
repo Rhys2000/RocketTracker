@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Status: String, Codable {
+enum CustomStatus: String, Codable {
     case active = "Active"
     case retired = "Retired"
     case repair = "Repair"
