@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		900669612AAA8280003D63EB /* LaunchPadRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900669602AAA8280003D63EB /* LaunchPadRowView.swift */; };
+		90107C172AAB67A600630580 /* OperationalStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90107C162AAB67A600630580 /* OperationalStatus.swift */; };
 		902404422AA7E1A200D702C3 /* FairingDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902404412AA7E1A200D702C3 /* FairingDataView.swift */; };
 		902404452AA91B8000D702C3 /* LaunchSiteRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902404442AA91B8000D702C3 /* LaunchSiteRowView.swift */; };
 		902404472AA92EB500D702C3 /* LaunchSiteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902404462AA92EB500D702C3 /* LaunchSiteListView.swift */; };
@@ -56,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		900669602AAA8280003D63EB /* LaunchPadRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPadRowView.swift; sourceTree = "<group>"; };
+		90107C162AAB67A600630580 /* OperationalStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationalStatus.swift; sourceTree = "<group>"; };
 		902404412AA7E1A200D702C3 /* FairingDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairingDataView.swift; sourceTree = "<group>"; };
 		902404442AA91B8000D702C3 /* LaunchSiteRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchSiteRowView.swift; sourceTree = "<group>"; };
 		902404462AA92EB500D702C3 /* LaunchSiteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchSiteListView.swift; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 			children = (
 				90A5F04D2A8A761100ECE789 /* LaunchSite.swift */,
 				90B396FF2AA52853003D35CB /* LaunchPad.swift */,
+				90107C162AAB67A600630580 /* OperationalStatus.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				90B396F62AA5186A003D35CB /* Capsule.swift in Sources */,
 				908D91D72A8D3B5D00AF36CA /* View.swift in Sources */,
 				90DDC7D12A8EB91A004B532E /* LaunchDataService.swift in Sources */,
+				90107C172AAB67A600630580 /* OperationalStatus.swift in Sources */,
 				90A5F04A2A8A75E500ECE789 /* LaunchViewModel.swift in Sources */,
 				90DDC8172A994BE3004B532E /* ScopeBarView.swift in Sources */,
 				902404452AA91B8000D702C3 /* LaunchSiteRowView.swift in Sources */,

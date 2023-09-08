@@ -25,7 +25,7 @@ class DevelopmentPreview {
     
     let launchSiteVM = LaunchSiteViewModel()
     
-    let launchSite = LaunchSite(shortName: "Vandenberg", fullName: "Vandenberg Space Force Base", abbrName: "VSFB", previousNames: ["Vandenberg Air Force Base"], owner: "USSF", status: "Active", latitude: 13.45, longitude: 3.23, territory: "California", country: "United States", abbrTimezone: "PST", launchPads: [LaunchPad(shortName: "SLC-4E", fullName: "Space Launch Complex 4 East", operatorName: "SpaceX", status: "Retired", latitude: 5.67, longitude: -2.93)])
+    let launchSite = LaunchSite(shortName: "Vandenberg", fullName: "Vandenberg Space Force Base", abbrName: "VSFB", previousNames: ["Vandenberg Air Force Base"], owner: "USSF", status: .active, latitude: 13.45, longitude: 3.23, territory: "California", country: "United States", abbrTimezone: "PST", launchPads: [LaunchPad(shortName: "SLC-4E", fullName: "Space Launch Complex 4 East", operatorName: "SpaceX", status: .retired, latitude: 5.67, longitude: -2.93)])
     
     let booster = Booster(name: "B1059", method: .droneship, location: "LZ-1", distance: "14.75", outcome: .success, flightNumber: 5)
     
