@@ -41,8 +41,6 @@ struct LaunchRowView: View {
         .cornerRadius(15, corners: .allCorners)
         .onTapGesture {
             vm.launch = launch
-            vm.getLaunchSite(location: launch.launchSiteShortName)
-            vm.getLaunchPad(pad: launch.launchPadAbbr)
         }
     }
 }
