@@ -30,8 +30,8 @@ struct LaunchDetailView: View {
                 roundedBackground(recoveryBody, Color.theme.secondaryBackground)
                 
                 DetailSectionHeaderView(sectionName: "Location")
-                roundedBackground(LaunchSiteRowView(launchSite: vm.launchSite!), Color.clear)
-                roundedBackground(LaunchPadRowView(launchPad: vm.launchPad!), Color.clear)
+                roundedBackground(LaunchSiteRowView(launchSite: launch.launchSite), Color.clear)
+                roundedBackground(LaunchPadRowView(launchPad: launch.launchPad), Color.clear)
 //
 //                sectionHeader("Payloads")
             }
@@ -90,7 +90,7 @@ extension LaunchDetailView {
                 LabelDataStackView(labelName: "Alternative Name:", data: [launch.altMissionName])
             }
             
-            LabelDataStackView(labelName: "Location:", data: [vm.launchSite?.getLaunchSiteAndLaunchPadFullName(vm.launchPad!) ?? ""])
+            LabelDataStackView(labelName: "Location:", data: [launch.launchSite.getLaunchSiteAndLaunchPadFullName(launch.launchPad)])
             
             LabelDataStackView(labelName: "Provider:", data: [launch.launchProvider])
             
@@ -210,8 +210,6 @@ extension LaunchDetailView {
             .padding()
             .onTapGesture {
                 vm.launch = nil
-                vm.launchSite = nil
-                vm.launchPad = nil
             }
     }
     
