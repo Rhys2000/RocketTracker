@@ -10,7 +10,9 @@ import SwiftUI
 struct LaunchDetailView: View {
     
     @EnvironmentObject private var vm: LaunchViewModel
+    
     @State private var showFullDescription: Bool = false
+    @State private var countdownTime: String = "Calculating..."
     
     let launch: Launch
     
@@ -18,7 +20,7 @@ struct LaunchDetailView: View {
         
         ScrollView {
             VStack(alignment: .leading) {
-                ImageTabView(height: 300, name: launch.vehicleName, numberOfImages: 4)
+                ImageTabView(height: 350, name: launch.vehicleName, numberOfImages: 4)
                 
                 statusHeader
                 roundedBackground(statusBody, Color.theme.secondaryBackground)
@@ -75,7 +77,12 @@ extension LaunchDetailView {
     private var statusBody: some View {
         VStack(spacing: 10) {
             LabelDataStackView(labelName: "Liftoff:", data: [launch.liftOffTime.statusTime(timezone: TimeZone.current), launch.liftOffTime.statusTime(timezone: TimeZone(abbreviation: "UTC")!)])
-            LabelDataStackView(labelName: "Outcome:", data: [launch.missionOutcome.getLaunchOutcomeDescription()])
+            if(launch.pastLaunch) {
+                LabelDataStackView(labelName: "Outcome:", data: [launch.missionOutcome.getLaunchOutcomeDescription()])
+            }
+            if(!launch.livestreamLink.isEmpty) {
+                LabelLinkStackView(labelName: "Livestream:", url: URL(string: launch.livestreamLink)!, pastLaunch: launch.pastLaunch)
+            }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.vertical, 8)
@@ -213,16 +220,60 @@ extension LaunchDetailView {
             }
     }
     
-    //Not Fixed
+    //Revised
     private var shortMissionName: some View {
-        Text(launch.abbrMissionName.isEmpty ? launch.missionName : launch.abbrMissionName)
-            .font(.headline)
-            .bold()
-            .padding(12)
-            .foregroundColor(Color.theme.primaryText)
-            .background(.ultraThinMaterial)
-            .cornerRadius(10)
-            .shadow(radius: 4)
-            .padding()
+        VStack(alignment: .leading, spacing: 2) {
+            if(!launch.pastLaunch) {
+                Text(countdownTime)
+                    .font(.headline)
+                    .bold()
+                    .padding(12)
+                    .foregroundColor(Color.theme.primaryText)
+                    .background(.ultraThinMaterial)
+                    .cornerRadius(10)
+                    .padding([.top, .leading])
+                    .shadow(radius: 4)
+                    .onAppear {
+                        refreshCountdownClock()
+                    }
+            }
+            Text(launch.abbrMissionName.isEmpty ? launch.missionName : launch.abbrMissionName)
+                .font(.headline)
+                .bold()
+                .padding(12)
+                .foregroundColor(Color.theme.primaryText)
+                .background(.ultraThinMaterial)
+                .cornerRadius(10)
+                .shadow(radius: 4)
+                .padding(launch.pastLaunch ? [.top, .leading] : .leading)
+        }
+    }
+    
+    //Revised
+    func refreshCountdownClock() {
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+            countdownTime = getCountdownClock()
+        }
+    }
+    
+    //Can be modified
+    func getCountdownClock() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        let liftOffTime = dateFormatter.date(from: launch.liftOffTime)!
+        let currentTime = Date()
+        var totalSecondsUntilLaunch = Int(liftOffTime - currentTime)
+        let daysToLaunch = totalSecondsUntilLaunch / 86400
+        totalSecondsUntilLaunch = totalSecondsUntilLaunch % 86400
+        let hoursToLaunch = totalSecondsUntilLaunch / 3600
+        totalSecondsUntilLaunch = totalSecondsUntilLaunch % 3600
+        let minutesToLaunch = totalSecondsUntilLaunch / 60
+        totalSecondsUntilLaunch = totalSecondsUntilLaunch % 60
+        if(daysToLaunch > 0) {
+            let dayFormat = (daysToLaunch == 1 ? "day" : "days")
+            return "T - \(daysToLaunch) \(dayFormat) " + String(format: "%02d:%02d:%02d", hoursToLaunch, minutesToLaunch, totalSecondsUntilLaunch)
+        } else {
+            return "T - " + String(format: "%02d:%02d:%02d", hoursToLaunch, minutesToLaunch, totalSecondsUntilLaunch)
+        }
     }
 }
