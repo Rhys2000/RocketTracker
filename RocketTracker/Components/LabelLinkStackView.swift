@@ -16,7 +16,7 @@ struct LabelLinkStackView: View {
     var body: some View {
         HStack(alignment: .center) {
             Text(labelName)
-                .font(.headline)
+                .font(.title3)
                 .foregroundColor(Color.theme.secondaryText)
             Text(pastLaunch ? "Watch Again" : "Watch Live")
                 .underline()

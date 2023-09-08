@@ -10,6 +10,8 @@
 		900669612AAA8280003D63EB /* LaunchPadRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900669602AAA8280003D63EB /* LaunchPadRowView.swift */; };
 		90107C172AAB67A600630580 /* OperationalStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90107C162AAB67A600630580 /* OperationalStatus.swift */; };
 		90107C192AABDDDA00630580 /* LabelLinkStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90107C182AABDDDA00630580 /* LabelLinkStackView.swift */; };
+		90107C202AABE4A000630580 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90107C1F2AABE4A000630580 /* Vehicle.swift */; };
+		90107C222AABE53B00630580 /* VehicleVariant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90107C212AABE53B00630580 /* VehicleVariant.swift */; };
 		902404422AA7E1A200D702C3 /* FairingDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902404412AA7E1A200D702C3 /* FairingDataView.swift */; };
 		902404452AA91B8000D702C3 /* LaunchSiteRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902404442AA91B8000D702C3 /* LaunchSiteRowView.swift */; };
 		902404472AA92EB500D702C3 /* LaunchSiteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902404462AA92EB500D702C3 /* LaunchSiteListView.swift */; };
@@ -60,6 +62,8 @@
 		900669602AAA8280003D63EB /* LaunchPadRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPadRowView.swift; sourceTree = "<group>"; };
 		90107C162AAB67A600630580 /* OperationalStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationalStatus.swift; sourceTree = "<group>"; };
 		90107C182AABDDDA00630580 /* LabelLinkStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelLinkStackView.swift; sourceTree = "<group>"; };
+		90107C1F2AABE4A000630580 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
+		90107C212AABE53B00630580 /* VehicleVariant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleVariant.swift; sourceTree = "<group>"; };
 		902404412AA7E1A200D702C3 /* FairingDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairingDataView.swift; sourceTree = "<group>"; };
 		902404442AA91B8000D702C3 /* LaunchSiteRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchSiteRowView.swift; sourceTree = "<group>"; };
 		902404462AA92EB500D702C3 /* LaunchSiteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchSiteListView.swift; sourceTree = "<group>"; };
@@ -118,6 +122,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		90107C1A2AABE41200630580 /* Vehicle */ = {
+			isa = PBXGroup;
+			children = (
+				90107C1B2AABE45000630580 /* JsonFiles */,
+				90107C1C2AABE46900630580 /* Models */,
+				90107C1D2AABE47D00630580 /* ViewModel */,
+				90107C1E2AABE48600630580 /* Views */,
+			);
+			path = Vehicle;
+			sourceTree = "<group>";
+		};
+		90107C1B2AABE45000630580 /* JsonFiles */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = JsonFiles;
+			sourceTree = "<group>";
+		};
+		90107C1C2AABE46900630580 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				90107C1F2AABE4A000630580 /* Vehicle.swift */,
+				90107C212AABE53B00630580 /* VehicleVariant.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		90107C1D2AABE47D00630580 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		90107C1E2AABE48600630580 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		902404432AA91B5A00D702C3 /* LaunchSiteListViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +208,7 @@
 				90A5F0412A8A736F00ECE789 /* Launch */,
 				90A5F03D2A8A72D000ECE789 /* LaunchSite */,
 				90DDC7CF2A8EB8DF004B532E /* Services */,
+				90107C1A2AABE41200630580 /* Vehicle */,
 				90DDC7D52A8EE27F004B532E /* Vessel */,
 				90A5F0332A8A70D800ECE789 /* Assets.xcassets */,
 				90A5F0352A8A70D800ECE789 /* Preview Content */,
@@ -428,6 +474,7 @@
 				90B397042AA791EA003D35CB /* BoosterDataView.swift in Sources */,
 				90DDC7CE2A8E6035004B532E /* String.swift in Sources */,
 				90A5F0502A8A762400ECE789 /* LaunchSiteViewModel.swift in Sources */,
+				90107C202AABE4A000630580 /* Vehicle.swift in Sources */,
 				90A5F0402A8A734E00ECE789 /* LaunchSiteView.swift in Sources */,
 				902404422AA7E1A200D702C3 /* FairingDataView.swift in Sources */,
 				90B396E82AA2CCF7003D35CB /* DetailSectionHeaderView.swift in Sources */,
@@ -448,6 +495,7 @@
 				90B396F82AA52091003D35CB /* OrbitDestination.swift in Sources */,
 				90AD7B6F2A9CFD6300357090 /* InfoView.swift in Sources */,
 				902404472AA92EB500D702C3 /* LaunchSiteListView.swift in Sources */,
+				90107C222AABE53B00630580 /* VehicleVariant.swift in Sources */,
 				900669612AAA8280003D63EB /* LaunchPadRowView.swift in Sources */,
 				90AD7B752A9D413100357090 /* LaunchDetailView.swift in Sources */,
 				90A5F0482A8A75D700ECE789 /* Launch.swift in Sources */,

@@ -34,18 +34,18 @@ struct LaunchDetailView: View {
                 DetailSectionHeaderView(sectionName: "Location")
                 roundedBackground(LaunchSiteRowView(launchSite: launch.launchSite), Color.clear)
                 roundedBackground(LaunchPadRowView(launchPad: launch.launchPad), Color.clear)
-//
-//                sectionHeader("Payloads")
             }
-            .padding(.bottom, 32)
             
-//            VStack(alignment: .leading) {
-//                sectionHeader("Vehicles")
-//                sectionHeader("Milestones")
-//                sectionHeader("Rocket")
-//                sectionHeader("Location")
-//            }
-//            .frame(maxWidth: .infinity, alignment: .leading)
+            VStack(alignment: .leading) {
+                DetailSectionHeaderView(sectionName: "Rocket")
+                
+                //sectionHeader("Vehicles")
+                //sectionHeader("Milestones")
+                //sectionHeader("Rocket")
+                //sectionHeader("Location")
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.bottom, 32)
         }
         .ignoresSafeArea()
         .background(Color.theme.primaryBackground)
