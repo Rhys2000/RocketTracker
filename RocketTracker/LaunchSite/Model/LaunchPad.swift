@@ -12,7 +12,7 @@ struct LaunchPad: Identifiable, Codable {
     let shortName: String
     let fullName: String
     let operatorName: String
-    let status: CustomStatus
+    let status: String
     let latitude: Double
     let longitude: Double
     
