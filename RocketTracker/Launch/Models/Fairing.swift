@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Fairing {
+struct Fairing: Identifiable {
+    let id = UUID()
     var flightNumber: Int = 0
     var method: RecoveryMethod = .notAvailable
     var location: String = ""
