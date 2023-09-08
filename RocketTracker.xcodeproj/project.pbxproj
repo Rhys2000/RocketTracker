@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		900669612AAA8280003D63EB /* LaunchPadRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900669602AAA8280003D63EB /* LaunchPadRowView.swift */; };
 		90107C172AAB67A600630580 /* OperationalStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90107C162AAB67A600630580 /* OperationalStatus.swift */; };
+		90107C192AABDDDA00630580 /* LabelLinkStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90107C182AABDDDA00630580 /* LabelLinkStackView.swift */; };
 		902404422AA7E1A200D702C3 /* FairingDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902404412AA7E1A200D702C3 /* FairingDataView.swift */; };
 		902404452AA91B8000D702C3 /* LaunchSiteRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902404442AA91B8000D702C3 /* LaunchSiteRowView.swift */; };
 		902404472AA92EB500D702C3 /* LaunchSiteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902404462AA92EB500D702C3 /* LaunchSiteListView.swift */; };
@@ -58,6 +59,7 @@
 /* Begin PBXFileReference section */
 		900669602AAA8280003D63EB /* LaunchPadRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPadRowView.swift; sourceTree = "<group>"; };
 		90107C162AAB67A600630580 /* OperationalStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationalStatus.swift; sourceTree = "<group>"; };
+		90107C182AABDDDA00630580 /* LabelLinkStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelLinkStackView.swift; sourceTree = "<group>"; };
 		902404412AA7E1A200D702C3 /* FairingDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairingDataView.swift; sourceTree = "<group>"; };
 		902404442AA91B8000D702C3 /* LaunchSiteRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchSiteRowView.swift; sourceTree = "<group>"; };
 		902404462AA92EB500D702C3 /* LaunchSiteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchSiteListView.swift; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 				90B396E92AA2CD61003D35CB /* ImageTabView.swift */,
 				90B396ED2AA2DF71003D35CB /* RecoveryOutcomeLabelView.swift */,
 				90B396EF2AA4004E003D35CB /* LabelDataStackView.swift */,
+				90107C182AABDDDA00630580 /* LabelLinkStackView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				90B397002AA52853003D35CB /* LaunchPad.swift in Sources */,
 				90DDC8152A9949C7004B532E /* SearchBarView.swift in Sources */,
 				90B396F42AA5185D003D35CB /* Booster.swift in Sources */,
+				90107C192AABDDDA00630580 /* LabelLinkStackView.swift in Sources */,
 				90B396F82AA52091003D35CB /* OrbitDestination.swift in Sources */,
 				90AD7B6F2A9CFD6300357090 /* InfoView.swift in Sources */,
 				902404472AA92EB500D702C3 /* LaunchSiteListView.swift in Sources */,
