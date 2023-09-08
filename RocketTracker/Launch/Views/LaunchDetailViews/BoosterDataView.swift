@@ -35,8 +35,8 @@ struct BoosterDataView: View {
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
+        .overlay(booster.outcome != .notAvailable ? RecoveryOutcomeLabelView(outcome: booster.outcome, font: .headline).padding(.trailing, -8) : nil, alignment: .topTrailing)
         .padding(.vertical, 4)
-        //.overlay(outcome != .notAvailable ? recoveryLabel(outcome: outcome) : nil, alignment: .topTrailing)
     }
 }
 
