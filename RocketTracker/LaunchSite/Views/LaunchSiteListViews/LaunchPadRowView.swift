@@ -12,9 +12,13 @@ struct LaunchPadRowView: View {
     let launchPad: LaunchPad
     
     var body: some View {
-        VStack {
-            
+        VStack(alignment: .leading, spacing: 0) {
+            imageView
+            firstRow
+            secondRow
         }
+        .background(Color.theme.secondaryBackground)
+        .cornerRadius(15, corners: .allCorners)
     }
 }
 
@@ -38,7 +42,7 @@ extension LaunchPadRowView {
                 .font(.subheadline)
                 .bold()
             Spacer()
-            Text(launchSite.status.rawValue)
+            Text(launchPad.status.rawValue)
                 .font(.subheadline)
         }
         .padding(.top, 6)
@@ -47,10 +51,10 @@ extension LaunchPadRowView {
     
     private var secondRow: some View {
         HStack {
-            Text("\(launchSite.territory), \(launchSite.country)")
+            Text("\(launchPad.latitude), \(launchPad.longitude)")
                 .font(.subheadline)
             Spacer()
-            Text(launchSite.owner)
+            Text(launchPad.operatorName)
                 .font(.subheadline)
         }
         .padding(.bottom, 8)
