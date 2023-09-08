@@ -37,25 +37,34 @@ extension LaunchSiteRowView {
     }
     
     private var firstRow: some View {
-        HStack {
+        HStack(alignment: .top) {
             Text(launchSite.fullName)
-                .font(.subheadline)
+                .font(.headline)
                 .bold()
+                .foregroundColor(Color.theme.primaryText)
             Spacer()
-            Text(launchSite.status)
-                .font(.subheadline)
+            Text(launchSite.owner + " ")
+                .font(.headline)
+                .bold()
+                .foregroundColor(Color.theme.secondaryText)
         }
-        .padding(.top, 6)
+        .padding(.top, 4)
         .padding(.horizontal, 8)
     }
     
     private var secondRow: some View {
         HStack {
-            Text("\(launchSite.territory), \(launchSite.country)")
+            Text("\(launchSite.territory), \(launchSite.country) \(launchSite.getCountryFlag())")
                 .font(.subheadline)
+                .bold()
+                .foregroundColor(Color.theme.secondaryText)
             Spacer()
-            Text(launchSite.owner)
+            Text(" \(launchSite.status.rawValue) ")
                 .font(.subheadline)
+                .bold()
+                .foregroundColor(Color.white)
+                .background(launchSite.status.getBackgroundColor())
+                .cornerRadius(5, corners: .allCorners)
         }
         .padding(.bottom, 8)
         .padding(.horizontal, 8)
