@@ -121,6 +121,15 @@ struct Launch: Identifiable, Equatable, Codable {
         
         return fairingArray
     }
+    
+    var launchSite: LaunchSite {
+        let service = LaunchSiteDataService()
+        return service.allLaunchSites.first(where: {$0.shortName == launchSiteShortName})!
+    }
+    
+    var launchPad: LaunchPad {
+        return launchSite.launchPads.first(where: { $0.shortName == launchPadAbbr })!
+    }
 
 //
 //    //Equatable
