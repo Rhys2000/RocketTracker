@@ -42,7 +42,7 @@ extension LaunchPadRowView {
                 .font(.subheadline)
                 .bold()
             Spacer()
-            Text(launchPad.status.rawValue)
+            Text(launchPad.status)
                 .font(.subheadline)
         }
         .padding(.top, 6)

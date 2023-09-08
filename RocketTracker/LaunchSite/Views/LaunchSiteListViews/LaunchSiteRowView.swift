@@ -42,7 +42,7 @@ extension LaunchSiteRowView {
                 .font(.subheadline)
                 .bold()
             Spacer()
-            Text(launchSite.status.rawValue)
+            Text(launchSite.status)
                 .font(.subheadline)
         }
         .padding(.top, 6)
