@@ -13,7 +13,7 @@ struct RecoveryOutcomeLabelView: View {
     let font: Font
     
     var body: some View {
-        let text = Text("  \(outcome.rawValue)  ")
+        let text = Text(" \(outcome.rawValue) ")
             .font(font)
             .foregroundColor(Color.white)
             .fontWeight(.bold)
