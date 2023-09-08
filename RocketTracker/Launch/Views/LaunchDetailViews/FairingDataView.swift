@@ -14,6 +14,16 @@ struct FairingDataView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
+            HStack(spacing: 0) {
+                Text("Outcome:")
+                    .font(.headline)
+                    .foregroundColor(Color.theme.secondaryText)
+                Spacer()
+                ForEach(fairings) { fairing in
+                    RecoveryOutcomeLabelView(outcome: fairing.outcome, font: .headline)
+                        .padding(.horizontal, -6)
+                }
+            }
             Text("- " + getNumberOfFlights())
                 .foregroundColor(Color.theme.tertiaryText)
             
