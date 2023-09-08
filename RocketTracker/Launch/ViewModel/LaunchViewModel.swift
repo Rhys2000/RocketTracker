@@ -14,8 +14,6 @@ class LaunchViewModel: ObservableObject {
     @Published var upcomingLaunches: [Launch] = []
     
     @Published var launch: Launch? = nil
-    @Published var launchSite: LaunchSite? = nil
-    @Published var launchPad: LaunchPad? = nil
     
     @Published var showFutureLaunches: Bool = true
     
@@ -42,16 +40,5 @@ class LaunchViewModel: ObservableObject {
                 self?.previousLaunches = previousLaunches
             }
             .store(in: &cancellables)
-    }
-    
-    func getLaunchSite(location: String) {
-        
-        let service = LaunchSiteDataService()
-        launchSite = service.allLaunchSites.first(where: {$0.shortName == location})
-        
-    }
-    
-    func getLaunchPad(pad: String) {
-        launchPad = (launchSite?.launchPads.first(where: {$0.shortName == pad}))
     }
 }
