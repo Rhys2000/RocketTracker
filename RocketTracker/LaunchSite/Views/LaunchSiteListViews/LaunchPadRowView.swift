@@ -48,7 +48,7 @@ extension LaunchPadRowView {
                 .bold()
                 .foregroundColor(Color.theme.secondaryText)
         }
-        .padding(.top, 6)
+        .padding(.top, 4)
         .padding(.horizontal, 8)
     }
     
