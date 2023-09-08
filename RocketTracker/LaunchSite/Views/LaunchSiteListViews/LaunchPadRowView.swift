@@ -39,11 +39,14 @@ extension LaunchPadRowView {
     private var firstRow: some View {
         HStack {
             Text(launchPad.fullName)
-                .font(.subheadline)
+                .font(.headline)
                 .bold()
+                .foregroundColor(Color.theme.primaryText)
             Spacer()
-            Text(launchPad.status)
-                .font(.subheadline)
+            Text(launchPad.operatorName)
+                .font(.headline)
+                .bold()
+                .foregroundColor(Color.theme.secondaryText)
         }
         .padding(.top, 6)
         .padding(.horizontal, 8)
@@ -51,11 +54,17 @@ extension LaunchPadRowView {
     
     private var secondRow: some View {
         HStack {
-            Text("\(launchPad.latitude), \(launchPad.longitude)")
+            Text(launchPad.convertToNWCoordinates(latitude: launchPad.latitude, longitude: launchPad.longitude))
                 .font(.subheadline)
+                .bold()
+                .foregroundColor(Color.theme.secondaryText)
             Spacer()
-            Text(launchPad.operatorName)
+            Text(" \(launchPad.status.rawValue) ")
                 .font(.subheadline)
+                .bold()
+                .foregroundColor(Color.white)
+                .background(launchPad.status.getBackgroundColor())
+                .cornerRadius(5, corners: .allCorners)
         }
         .padding(.bottom, 8)
         .padding(.horizontal, 8)
