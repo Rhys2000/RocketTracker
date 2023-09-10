@@ -12,6 +12,10 @@
 		90107C192AABDDDA00630580 /* LabelLinkStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90107C182AABDDDA00630580 /* LabelLinkStackView.swift */; };
 		90107C202AABE4A000630580 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90107C1F2AABE4A000630580 /* Vehicle.swift */; };
 		90107C222AABE53B00630580 /* VehicleVariant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90107C212AABE53B00630580 /* VehicleVariant.swift */; };
+		90107C242AABF1D000630580 /* VehicleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90107C232AABF1D000630580 /* VehicleView.swift */; };
+		90107C282AABF22600630580 /* VehicleRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90107C272AABF22600630580 /* VehicleRowView.swift */; };
+		90107C2A2AABF45000630580 /* VehicleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90107C292AABF45000630580 /* VehicleViewModel.swift */; };
+		90107C2C2AABF4DF00630580 /* VehicleDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90107C2B2AABF4DF00630580 /* VehicleDataService.swift */; };
 		902404422AA7E1A200D702C3 /* FairingDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902404412AA7E1A200D702C3 /* FairingDataView.swift */; };
 		902404452AA91B8000D702C3 /* LaunchSiteRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902404442AA91B8000D702C3 /* LaunchSiteRowView.swift */; };
 		902404472AA92EB500D702C3 /* LaunchSiteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902404462AA92EB500D702C3 /* LaunchSiteListView.swift */; };
@@ -64,6 +68,10 @@
 		90107C182AABDDDA00630580 /* LabelLinkStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelLinkStackView.swift; sourceTree = "<group>"; };
 		90107C1F2AABE4A000630580 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 		90107C212AABE53B00630580 /* VehicleVariant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleVariant.swift; sourceTree = "<group>"; };
+		90107C232AABF1D000630580 /* VehicleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleView.swift; sourceTree = "<group>"; };
+		90107C272AABF22600630580 /* VehicleRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleRowView.swift; sourceTree = "<group>"; };
+		90107C292AABF45000630580 /* VehicleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleViewModel.swift; sourceTree = "<group>"; };
+		90107C2B2AABF4DF00630580 /* VehicleDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDataService.swift; sourceTree = "<group>"; };
 		902404412AA7E1A200D702C3 /* FairingDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairingDataView.swift; sourceTree = "<group>"; };
 		902404442AA91B8000D702C3 /* LaunchSiteRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchSiteRowView.swift; sourceTree = "<group>"; };
 		902404462AA92EB500D702C3 /* LaunchSiteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchSiteListView.swift; sourceTree = "<group>"; };
@@ -152,6 +160,7 @@
 		90107C1D2AABE47D00630580 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				90107C292AABF45000630580 /* VehicleViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -159,8 +168,26 @@
 		90107C1E2AABE48600630580 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				90107C232AABF1D000630580 /* VehicleView.swift */,
+				90107C252AABF1EC00630580 /* VehicleListViews */,
+				90107C262AABF1FF00630580 /* VehicleDetailViews */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		90107C252AABF1EC00630580 /* VehicleListViews */ = {
+			isa = PBXGroup;
+			children = (
+				90107C272AABF22600630580 /* VehicleRowView.swift */,
+			);
+			path = VehicleListViews;
+			sourceTree = "<group>";
+		};
+		90107C262AABF1FF00630580 /* VehicleDetailViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VehicleDetailViews;
 			sourceTree = "<group>";
 		};
 		902404432AA91B5A00D702C3 /* LaunchSiteListViews */ = {
@@ -324,6 +351,7 @@
 			children = (
 				90DDC7D02A8EB91A004B532E /* LaunchDataService.swift */,
 				90DDC7F32A992C35004B532E /* LaunchSiteDataService.swift */,
+				90107C2B2AABF4DF00630580 /* VehicleDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -479,12 +507,16 @@
 				902404422AA7E1A200D702C3 /* FairingDataView.swift in Sources */,
 				90B396E82AA2CCF7003D35CB /* DetailSectionHeaderView.swift in Sources */,
 				90DDC7D82A8EE2AB004B532E /* Vessel.swift in Sources */,
+				90107C2A2AABF45000630580 /* VehicleViewModel.swift in Sources */,
 				90DDC8192A996E0F004B532E /* LaunchListView.swift in Sources */,
 				90DDC8132A994833004B532E /* CircleButtonView.swift in Sources */,
 				90B396EE2AA2DF71003D35CB /* RecoveryOutcomeLabelView.swift in Sources */,
 				90A5F04E2A8A761100ECE789 /* LaunchSite.swift in Sources */,
+				90107C282AABF22600630580 /* VehicleRowView.swift in Sources */,
 				90B396FC2AA521A8003D35CB /* Outcome.swift in Sources */,
+				90107C2C2AABF4DF00630580 /* VehicleDataService.swift in Sources */,
 				90B397022AA78ED0003D35CB /* Int.swift in Sources */,
+				90107C242AABF1D000630580 /* VehicleView.swift in Sources */,
 				90A5F0432A8A738400ECE789 /* LaunchView.swift in Sources */,
 				90DDC7CC2A8E5D16004B532E /* Color.swift in Sources */,
 				90A5F0792A8C33CD00ECE789 /* LaunchRowView.swift in Sources */,
