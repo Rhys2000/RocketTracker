@@ -29,7 +29,7 @@ class LaunchViewModel: ObservableObject {
         addSubscribers()
     }
     
-    func addSubscribers() {
+    private func addSubscribers() {
         dataService.$upcomingLaunches
             .sink { [weak self] (upcomingLaunches) in
                 self?.upcomingLaunches = upcomingLaunches
