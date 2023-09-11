@@ -7,6 +7,28 @@
 
 import Foundation
 
+//{
+//    "vehicleName" : "",
+//    "description" : [""],
+//    "vehicleVariants" :
+//    [
+//        {
+//            "variantName" : "",
+//            "altVariantName" : "",
+//            "vehicleHeight" : "",
+//            "vehicleDiameter" : "",
+//            "fairingHeight" : "",
+//            "fairingDiameter" : "",
+//            "manufacturer" : "",
+//            "numberOfStages" : "",
+//            "strapOnBoosters" : "",
+//            "priceTag" : "",
+//            "thrustAtLiftOff" : "",
+//            "status" : "",
+//        },
+//    ]
+//},
+
 struct Vehicle: Identifiable, Codable {
     let vehicleName: String
     let description: [String]
