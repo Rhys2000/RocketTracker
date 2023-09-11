@@ -19,6 +19,7 @@
 		902404422AA7E1A200D702C3 /* FairingDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902404412AA7E1A200D702C3 /* FairingDataView.swift */; };
 		902404452AA91B8000D702C3 /* LaunchSiteRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902404442AA91B8000D702C3 /* LaunchSiteRowView.swift */; };
 		902404472AA92EB500D702C3 /* LaunchSiteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902404462AA92EB500D702C3 /* LaunchSiteListView.swift */; };
+		905B68142AAFD8C7007F64F1 /* vehicle.json in Resources */ = {isa = PBXBuildFile; fileRef = 905B68132AAFD8C7007F64F1 /* vehicle.json */; };
 		908D91D72A8D3B5D00AF36CA /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908D91D62A8D3B5D00AF36CA /* View.swift */; };
 		9090E5DD2AA1372800242D60 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9090E5DC2AA1372800242D60 /* Date.swift */; };
 		90A5F0302A8A70D700ECE789 /* RocketTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5F02F2A8A70D700ECE789 /* RocketTrackerApp.swift */; };
@@ -75,6 +76,7 @@
 		902404412AA7E1A200D702C3 /* FairingDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairingDataView.swift; sourceTree = "<group>"; };
 		902404442AA91B8000D702C3 /* LaunchSiteRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchSiteRowView.swift; sourceTree = "<group>"; };
 		902404462AA92EB500D702C3 /* LaunchSiteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchSiteListView.swift; sourceTree = "<group>"; };
+		905B68132AAFD8C7007F64F1 /* vehicle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vehicle.json; sourceTree = "<group>"; };
 		908D91D62A8D3B5D00AF36CA /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		9090E5DC2AA1372800242D60 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		90A5F02C2A8A70D700ECE789 /* RocketTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RocketTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +146,7 @@
 		90107C1B2AABE45000630580 /* JsonFiles */ = {
 			isa = PBXGroup;
 			children = (
+				905B68132AAFD8C7007F64F1 /* vehicle.json */,
 			);
 			path = JsonFiles;
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 				90DDC7D42A8EBAC9004B532E /* spacex.json in Resources */,
 				90A5F0372A8A70D800ECE789 /* Preview Assets.xcassets in Resources */,
 				90A5F0342A8A70D800ECE789 /* Assets.xcassets in Resources */,
+				905B68142AAFD8C7007F64F1 /* vehicle.json in Resources */,
 				90DDC7F22A99291C004B532E /* launchsite.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
