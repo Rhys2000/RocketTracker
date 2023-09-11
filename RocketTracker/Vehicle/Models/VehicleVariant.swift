@@ -10,14 +10,15 @@ import Foundation
 struct VehicleVariant: Identifiable, Codable {
     var id = UUID()
     let variantName: String
-    let vehicleHeight: String
-    let vehicleDiameter: String
-    let fairingHeight: String
-    let fairingDiameter: String
+    let altVariantName: String
+    let vehicleHeight: Double
+    let vehicleDiameter: Double
+    let fairingHeight: Double
+    let fairingDiameter: Double
     let manufacturer: String
-    let numberOfStages: String
-    let strapOnBoosters: String
+    let numberOfStages: Int
+    let strapOnBoosters: Int
     let priceTag: String
-    let thrustAtLiftOff: String //in kN
+    let thrustAtLiftOff: Int //in kN
     let status: OperationalStatus
 }
