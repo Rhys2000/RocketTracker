@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct VehicleVariant: Codable {
+    let manufacturer: String
+    
+}
