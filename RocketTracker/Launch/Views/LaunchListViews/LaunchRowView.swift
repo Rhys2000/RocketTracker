@@ -27,12 +27,13 @@ struct LaunchRowView: View {
                 liftOffTimeText
             }
             .padding(.leading, 8)
+            .padding(.vertical, 8)
             .overlay(
                 GeometryReader(content: { geometry in
                     Color.clear
-                            .onAppear(perform: {
-                                self.textHeight = geometry.frame(in: .local).size.height
-                            })
+                        .onAppear(perform: {
+                            self.textHeight = geometry.frame(in: .local).size.height
+                        })
                     })
                 )
             Spacer()
