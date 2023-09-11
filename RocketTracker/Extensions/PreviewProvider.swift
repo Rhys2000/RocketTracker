@@ -33,5 +33,5 @@ class DevelopmentPreview {
     
     let vehicleVM = VehicleViewModel()
     
-    let vehicle = Vehicle(vehicleName: "Falcon 9", description: [""], vehicleVariants: [VehicleVariant(manufacturer: "SpaceX")])
+    let vehicle = Vehicle(vehicleName: "Falcon 9", description: [""], vehicleVariants: [VehicleVariant(variantName: "Block 1", altVariantName: "v1.0", vehicleHeight: 57.8, vehicleDiameter: 3.66, fairingHeight: 13.0, fairingDiameter: 5.2, manufacturer: "SpaceX", numberOfStages: 2, strapOnBoosters: 0, priceTag: "423500000", thrustAtLiftOff: 5231, status: .retired), VehicleVariant(variantName: "Block 2", altVariantName: "v1.1", vehicleHeight: 67.9, vehicleDiameter: 3.66, fairingHeight: 13.0, fairingDiameter: 5.2, manufacturer: "SpaceX", numberOfStages: 2, strapOnBoosters: 0, priceTag: "89120000", thrustAtLiftOff: 9232, status: .retired)])
 }
