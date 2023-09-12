@@ -23,16 +23,18 @@ struct VehicleRowView: View {
                     .font(.title2)
                     .bold()
                     .foregroundColor(Color.theme.primaryText)
-//                LabelDataStackView(labelName: "Total Missions:", data: [String(vehicle.missionsFlown)])
-//                LabelDataStackView(labelName: "Successful Missions:", data: [""/*String(vehicle.successfulMissions)*/])
-//
-//                LabelDataStackView(labelName: "Partial Successes:", data: [String(vehicle.partiallySuccessfulMissions)])
-//                LabelDataStackView(labelName: "Failed Missions:", data: [String(vehicle.failedMissions)])
-//                LabelDataStackView(labelName: "Success Rate:", data: [String(vehicle.successRate)])
-//                LabelDataStackView(labelName: "Success Streak:", data: [String(vehicle.successStreak)])
+                LabelDataStackView(labelName: "Total Missions:", data: ["\(vehicle.missionsFlown)"])
+                LabelDataStackView(labelName: "Successes:", data: ["\(vehicle.successfulMissions)"])
+                LabelDataStackView(labelName: "Partials:", data: ["\(vehicle.partiallySuccessfulMissions)"])
+                LabelDataStackView(labelName: "Failures:", data: ["\(vehicle.failedMissions)"])
+                LabelDataStackView(labelName: "Success Rate:", data: ["\(vehicle.successRate)"])
+                LabelDataStackView(labelName: "Streak:", data: ["\(vehicle.successStreak)"])
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(Color.purple.opacity(0.4))
             .padding(.vertical, 8)
             .padding(.leading, 8)
+            .padding(.trailing, -8)
             .overlay(
                 GeometryReader(content: { geometry in
                     Color.clear
@@ -62,7 +64,7 @@ extension VehicleRowView {
     private var imageView: some View {
         Image("Falcon9Block5")
             .resizable()
-            .frame(width: 150)
+            .frame(width: 130)
             .frame(maxHeight: textHeight)
     }
 }
