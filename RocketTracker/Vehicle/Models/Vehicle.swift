@@ -36,8 +36,8 @@ struct Vehicle: Identifiable, Codable {
     
     var id: String { vehicleName }
     
-    var missionsFlown: Double {
-        var temp: Double = 0
+    var missionsFlown: Int {
+        var temp: Int = 0
         for launch in LaunchDataService().previousLaunches {
             if(launch.vehicleName == vehicleName) {
                 temp += 1
@@ -46,8 +46,8 @@ struct Vehicle: Identifiable, Codable {
         return temp
     }
     
-    var successfulMissions: Double {
-        var temp: Double = 0
+    var successfulMissions: Int {
+        var temp: Int = 0
         for launch in LaunchDataService().previousLaunches {
             if(launch.vehicleName == vehicleName && launch.missionOutcome == .success) {
                 temp += 1
@@ -56,8 +56,8 @@ struct Vehicle: Identifiable, Codable {
         return temp
     }
     
-    var partiallySuccessfulMissions: Double {
-        var temp: Double = 0
+    var partiallySuccessfulMissions: Int {
+        var temp: Int = 0
         for launch in LaunchDataService().previousLaunches {
             if(launch.vehicleName == vehicleName && launch.missionOutcome == .partialSuccess) {
                 temp += 1
@@ -66,8 +66,8 @@ struct Vehicle: Identifiable, Codable {
         return temp
     }
     
-    var failedMissions: Double {
-        var temp: Double = 0
+    var failedMissions: Int {
+        var temp: Int = 0
         for launch in LaunchDataService().previousLaunches {
             if(launch.vehicleName == vehicleName && (launch.missionOutcome == .failure || launch.missionOutcome == .explosion)) {
                 temp += 1
@@ -77,17 +77,16 @@ struct Vehicle: Identifiable, Codable {
     }
     
     var successRate: Double {
-        return (successfulMissions + (partiallySuccessfulMissions * 0.5)) / missionsFlown
+        return ((Double(successfulMissions) + Double(Double(partiallySuccessfulMissions) * 0.5)) / Double(missionsFlown)) * 100
     }
     
-    var successStreak: Double {
-        var temp: Double = 0
+    var successStreak: Int {
+        var temp: Int = 0
         for launch in LaunchDataService().previousLaunches {
             if(launch.vehicleName == vehicleName && launch.missionOutcome == .success) {
                 temp += 1
             }
         }
-        print(temp)
         return temp
     }
 }
