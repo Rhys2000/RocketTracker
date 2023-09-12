@@ -8,7 +8,6 @@
 import Foundation
 
 struct VehicleVariant: Identifiable, Codable {
-    var id = UUID()
     let variantName: String
     let altVariantName: String
     let vehicleHeight: Double
@@ -21,4 +20,6 @@ struct VehicleVariant: Identifiable, Codable {
     let priceTag: String
     let thrustAtLiftOff: Int //in kN
     let status: OperationalStatus
+    
+    var id: String { variantName + priceTag }
 }
