@@ -27,11 +27,11 @@ struct VehicleRowView: View {
                 LabelDataStackView(labelName: "Successes:", data: ["\(vehicle.successfulMissions)"])
                 LabelDataStackView(labelName: "Partials:", data: ["\(vehicle.partiallySuccessfulMissions)"])
                 LabelDataStackView(labelName: "Failures:", data: ["\(vehicle.failedMissions)"])
-                LabelDataStackView(labelName: "Success Rate:", data: ["\(vehicle.successRate)"])
+                LabelDataStackView(labelName: "Success Rate:", data: [String(format: "%.2f", vehicle.successRate) + "%"])
                 LabelDataStackView(labelName: "Streak:", data: ["\(vehicle.successStreak)"])
+                LabelDataStackView(labelName: "Variants:", data: ["\(vehicle.vehicleVariants.count)"])
             }
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background(Color.purple.opacity(0.4))
             .padding(.vertical, 8)
             .padding(.leading, 8)
             .padding(.trailing, -8)
@@ -64,7 +64,7 @@ extension VehicleRowView {
     private var imageView: some View {
         Image("Falcon9Block5")
             .resizable()
-            .frame(width: 130)
+            .frame(width: 170)
             .frame(maxHeight: textHeight)
     }
 }
