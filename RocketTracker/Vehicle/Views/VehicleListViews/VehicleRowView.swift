@@ -22,7 +22,7 @@ struct VehicleRowView: View {
                 Text(vehicle.vehicleName)
                     .font(.title2)
                 LabelDataStackView(labelName: "Total Missions:", data: [String(vehicle.missionsFlown)])
-                LabelDataStackView(labelName: "Successful Missions:", data: [String(vehicle.successfulMissions)])
+                LabelDataStackView(labelName: "Successful Missions:", data: [""/*String(vehicle.successfulMissions)*/])
                     
                 LabelDataStackView(labelName: "Partial Successes:", data: [String(vehicle.partiallySuccessfulMissions)])
                 LabelDataStackView(labelName: "Failed Missions:", data: [String(vehicle.failedMissions)])
