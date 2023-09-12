@@ -21,15 +21,17 @@ struct VehicleRowView: View {
             VStack(alignment: .leading, spacing: 4) {
                 Text(vehicle.vehicleName)
                     .font(.title2)
-                LabelDataStackView(labelName: "Total Missions:", data: [String(vehicle.missionsFlown)])
-                LabelDataStackView(labelName: "Successful Missions:", data: [""/*String(vehicle.successfulMissions)*/])
-                    
-                LabelDataStackView(labelName: "Partial Successes:", data: [String(vehicle.partiallySuccessfulMissions)])
-                LabelDataStackView(labelName: "Failed Missions:", data: [String(vehicle.failedMissions)])
-                LabelDataStackView(labelName: "Success Rate:", data: [String(vehicle.successRate)])
-                LabelDataStackView(labelName: "Success Streak:", data: [String(vehicle.successStreak)])
+                    .bold()
+                    .foregroundColor(Color.theme.primaryText)
+//                LabelDataStackView(labelName: "Total Missions:", data: [String(vehicle.missionsFlown)])
+//                LabelDataStackView(labelName: "Successful Missions:", data: [""/*String(vehicle.successfulMissions)*/])
+//
+//                LabelDataStackView(labelName: "Partial Successes:", data: [String(vehicle.partiallySuccessfulMissions)])
+//                LabelDataStackView(labelName: "Failed Missions:", data: [String(vehicle.failedMissions)])
+//                LabelDataStackView(labelName: "Success Rate:", data: [String(vehicle.successRate)])
+//                LabelDataStackView(labelName: "Success Streak:", data: [String(vehicle.successStreak)])
             }
-            .background(Color.red)
+            .padding(.vertical, 8)
             .padding(.leading, 8)
             .overlay(
                 GeometryReader(content: { geometry in
