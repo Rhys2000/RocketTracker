@@ -18,16 +18,7 @@ struct VehicleRowView: View {
         HStack(spacing: 0) {
             imageView
             
-            VStack(alignment: .leading, spacing: 4) {
-                vehicleName
-                totalMissionsText
-                successfulMissions
-                partialMissions
-                failedMissions
-                successRate
-                successStreak
-                numberOfVariants
-            }
+            dataStack
             .padding(.vertical, 8)
             .padding(.leading, 8)
             .overlay(
@@ -57,44 +48,29 @@ struct VehicleRowView_Previews: PreviewProvider {
 extension VehicleRowView {
     
     private var imageView: some View {
-        Image("Falcon9Block5")
+        Image(vehicle.vehicleName)
             .resizable()
             .frame(width: 170)
             .frame(maxHeight: textHeight)
     }
     
-    private var vehicleName: some View {
-        Text(vehicle.vehicleName)
-            .font(.title2)
-            .bold()
-            .foregroundColor(Color.theme.primaryText)
-    }
-    
-    private var totalMissionsText: some View {
-        LabelDataView(label: "Total Missions: ", data: "\(vehicle.missionsFlown)")
-    }
-    
-    private var successfulMissions: some View {
-        LabelDataView(label: "Successful Missions: ", data: "\(vehicle.successfulMissions)")
-    }
-    
-    private var partialMissions: some View {
-        Text("Partial Successes: ") + Text("\(vehicle.partiallySuccessfulMissions)")
-    }
-    
-    private var failedMissions: some View {
-        Text("Failed Misssions: ") + Text("\(vehicle.failedMissions)")
-    }
-    
-    private var successRate: some View {
-        Text("Success Rate: ") + Text(String(format: "%.2f", vehicle.successRate) + "%")
-    }
-    
-    private var successStreak: some View {
-        Text("Success Streak: ") + Text("\(vehicle.successStreak)")
-    }
-    
-    private var numberOfVariants: some View {
-        Text("Total Variants: ") + Text("\(vehicle.vehicleVariants.count)")
+    private var dataStack: some View {
+        VStack(alignment: .leading, spacing: 4) {
+            
+            Text(vehicle.vehicleName)
+                .font(.title2)
+                .bold()
+                .foregroundColor(Color.theme.primaryText)
+            
+            LabelDataView(label: "Total Missions: ", data: "\(vehicle.missionsFlown)")
+            LabelDataView(label: "Successful Missions: ", data: "\(vehicle.successfulMissions)")
+            LabelDataView(label: "Partial Successes: ", data: "\(vehicle.partiallySuccessfulMissions)")
+            LabelDataView(label: "Failed Missions: ", data: "\(vehicle.failedMissions)")
+            LabelDataView(label: "Success Rate: ", data: String(format: "%.2f", vehicle.successRate) + "%")
+            LabelDataView(label: "Success Streak: ", data: "\(vehicle.successStreak)")
+            if(vehicle.vehicleVariants.count > 1) {
+                LabelDataView(label: "Total Variants: ", data: "\(vehicle.vehicleVariants.count)")
+            }
+        }
     }
 }
