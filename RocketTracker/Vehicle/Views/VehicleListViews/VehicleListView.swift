@@ -8,13 +8,20 @@
 import SwiftUI
 
 struct VehicleListView: View {
+    
+    let vehicleList: [Vehicle]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            ForEach(vehicleList) { vehicle in
+                
+            }
+        }
     }
 }
 
 struct VehicleListView_Previews: PreviewProvider {
     static var previews: some View {
-        VehicleListView()
+        VehicleListView(vehicleList: [dev.vehicle], body: <#T##View#>)
     }
 }
