@@ -48,14 +48,14 @@ struct VehicleRowView_Previews: PreviewProvider {
 extension VehicleRowView {
     
     private var imageView: some View {
-        Image(vehicle.vehicleName)
+        Image(vehicle.vehicleName.replacingOccurrences(of: " ", with: ""))
             .resizable()
             .frame(width: 170)
             .frame(maxHeight: textHeight)
     }
     
     private var dataStack: some View {
-        VStack(alignment: .leading, spacing: 4) {
+        VStack(alignment: .leading, spacing: 8) {
             
             Text(vehicle.vehicleName)
                 .font(.title2)
