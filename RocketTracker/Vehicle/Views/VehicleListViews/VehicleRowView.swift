@@ -23,10 +23,10 @@ struct VehicleRowView: View {
                     .font(.title2)
                     .bold()
                     .foregroundColor(Color.theme.primaryText)
-                //LabelDataStackView(labelName: "Total Missions:", data: ["\(vehicle.missionsFlown)"])
                 totalMissionsText
-                LabelDataStackView(labelName: "Successes:", data: ["\(vehicle.successfulMissions)"])
-                LabelDataStackView(labelName: "Partials:", data: ["\(vehicle.partiallySuccessfulMissions)"])
+                successfulMissions
+                partialMissions
+                
                 LabelDataStackView(labelName: "Failures:", data: ["\(vehicle.failedMissions)"])
                 LabelDataStackView(labelName: "Success Rate:", data: [String(format: "%.2f", vehicle.successRate) + "%"])
                 LabelDataStackView(labelName: "Streak:", data: ["\(vehicle.successStreak)"])
@@ -71,5 +71,13 @@ extension VehicleRowView {
     
     private var totalMissionsText: some View {
         Text("Total Missions: ") + Text("\(vehicle.missionsFlown)")
+    }
+    
+    private var successfulMissions: some View {
+        Text("Successful Missions: ") + Text("\(vehicle.successfulMissions)")
+    }
+    
+    private var partialMissions: some View {
+        Text("Partial Successes: ") + Text("\(vehicle.partiallySuccessfulMissions)")
     }
 }
