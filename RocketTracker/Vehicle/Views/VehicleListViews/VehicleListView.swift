@@ -14,14 +14,18 @@ struct VehicleListView: View {
     var body: some View {
         List {
             ForEach(vehicleList) { vehicle in
-                
+                VehicleRowView(vehicle: vehicle)
+                    .listRowBackground(Color.theme.primaryBackground)
+                    .listRowSeparator(.hidden)
+                    .shadow(color: Color.theme.accent.opacity(1), radius: 10)
             }
         }
+        .listStyle(PlainListStyle())
     }
 }
 
 struct VehicleListView_Previews: PreviewProvider {
     static var previews: some View {
-        VehicleListView(vehicleList: [dev.vehicle], body: <#T##View#>)
+        VehicleListView(vehicleList: dev.vehicleVM.allVehicles)
     }
 }
