@@ -8,13 +8,21 @@
 import SwiftUI
 
 struct LabelDataView: View {
+    
+    let label: String
+    let data: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(label)
+            .font(.headline)
+            .foregroundColor(Color.theme.secondaryText) +
+        Text(data)
+            .foregroundColor(Color.theme.tertiaryText)
     }
 }
 
 struct LabelDataView_Previews: PreviewProvider {
     static var previews: some View {
-        LabelDataView()
+        LabelDataView(label: "Successful Missions: ", data: "234")
     }
 }
