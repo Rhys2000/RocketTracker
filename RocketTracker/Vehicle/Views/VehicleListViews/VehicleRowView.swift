@@ -71,11 +71,11 @@ extension VehicleRowView {
     }
     
     private var totalMissionsText: some View {
-        Text("Total Missions: ") + Text("\(vehicle.missionsFlown)")
+        LabelDataView(label: "Total Missions: ", data: "\(vehicle.missionsFlown)")
     }
     
     private var successfulMissions: some View {
-        Text("Successful Missions: ") + Text("\(vehicle.successfulMissions)")
+        LabelDataView(label: "Successful Missions: ", data: "\(vehicle.successfulMissions)")
     }
     
     private var partialMissions: some View {
