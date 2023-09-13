@@ -19,10 +19,7 @@ struct VehicleRowView: View {
             imageView
             
             VStack(alignment: .leading, spacing: 4) {
-                Text(vehicle.vehicleName)
-                    .font(.title2)
-                    .bold()
-                    .foregroundColor(Color.theme.primaryText)
+                vehicleName
                 totalMissionsText
                 successfulMissions
                 partialMissions
@@ -64,6 +61,13 @@ extension VehicleRowView {
             .resizable()
             .frame(width: 170)
             .frame(maxHeight: textHeight)
+    }
+    
+    private var vehicleName: some View {
+        Text(vehicle.vehicleName)
+            .font(.title2)
+            .bold()
+            .foregroundColor(Color.theme.primaryText)
     }
     
     private var totalMissionsText: some View {

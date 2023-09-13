@@ -21,6 +21,7 @@
 		902404472AA92EB500D702C3 /* LaunchSiteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902404462AA92EB500D702C3 /* LaunchSiteListView.swift */; };
 		905B68142AAFD8C7007F64F1 /* vehicle.json in Resources */ = {isa = PBXBuildFile; fileRef = 905B68132AAFD8C7007F64F1 /* vehicle.json */; };
 		905B68162AB134A0007F64F1 /* VehicleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905B68152AB134A0007F64F1 /* VehicleListView.swift */; };
+		905B68182AB13A68007F64F1 /* LabelDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905B68172AB13A68007F64F1 /* LabelDataView.swift */; };
 		908D91D72A8D3B5D00AF36CA /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908D91D62A8D3B5D00AF36CA /* View.swift */; };
 		9090E5DD2AA1372800242D60 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9090E5DC2AA1372800242D60 /* Date.swift */; };
 		90A5F0302A8A70D700ECE789 /* RocketTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5F02F2A8A70D700ECE789 /* RocketTrackerApp.swift */; };
@@ -79,6 +80,7 @@
 		902404462AA92EB500D702C3 /* LaunchSiteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchSiteListView.swift; sourceTree = "<group>"; };
 		905B68132AAFD8C7007F64F1 /* vehicle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vehicle.json; sourceTree = "<group>"; };
 		905B68152AB134A0007F64F1 /* VehicleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleListView.swift; sourceTree = "<group>"; };
+		905B68172AB13A68007F64F1 /* LabelDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelDataView.swift; sourceTree = "<group>"; };
 		908D91D62A8D3B5D00AF36CA /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		9090E5DC2AA1372800242D60 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		90A5F02C2A8A70D700ECE789 /* RocketTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RocketTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -424,6 +426,7 @@
 				90B396ED2AA2DF71003D35CB /* RecoveryOutcomeLabelView.swift */,
 				90B396EF2AA4004E003D35CB /* LabelDataStackView.swift */,
 				90107C182AABDDDA00630580 /* LabelLinkStackView.swift */,
+				905B68172AB13A68007F64F1 /* LabelDataView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 				90B396F22AA51856003D35CB /* Fairing.swift in Sources */,
 				90DDC8292A9CE162004B532E /* SettingsView.swift in Sources */,
 				90DDC7F42A992C35004B532E /* LaunchSiteDataService.swift in Sources */,
+				905B68182AB13A68007F64F1 /* LabelDataView.swift in Sources */,
 				90B396F02AA4004E003D35CB /* LabelDataStackView.swift in Sources */,
 				90B396EA2AA2CD61003D35CB /* ImageTabView.swift in Sources */,
 				90B397042AA791EA003D35CB /* BoosterDataView.swift in Sources */,
