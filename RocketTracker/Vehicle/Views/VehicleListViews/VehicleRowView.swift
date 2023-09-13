@@ -26,16 +26,13 @@ struct VehicleRowView: View {
                 totalMissionsText
                 successfulMissions
                 partialMissions
-                
-                LabelDataStackView(labelName: "Failures:", data: ["\(vehicle.failedMissions)"])
-                LabelDataStackView(labelName: "Success Rate:", data: [String(format: "%.2f", vehicle.successRate) + "%"])
-                LabelDataStackView(labelName: "Streak:", data: ["\(vehicle.successStreak)"])
-                LabelDataStackView(labelName: "Variants:", data: ["\(vehicle.vehicleVariants.count)"])
+                failedMissions
+                successRate
+                successStreak
+                numberOfVariants
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.vertical, 8)
             .padding(.leading, 8)
-            .padding(.trailing, -8)
             .overlay(
                 GeometryReader(content: { geometry in
                     Color.clear
@@ -79,5 +76,21 @@ extension VehicleRowView {
     
     private var partialMissions: some View {
         Text("Partial Successes: ") + Text("\(vehicle.partiallySuccessfulMissions)")
+    }
+    
+    private var failedMissions: some View {
+        Text("Failed Misssions: ") + Text("\(vehicle.failedMissions)")
+    }
+    
+    private var successRate: some View {
+        Text("Success Rate: ") + Text(String(format: "%.2f", vehicle.successRate) + "%")
+    }
+    
+    private var successStreak: some View {
+        Text("Success Streak: ") + Text("\(vehicle.successStreak)")
+    }
+    
+    private var numberOfVariants: some View {
+        Text("Total Variants: ") + Text("\(vehicle.vehicleVariants.count)")
     }
 }
