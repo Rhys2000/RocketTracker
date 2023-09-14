@@ -63,6 +63,7 @@
 		90DDC8172A994BE3004B532E /* ScopeBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDC8162A994BE3004B532E /* ScopeBarView.swift */; };
 		90DDC8192A996E0F004B532E /* LaunchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDC8182A996E0F004B532E /* LaunchListView.swift */; };
 		90DDC8292A9CE162004B532E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDC8282A9CE162004B532E /* SettingsView.swift */; };
+		90F11D7E2AB299AC00AB27AE /* VehicleVariantRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F11D7D2AB299AC00AB27AE /* VehicleVariantRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -123,6 +124,7 @@
 		90DDC8162A994BE3004B532E /* ScopeBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScopeBarView.swift; sourceTree = "<group>"; };
 		90DDC8182A996E0F004B532E /* LaunchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListView.swift; sourceTree = "<group>"; };
 		90DDC8282A9CE162004B532E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		90F11D7D2AB299AC00AB27AE /* VehicleVariantRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleVariantRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 			children = (
 				90107C272AABF22600630580 /* VehicleRowView.swift */,
 				905B68152AB134A0007F64F1 /* VehicleListView.swift */,
+				90F11D7D2AB299AC00AB27AE /* VehicleVariantRowView.swift */,
 			);
 			path = VehicleListViews;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				900669612AAA8280003D63EB /* LaunchPadRowView.swift in Sources */,
 				905B68162AB134A0007F64F1 /* VehicleListView.swift in Sources */,
 				90AD7B752A9D413100357090 /* LaunchDetailView.swift in Sources */,
+				90F11D7E2AB299AC00AB27AE /* VehicleVariantRowView.swift in Sources */,
 				90A5F0482A8A75D700ECE789 /* Launch.swift in Sources */,
 				90A5F0772A8C2F9600ECE789 /* PreviewProvider.swift in Sources */,
 				90AD7B772A9D417500357090 /* CloseSheetButton.swift in Sources */,
