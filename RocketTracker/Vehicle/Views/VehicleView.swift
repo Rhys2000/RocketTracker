@@ -8,13 +8,28 @@
 import SwiftUI
 
 struct VehicleView: View {
+    
+    @EnvironmentObject private var vm: VehicleViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Color.theme.primaryBackground
+                .ignoresSafeArea()
+            
+            VStack {
+                SearchBarView(searchText: .constant(""))
+                
+                VehicleListView(vehicleList: vm.allVehicles)
+                
+                Spacer(minLength: 0)
+            }
+        }
     }
 }
 
 struct VehicleView_Previews: PreviewProvider {
     static var previews: some View {
         VehicleView()
+            .environmentObject(dev.vehicleVM)
     }
 }
