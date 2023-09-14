@@ -124,7 +124,12 @@ struct Launch: Identifiable, Equatable, Codable {
     
     var launchSite: LaunchSite {
         let service = LaunchSiteDataService()
-        return service.allLaunchSites.first(where: {$0.shortName == launchSiteShortName})!
+        return service.allLaunchSites.first(where: { $0.shortName == launchSiteShortName })!
+    }
+    
+    var vehicle: Vehicle {
+        let service = VehicleDataService()
+        return service.allVehicles.first(where: { $0.vehicleName == vehicleName })!
     }
     
     var launchPad: LaunchPad {
