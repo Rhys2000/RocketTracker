@@ -38,6 +38,7 @@ struct LaunchDetailView: View {
             
             VStack(alignment: .leading) {
                 DetailSectionHeaderView(sectionName: "Rocket")
+                roundedBackground(VehicleRowView(vehicle: launch.vehicle), Color.clear)
                 
                 //sectionHeader("Vehicles")
                 //sectionHeader("Milestones")
