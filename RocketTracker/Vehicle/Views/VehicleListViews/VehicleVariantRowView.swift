@@ -10,6 +10,7 @@ import SwiftUI
 struct VehicleVariantRowView: View {
     var body: some View {
         Text("Blah")
+        Text("Blah")
         
     }
 }
