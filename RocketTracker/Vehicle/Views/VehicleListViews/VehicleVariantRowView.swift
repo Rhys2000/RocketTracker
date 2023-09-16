@@ -21,6 +21,7 @@ struct VehicleVariantRowView: View {
         Text("Blah")
         Text("Blah")
         Text("Blah")
+        Text("Blah")
     }
 }
 
